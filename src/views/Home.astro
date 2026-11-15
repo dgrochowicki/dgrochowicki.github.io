@@ -78,6 +78,7 @@ const featured = ['coresender', 'aurora-now', 'trading'].map((s) => projects.fin
   .lead { font-size: clamp(18px, 2vw, 21px); max-width: 36em; color: var(--muted); margin-bottom: 32px; }
   .stats { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: clamp(48px, 7vw, 80px); }
   .stats li { border-top: 1px solid var(--fg); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+  @media (prefers-color-scheme: dark) { .stats li { border-top-color: #4b5058; } }
   .stats strong { font-size: clamp(26px, 3vw, 36px); font-weight: 500; letter-spacing: -0.02em; }
   .stats span { color: var(--muted); font-size: 14px; line-height: 1.4; }
   @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; gap: 28px 16px; } }

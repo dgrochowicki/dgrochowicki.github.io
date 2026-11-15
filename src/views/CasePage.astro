@@ -137,6 +137,8 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .lesson { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
   .lesson .eyebrow { color: var(--accent); margin-bottom: 12px; }
   .lesson p:last-child { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.35; max-width: 30em; }
+  /* W ciemnym motywie jasny blok za mocno się wybija: spokojne, ciemne tło */
+  @media (prefers-color-scheme: dark) { .lesson { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
 
   .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }

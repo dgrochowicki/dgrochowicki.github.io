@@ -24,7 +24,8 @@ const c = item.content[lang];
   .card { display: flex; flex-direction: column; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: .2s; background: var(--bg); }
   .card:hover { border-color: var(--muted); transform: translateY(-2px); }
   .thumb { aspect-ratio: 16 / 10; overflow: hidden; background: var(--accent); padding: 20px 20px 0; }
-  .thumb :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: top left; border-radius: 8px 8px 0 0; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+  /* Pełna szerokość zrzutu, przycinany jest tylko dół (ekran „wychodzi” poza kafelek) */
+  .thumb :global(img) { display: block; width: 100%; height: auto; border-radius: 8px 8px 0 0; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
   .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .body h3 { font-size: 20px; }
   .body p { font-size: 15px; flex: 1; }

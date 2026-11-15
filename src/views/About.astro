@@ -68,14 +68,14 @@ const L = {
     <div class="row">
       <div class="label">{L.edu}</div>
       <ul class="entries">
-        {education[lang].map((e) => <li><div class="job-head"><h3>{e.title}</h3><span class="muted">{e.years}</span></div><p class="muted">{e.sub}</p></li>)}
+        {education[lang].map((e) => <li class="job"><div class="job-body"><h3>{e.title}</h3><p class="muted">{e.sub}</p></div><span class="muted job-years">{e.years}</span></li>)}
       </ul>
     </div>
 
     <div class="row">
       <div class="label">{L.awards}</div>
       <ul class="entries">
-        {awards[lang].map((e) => <li><div class="job-head"><h3>{e.title}</h3><span class="muted">{e.years}</span></div><p class="muted">{e.sub}</p></li>)}
+        {awards[lang].map((e) => <li class="job"><div class="job-body"><h3>{e.title}</h3><p class="muted">{e.sub}</p></div><span class="muted job-years">{e.years}</span></li>)}
       </ul>
     </div>
 
@@ -94,7 +94,7 @@ const L = {
 </Base>
 
 <style>
-  .top { padding-bottom: 24px; }
+  .top { padding-bottom: 72px; }
   .intro { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 6vw, 96px); align-items: stretch; }
   .intro h1 { font-size: clamp(34px, 5vw, 56px); margin-top: 12px; letter-spacing: -0.025em; }
   .role { color: var(--muted); font-size: 20px; margin: 6px 0 28px; }
@@ -116,14 +116,11 @@ const L = {
     .job { grid-template-columns: 1fr; gap: 2px; }
     .job-years { order: -1; text-align: left; }
   }
-  .job-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
-  .job-head h3 { font-size: 18px; }
-  .job-head span { white-space: nowrap; font-size: 15px; }
   .job-role { margin: 2px 0 10px; }
   .bullets { padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
   .bullets.plain { margin: 0; }
   .skills { display: flex; flex-direction: column; gap: 28px; }
   .skills h3 { font-size: 16px; margin-bottom: 12px; }
-  .entries { list-style: none; display: flex; flex-direction: column; gap: 20px; max-width: 760px; }
+  .entries { list-style: none; display: flex; flex-direction: column; gap: 28px; max-width: 920px; }
   .entries p { margin: 4px 0 0; }
 </style>

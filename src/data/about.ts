@@ -2,7 +2,7 @@ import type { L10n } from '../lib/i18n';
 
 export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
   pl: {
-    hero: 'Projektuję produkty cyfrowe. Od researchu do działającego prototypu.',
+    hero: 'Projektuję produkty cyfrowe. Od\u00A0researchu do działającego prototypu.',
     lead: 'Przez ostatnie 5 lat w Tidio projektowałem narzędzia do obsługi klienta: od chatbotów i analityki po Lyro, agenta AI, który samodzielnie rozwiązuje rozmowy z klientami.',
     bio: [
       'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od grafiki i animacji do gier na palmtopy i telefony komórkowe, następnie rozwijałem się w brandingu oraz projektowaniu stron i aplikacji.',

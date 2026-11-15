@@ -36,7 +36,6 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
       <div class="wrap bar">
         <a class="brand" href={href('', lang)}>
           <strong>{site.name}</strong>
-          <span class="muted">{t.role}</span>
         </a>
         <nav aria-label="Menu">
           <a href={href('portfolio', lang)} aria-current={active === 'portfolio' ? 'page' : undefined}>{t.navPortfolio}</a>
@@ -119,7 +118,7 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
   nav a:hover, nav a[aria-current='page'] { color: var(--fg); }
   .lang { border: 1px solid var(--line); padding: 3px 9px; border-radius: 999px; font-size: 13px; }
   @media (max-width: 720px) {
-    .brand .muted, .hide-sm { display: none; }
+    .hide-sm { display: none; }
   }
 
   .site-footer { border-top: 1px solid var(--line); padding: 40px 0 56px; font-size: 15px; }

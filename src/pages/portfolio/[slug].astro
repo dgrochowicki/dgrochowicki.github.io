@@ -1,0 +1,15 @@
+---
+import CasePage from '../../views/CasePage.astro';
+import ProjectPage from '../../views/ProjectPage.astro';
+import { cases } from '../../data/cases';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return [
+    ...cases.map((item) => ({ params: { slug: item.slug }, props: { kind: 'case' as const, item } })),
+    ...projects.map((item) => ({ params: { slug: item.slug }, props: { kind: 'project' as const, item } })),
+  ];
+}
+const { kind, item } = Astro.props as any;
+---
+{kind === 'case' ? <CasePage lang="pl" item={item} /> : <ProjectPage lang="pl" item={item} />}

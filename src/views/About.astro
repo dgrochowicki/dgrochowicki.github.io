@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Contact from '../components/Contact.astro';
+import { intro, experience, skills, education, awards, volunteering, languages } from '../data/about';
+import { img } from '../lib/images';
+import { site } from '../data/site';
+import { asset, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const pl = lang === 'pl';
+const L = {
+  about: pl ? 'O mnie' : 'About',
+  exp: pl ? 'Doświadczenie' : 'Experience',
+  skills: pl ? 'Umiejętności' : 'Skills',
+  comp: pl ? 'Kompetencje' : 'Competencies',
+  tools: pl ? 'Narzędzia i dodatkowe umiejętności' : 'Tools & other skills',
+  edu: pl ? 'Edukacja' : 'Education',
+  lang: pl ? 'Języki' : 'Languages',
+  awards: pl ? 'Nagrody' : 'Awards',
+  other: pl ? 'Wolontariat' : 'Volunteering',
+};
+---
+<Base lang={lang} title={L.about} alt={pl ? 'about' : 'o-mnie'} active="about" description={intro[lang].lead}>
+  <section class="section top">
+    <div class="wrap intro">
+      <div>
+        <p class="eyebrow">{L.about}</p>
+        <h1>{site.name}</h1>
+        <p class="role">{t.role}</p>
+        {intro[lang].bio.map((p) => <p>{p}</p>)}
+        <div class="btns"><a class="btn primary" href={asset(site.cv)} target="_blank" rel="noopener">{t.downloadCv} ↓</a></div>
+      </div>
+      <div class="photo">
+        <Image src={img('about/photo')} alt={site.name} widths={[400, 700]} sizes="(max-width: 860px) 60vw, 380px" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap cv">
+    <div class="row">
+      <div class="label">{L.exp}</div>
+      <ol class="jobs">
+        {experience[lang].map((j) => (
+          <li>
+            <div class="job-head"><h3>{j.company}</h3><span class="muted">{j.years}</span></div>
+            <p class="muted job-role">{j.role}</p>
+            {j.text && <p>{j.text}</p>}
+            {j.bullets && <ul class="bullets">{j.bullets.map((b) => <li>{b}</li>)}</ul>}
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="row">
+      <div class="label">{L.skills}</div>
+      <div class="skills">
+        <div><h3>{L.comp}</h3><ul class="tags">{skills[lang].competencies.map((s) => <li class="tag">{s}</li>)}</ul></div>
+        <div><h3>{L.tools}</h3><ul class="tags">{skills[lang].tools.map((s) => <li class="tag">{s}</li>)}</ul></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">{L.edu}</div>
+      <ul class="entries">
+        {education[lang].map((e) => <li><div class="job-head"><h3>{e.title}</h3><span class="muted">{e.years}</span></div><p class="muted">{e.sub}</p></li>)}
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="label">{L.awards}</div>
+      <ul class="entries">
+        {awards[lang].map((e) => <li><div class="job-head"><h3>{e.title}</h3><span class="muted">{e.years}</span></div><p class="muted">{e.sub}</p></li>)}
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="label">{L.lang}</div>
+      <ul class="bullets plain">{languages[lang].map((s) => <li>{s}</li>)}</ul>
+    </div>
+
+    <div class="row">
+      <div class="label">{L.other}</div>
+      <ul class="bullets plain">{volunteering[lang].map((s) => <li>{s}</li>)}</ul>
+    </div>
+  </section>
+
+  <Contact lang={lang} />
+</Base>
+
+<style>
+  .top { padding-bottom: 24px; }
+  .intro { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .intro h1 { font-size: clamp(34px, 5vw, 56px); margin-top: 12px; letter-spacing: -0.025em; }
+  .role { color: var(--muted); font-size: 20px; margin: 6px 0 28px; }
+  .intro p:not(.eyebrow):not(.role) { max-width: var(--text); }
+  .intro .btns { margin-top: 28px; }
+  .photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--bg-soft); }
+  .photo :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } .photo { max-width: 320px; order: -1; } }
+
+  .cv { padding-bottom: 40px; }
+  .jobs { list-style: none; display: flex; flex-direction: column; gap: 36px; max-width: 760px; }
+  .job-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  .job-head h3 { font-size: 18px; }
+  .job-head span { white-space: nowrap; font-size: 15px; }
+  .job-role { margin: 2px 0 10px; }
+  .bullets { padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+  .bullets.plain { margin: 0; }
+  .skills { display: flex; flex-direction: column; gap: 28px; }
+  .skills h3 { font-size: 16px; margin-bottom: 12px; }
+  .entries { list-style: none; display: flex; flex-direction: column; gap: 20px; max-width: 760px; }
+  .entries p { margin: 4px 0 0; }
+</style>

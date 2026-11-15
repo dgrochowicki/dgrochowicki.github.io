@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
+import { projects, categories, type Project } from '../data/projects';
+import { href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang; item: Project }
+const { lang, item } = Astro.props;
+const t = ui[lang];
+const c = item.content[lang];
+const images = Object.entries(import.meta.glob('/src/img/projects/**/*.{png,jpg,jpeg,webp,avif}'))
+  .map(([p]) => p.replace('/src/img/', '').replace(/\.[^.]+$/, ''))
+  .filter((k) => k.startsWith(`projects/${item.slug}/`))
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+const idx = projects.findIndex((p) => p.slug === item.slug);
+const prev = projects[(idx - 1 + projects.length) % projects.length];
+const next = projects[(idx + 1) % projects.length];
+---
+<Base lang={lang} title={item.title} alt={`portfolio/${item.slug}`} active="portfolio" description={c.summary}>
+  <header class="wrap head">
+    <a class="back text-link" href={`${href('portfolio', lang)}#projects`}>← {t.back}</a>
+    <p class="eyebrow">{categories[item.category][lang]}</p>
+    <h1>{item.title}</h1>
+    <p class="lead">{c.text}</p>
+  </header>
+  <div class="wrap imgs">
+    {images.map((src, n) => <Figure src={src} eager={n === 0} alt={item.title} />)}
+  </div>
+  <nav class="wrap pn">
+    <a href={href(`portfolio/${prev.slug}`, lang)}><span class="eyebrow">← {t.prev}</span><strong>{prev.title}</strong></a>
+    <a class="r" href={href(`portfolio/${next.slug}`, lang)}><span class="eyebrow">{t.next} →</span><strong>{next.title}</strong></a>
+  </nav>
+</Base>
+
+<style>
+  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 40px; }
+  .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
+  .head h1 { font-size: clamp(32px, 5vw, 56px); margin: 14px 0 20px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(17px, 1.8vw, 20px); color: var(--muted); max-width: 38em; }
+  .imgs { display: flex; flex-direction: column; gap: 24px; }
+  .pn { display: flex; justify-content: space-between; gap: 24px; padding-top: 56px; padding-bottom: 96px; }
+  .pn a { display: flex; flex-direction: column; gap: 4px; text-decoration: none; }
+  .pn a:hover strong { text-decoration: underline; }
+  .pn .r { text-align: right; }
+  .pn strong { font-size: 20px; }
+</style>

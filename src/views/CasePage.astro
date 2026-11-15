@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
+import { cases, type CaseStudy } from '../data/cases';
+import { href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang; item: CaseStudy }
+const { lang, item } = Astro.props;
+const t = ui[lang];
+const c = item.content[lang];
+const idx = cases.findIndex((x) => x.slug === item.slug);
+const next = cases[(idx + 1) % cases.length];
+const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(max-width: 1248px) 100vw, 1200px');
+---
+<Base lang={lang} title={c.title} alt={`portfolio/${item.slug}`} active="portfolio" description={c.summary}>
+  <article>
+    <header class="wrap head">
+      <a class="back text-link" href={href('portfolio', lang)}>← {t.back}</a>
+      <p class="eyebrow">{c.label}</p>
+      <h1>{c.title}</h1>
+      <p class="lead">{c.summary}</p>
+      <p class="role"><span class="muted">{t.myRole}:</span> {c.role}</p>
+    </header>
+
+    <div class="wrap">
+      <dl class="tldr">
+        <div><dt>{t.problem}</dt><dd>{c.tldr.problem}</dd></div>
+        <div><dt>{t.solution}</dt><dd>{c.tldr.solution}</dd></div>
+        <div><dt>{t.effect}</dt><dd>{c.tldr.effect}</dd></div>
+      </dl>
+      <Figure src={item.cover} eager />
+    </div>
+
+    {c.sections.map((s) => (
+      <section class="wrap block">
+        <div class="row">
+          <h2 class="label">{s.title}</h2>
+          <div class="content">
+            {s.text?.map((p) => <p>{p}</p>)}
+            {s.list && <ul class="bullets">{s.list.map((l) => <li>{l}</li>)}</ul>}
+            {s.steps && (
+              <ol class="steps">
+                {s.steps.map((st, n) => (
+                  <li>
+                    <span class="num">{n + 1}</span>
+                    <div>
+                      <h3>{st.title}</h3>
+                      <p>{st.text}</p>
+                      {st.rejected && <p class="rejected">{lang === 'pl' ? 'Odrzucone' : 'Rejected'}: {st.rejected}</p>}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+            {s.note && <p class="note">{s.note}</p>}
+          </div>
+        </div>
+
+        {s.compare && (
+          <div class="compare">
+            {(['before', 'after'] as const).map((k) => (
+              <div class:list={['col', k]}>
+                <span class="badge">{t[k]}</span>
+                <ul class="bullets">{s.compare![k].list.map((l) => <li>{l}</li>)}</ul>
+                {s.compare![k].images.map((src) => <Figure src={src} caption={t[k]} sizes="(max-width: 860px) 100vw, 600px" />)}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {s.images && (
+          <div class:list={['imgs', `n${s.images.length}`]}>
+            {s.images.map((src, n) => <Figure src={src} caption={s.captions?.[n]} sizes={imgSizes(s.images!.length)} />)}
+          </div>
+        )}
+      </section>
+    ))}
+
+    <section class="wrap">
+      <div class="lesson">
+        <p class="eyebrow">{t.lesson}</p>
+        <p>{c.lesson}</p>
+      </div>
+    </section>
+
+    <nav class="wrap next">
+      <a href={href(`portfolio/${next.slug}`, lang)}>
+        <span class="eyebrow">{t.next} case study</span>
+        <strong>{next.content[lang].title} →</strong>
+      </a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 40px; }
+  .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
+  .head h1 { font-size: clamp(32px, 5vw, 56px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 38em; }
+  .role { font-size: 15px; margin-top: 20px; }
+
+  .tldr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 0 0 40px; }
+  .tldr div { background: var(--bg); padding: 22px 24px; }
+  .tldr div:last-child { background: var(--accent); color: var(--accent-fg); }
+  .tldr dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; opacity: .7; }
+  .tldr dd { margin: 0; font-size: 16px; }
+  @media (max-width: 860px) { .tldr { grid-template-columns: 1fr; } }
+
+  .block { padding-top: clamp(40px, 6vw, 72px); }
+  .block .row { border-top: 1px solid var(--line); }
+  .block h2.label { font-size: 15px; font-weight: 500; line-height: 1.6; }
+  .content { max-width: var(--text); }
+  .bullets { padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+  .content .bullets { margin-top: 4px; }
+  .steps { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .steps li { display: grid; grid-template-columns: 32px 1fr; gap: 14px; }
+  .steps .num { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-weight: 600; font-size: 14px; }
+  .steps h3 { font-size: 17px; margin: 2px 0 6px; }
+  .steps p { margin: 0; }
+  .rejected { color: var(--muted); font-size: 15px; margin-top: 6px !important; text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 60%, transparent); }
+  .note { margin-top: 24px; padding: 14px 18px; border-left: 3px solid var(--muted); background: var(--bg-soft); border-radius: 0 8px 8px 0; font-size: 15px; }
+
+  .imgs { display: grid; gap: 24px; margin-top: 8px; }
+  .imgs.n2 { grid-template-columns: 1fr 1fr; }
+  .imgs.n3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 860px) { .imgs.n2, .imgs.n3 { grid-template-columns: 1fr; } }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .compare .col { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+  .compare .after { border-color: color-mix(in srgb, var(--fg) 35%, transparent); }
+  .badge { align-self: start; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 999px; background: var(--bg-soft); }
+  .after .badge { background: var(--accent); color: var(--accent-fg); }
+  .compare .bullets { font-size: 15px; }
+  .compare :global(figcaption) { display: none; }
+  @media (max-width: 860px) { .compare { grid-template-columns: 1fr; } }
+
+  .lesson { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
+  .lesson .eyebrow { color: var(--accent); margin-bottom: 12px; }
+  .lesson p:last-child { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.35; max-width: 30em; }
+
+  .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
+  .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
+  .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }
+  .next a:hover strong { text-decoration: underline; }
+</style>

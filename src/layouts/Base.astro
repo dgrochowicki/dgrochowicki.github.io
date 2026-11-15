@@ -35,6 +35,7 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
     <header class="site-header">
       <div class="wrap bar">
         <a class="brand" href={href('', lang)}>
+          <svg class="logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1C11.8451 1 15 4.06746 15 7.97559C14.9998 11.8836 11.845 15 8 15H1V1H8ZM3.02148 2.97852V12.9717H8C10.7605 12.9717 12.9793 10.7458 12.9795 7.97559C12.9795 5.20527 10.7606 2.97852 8 2.97852H3.02148ZM8.0498 4.94434C9.72594 4.94434 11.0566 6.27618 11.0566 7.95215C11.0564 9.6279 9.72578 10.959 8.0498 10.959H5.04297V7.95215H7.01465V8.9375H8.00098C8.54291 8.93728 8.98607 8.49403 8.98633 7.95215C8.98633 7.41006 8.54307 6.96604 8.00098 6.96582H4.99316V4.94434H8.0498Z"/></svg>
           <strong>{site.name}</strong>
         </a>
         <nav aria-label="Menu">
@@ -112,7 +113,8 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
     border-bottom: 1px solid var(--line);
   }
   .bar { display: flex; justify-content: space-between; align-items: center; height: 64px; gap: 16px; }
-  .brand { text-decoration: none; display: flex; gap: 10px; align-items: baseline; font-size: 15px; white-space: nowrap; }
+  .brand { text-decoration: none; display: flex; gap: 10px; align-items: center; font-size: 15px; white-space: nowrap; color: var(--fg); }
+  .logo { width: 22px; height: 22px; flex: none; }
   nav { display: flex; gap: clamp(14px, 2.5vw, 28px); font-size: 15px; align-items: center; }
   nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
   nav a:hover, nav a[aria-current='page'] { color: var(--fg); }

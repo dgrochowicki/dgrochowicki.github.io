@@ -44,11 +44,14 @@ const L = {
       <div class="label">{L.exp}</div>
       <ol class="jobs">
         {experience[lang].map((j) => (
-          <li>
-            <div class="job-head"><h3>{j.company}</h3><span class="muted">{j.years}</span></div>
-            <p class="muted job-role">{j.role}</p>
-            {j.text && <p>{j.text}</p>}
-            {j.bullets && <ul class="bullets">{j.bullets.map((b) => <li>{b}</li>)}</ul>}
+          <li class="job">
+            <div class="job-body">
+              <h3>{j.company}</h3>
+              <p class="muted job-role">{j.role}</p>
+              {j.text && <p>{j.text}</p>}
+              {j.bullets && <ul class="bullets">{j.bullets.map((b) => <li>{b}</li>)}</ul>}
+            </div>
+            <span class="muted job-years">{j.years}</span>
           </li>
         ))}
       </ol>
@@ -57,8 +60,8 @@ const L = {
     <div class="row">
       <div class="label">{L.skills}</div>
       <div class="skills">
-        <div><h3>{L.comp}</h3><ul class="tags">{skills[lang].competencies.map((s) => <li class="tag">{s}</li>)}</ul></div>
-        <div><h3>{L.tools}</h3><ul class="tags">{skills[lang].tools.map((s) => <li class="tag">{s}</li>)}</ul></div>
+        <div><h3>{L.comp}</h3><ul class="bullets plain">{skills[lang].competencies.map((s) => <li>{s}</li>)}</ul></div>
+        <div><h3>{L.tools}</h3><ul class="bullets plain">{skills[lang].tools.map((s) => <li>{s}</li>)}</ul></div>
       </div>
     </div>
 
@@ -102,7 +105,16 @@ const L = {
   @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } .photo { max-width: 320px; order: -1; } }
 
   .cv { padding-bottom: 40px; }
-  .jobs { list-style: none; display: flex; flex-direction: column; gap: 36px; max-width: 760px; }
+  .jobs { list-style: none; display: flex; flex-direction: column; gap: 64px; max-width: 920px; }
+  .job { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 32px; align-items: baseline; }
+  .job-body { max-width: 720px; }
+  .job-body h3 { font-size: 18px; }
+  .job-years { white-space: nowrap; font-size: 15px; text-align: right; }
+  @media (max-width: 760px) {
+    .jobs { gap: 44px; }
+    .job { grid-template-columns: 1fr; gap: 2px; }
+    .job-years { order: -1; text-align: left; }
+  }
   .job-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
   .job-head h3 { font-size: 18px; }
   .job-head span { white-space: nowrap; font-size: 15px; }

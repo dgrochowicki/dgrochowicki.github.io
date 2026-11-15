@@ -24,7 +24,7 @@ const cats = Object.keys(categories) as Category[];
         <div>
           {ti.text.map((p) => <p>{p}</p>)}
           <ul class="mini-stats">
-            {stats[lang].slice(1).map((s) => <li><strong>{s.value}</strong> <span class="muted">{s.label}</span></li>)}
+            {stats[lang].slice(1, 3).map((s) => <li><strong>{s.value}</strong> <span class="muted">{s.label}</span></li>)}
           </ul>
         </div>
         <Figure src="tidio/hero" frame={false} eager sizes="(max-width: 860px) 100vw, 560px" alt="Tidio Lyro AI Agent" />

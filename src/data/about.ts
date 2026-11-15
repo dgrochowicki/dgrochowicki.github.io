@@ -24,13 +24,13 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
 export const stats: L10n<{ value: string; label: string }[]> = {
   pl: [
     { value: '20+ lat', label: 'w projektowaniu UI i grafice' },
-    { value: '5 lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
+    { value: 'Ponad 5 lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
     { value: '3 lata', label: 'przy produktach AI: Lyro, Copilot, Ask' },
     { value: '67%', label: 'średni resolution rate Lyro (wg Tidio)' },
   ],
   en: [
     { value: '20+ yrs', label: 'in UI and graphic design' },
-    { value: '5 yrs', label: 'as a Product Designer at Tidio, 4 teams' },
+    { value: '5+ yrs', label: 'as a Product Designer at Tidio, 4 teams' },
     { value: '3 yrs', label: 'on AI products: Lyro, Copilot, Ask' },
     { value: '67%', label: 'average Lyro resolution rate (per Tidio)' },
   ],

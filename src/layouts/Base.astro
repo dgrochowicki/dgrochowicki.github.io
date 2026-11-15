@@ -14,7 +14,7 @@ interface Props {
 const { lang, title, description, alt, active } = Astro.props;
 const t = ui[lang];
 const other: Lang = lang === 'pl' ? 'en' : 'pl';
-const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — ${t.role}`;
+const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${t.role}`;
 const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
 ---
 

@@ -7,7 +7,7 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     bio: [
       'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od grafiki i animacji do gier na palmtopy i telefony komórkowe, następnie rozwijałem się w brandingu oraz projektowaniu stron i aplikacji.',
       'Przez ostatnie pięć lat w Tidio projektowałem produkty cyfrowe, w tym rozwiązania AI, łącząc projektowanie UX/UI z badaniami i analizą danych. Koordynowałem też prace nad design systemem.',
-      'Z wykształcenia jestem informatykiem — dzięki temu projektuję w realnych ograniczeniach technicznych i dobrze dogaduję się z developerami.',
+      'Z wykształcenia jestem informatykiem. Dzięki temu projektuję w realnych ograniczeniach technicznych i dobrze dogaduję się z developerami.',
     ],
   },
   en: {
@@ -44,7 +44,7 @@ export const principles: L10n<{ title: string; text: string }[]> = {
     },
     {
       title: 'Prototyp jako narzędzie decyzji',
-      text: 'Buduję klikalne prototypy — kiedyś w Figmie, dziś także w Claude Design (HTML) — żeby szybko testować pomysły i uzgadniać je z zespołem przed developmentem.',
+      text: 'Buduję klikalne prototypy (kiedyś w Figmie, dziś także w Claude Design jako HTML), żeby szybko testować pomysły i uzgadniać je z zespołem przed developmentem.',
     },
     {
       title: 'Rozumiem, jak to działa pod spodem',
@@ -58,7 +58,7 @@ export const principles: L10n<{ title: string; text: string }[]> = {
     },
     {
       title: 'Prototypes drive decisions',
-      text: 'I build clickable prototypes — in Figma, and now also in Claude Design (HTML) — to test ideas quickly and align the team before development.',
+      text: 'I build clickable prototypes (in Figma, and now also in Claude Design as HTML) to test ideas quickly and align the team before development.',
     },
     {
       title: 'I know how it works underneath',
@@ -74,12 +74,12 @@ export const experience: L10n<Job[]> = {
     {
       company: 'Tidio',
       role: 'Product Designer',
-      years: '2021 – 2026',
+      years: '2021-2026',
       text: 'Produkty: Lyro AI Agent (konwersacyjny agent AI do obsługi klienta), Copilot (asystent AI dla konsultantów), Flows (wizualny edytor chatbotów), Analytics, Inbox.',
       bullets: [
         'Koncepcje, user flows, prototypy i docelowe interfejsy dla nowych funkcji i zmian w produkcie',
         'Research, projektowanie i rozwój produktów AI: Lyro AI Agent, Copilot, Ask (AI panel agent)',
-        'Budowa i rozwój Flows — narzędzia do automatyzacji rozmów w edytorze graficznym',
+        'Budowa i rozwój Flows, narzędzia do automatyzacji rozmów w edytorze graficznym',
         'Testy użyteczności prototypów i testy korytarzowe',
         'Dashboardy analityczne i analiza użycia funkcji w Amplitude',
         'Analiza rozmów użytkowników w celu identyfikowania problemów i potrzeb',
@@ -90,31 +90,31 @@ export const experience: L10n<Job[]> = {
     {
       company: 'Deque Dominik Grochowicki',
       role: 'Projektant UI/UX i grafik, właściciel',
-      years: '2017 – obecnie',
+      years: 'od 2017',
       text: 'UI/UX, branding, identyfikacja wizualna i materiały do druku. Klienci m.in.: inProjects, Werin, Teonite, Browar Rockmill, Salvada, Enterprise Logistics.',
     },
     {
       company: 'Omnicorp',
       role: 'Product Designer / UI/UX Designer',
-      years: '2019 – 2021',
-      text: 'Kompletny panel użytkownika (UI/UX) dla Coresender — platformy do wysyłania i monitorowania maili transakcyjnych i marketingowych przez SMTP i API.',
+      years: '2019-2021',
+      text: 'Kompletny panel użytkownika (UI/UX) dla Coresender, platformy do wysyłania i monitorowania maili transakcyjnych i marketingowych przez SMTP i API.',
     },
     {
       company: 'Lemon Demon Sp. z o.o.',
       role: 'Graphic Designer / UI/UX Designer',
-      years: '2012 – 2019',
+      years: '2012-2019',
       text: 'Interfejsy platform gamingowych, tradingowych, płatniczych i loterii online, portfel kryptowalutowy, panele użytkownika. Strony www, landing pages, identyfikacje wizualne i materiały marketingowe.',
     },
     {
       company: 'Deepline s.c.',
       role: 'Graphic Designer, UI/UX Designer',
-      years: '2009 – 2012',
+      years: '2009-2012',
       text: 'Strony internetowe, identyfikacje wizualne, materiały marketingowe i do druku, grafika do gier mobilnych.',
     },
     {
       company: 'Gameleons, Cubezn New Media, InterActive Vision, Mind Beacon',
       role: 'Game Graphic Artist / UI Designer',
-      years: '2001 – 2009',
+      years: '2001-2009',
       text: 'Grafika, animacje i interfejsy do gier na urządzenia mobilne.',
     },
   ],
@@ -122,12 +122,12 @@ export const experience: L10n<Job[]> = {
     {
       company: 'Tidio',
       role: 'Product Designer',
-      years: '2021 – 2026',
+      years: '2021-2026',
       text: 'Products: Lyro AI Agent (conversational AI agent for customer service), Copilot (AI assistant for support agents), Flows (visual chatbot builder), Analytics, Inbox.',
       bullets: [
         'Concepts, user flows, prototypes and final UI for new features and product changes',
         'Research, design and development of AI products: Lyro AI Agent, Copilot, Ask (AI agent panel)',
-        'Building and growing Flows — a visual editor for conversation automation',
+        'Building and growing Flows, a visual editor for conversation automation',
         'Usability testing of prototypes and guerrilla testing',
         'Analytics dashboards and feature usage analysis in Amplitude',
         'Analysing user conversations to identify problems and needs',
@@ -138,31 +138,31 @@ export const experience: L10n<Job[]> = {
     {
       company: 'Deque Dominik Grochowicki',
       role: 'UI/UX & Graphic Designer, owner',
-      years: '2017 – present',
+      years: 'since 2017',
       text: 'UI/UX, branding, visual identity and print. Clients include inProjects, Werin, Teonite, Rockmill Brewery, Salvada and Enterprise Logistics.',
     },
     {
       company: 'Omnicorp',
       role: 'Product Designer / UI/UX Designer',
-      years: '2019 – 2021',
-      text: 'Designed the complete user dashboard (UI/UX) for Coresender — a platform for sending and monitoring transactional and marketing email via SMTP and API.',
+      years: '2019-2021',
+      text: 'Designed the complete user dashboard (UI/UX) for Coresender, a platform for sending and monitoring transactional and marketing email via SMTP and API.',
     },
     {
       company: 'Lemon Demon Sp. z o.o.',
       role: 'Graphic Designer / UI/UX Designer',
-      years: '2012 – 2019',
+      years: '2012-2019',
       text: 'Interfaces for gaming, trading, payment and online lottery platforms, a crypto wallet and user dashboards. Websites, landing pages, visual identities and marketing materials.',
     },
     {
       company: 'Deepline s.c.',
       role: 'Graphic Designer, UI/UX Designer',
-      years: '2009 – 2012',
+      years: '2009-2012',
       text: 'Websites, visual identities, marketing and print materials, graphics for mobile games.',
     },
     {
       company: 'Gameleons, Cubezn New Media, InterActive Vision, Mind Beacon',
       role: 'Game Graphic Artist / UI Designer',
-      years: '2001 – 2009',
+      years: '2001-2009',
       text: 'Graphics, animation and interfaces for mobile games.',
     },
   ],
@@ -181,7 +181,7 @@ export const skills: L10n<{ competencies: string[]; tools: string[] }> = {
     ],
     tools: [
       'Figma',
-      'Claude Design (Artifacts) — design systems, prototypy',
+      'Claude Design (Artifacts): design systems, prototypy',
       'Amplitude',
       'HTML, CSS',
       'Photoshop',
@@ -204,7 +204,7 @@ export const skills: L10n<{ competencies: string[]; tools: string[] }> = {
     ],
     tools: [
       'Figma',
-      'Claude Design (Artifacts) — design systems, prototypes',
+      'Claude Design (Artifacts): design systems, prototypes',
       'Amplitude',
       'HTML, CSS',
       'Photoshop',
@@ -222,44 +222,44 @@ type Entry = { title: string; sub: string; years: string };
 export const education: L10n<Entry[]> = {
   pl: [
     {
-      title: 'Politechnika Szczecińska — Wydział Informatyki',
+      title: 'Politechnika Szczecińska, Wydział Informatyki',
       sub: 'Studia magisterskie, informatyka, specjalizacja: techniki multimedialne',
-      years: '1998 – 2003',
+      years: '1998-2003',
     },
-    { title: 'Sztuka projektowania', sub: 'Kurs designu pod patronatem Karola Śliwki, I edycja, Gdańsk', years: '2008 – 2009' },
+    { title: 'Sztuka projektowania', sub: 'Kurs designu pod patronatem Karola Śliwki, I edycja, Gdańsk', years: '2008-2009' },
   ],
   en: [
     {
-      title: 'Szczecin University of Technology — Faculty of Computer Science',
+      title: 'Szczecin University of Technology, Faculty of Computer Science',
       sub: "Master's degree in Computer Science, specialisation: multimedia technologies",
-      years: '1998 – 2003',
+      years: '1998-2003',
     },
-    { title: 'Sztuka projektowania (The Art of Design)', sub: 'Design course under Karol Śliwka, 1st edition, Gdańsk', years: '2008 – 2009' },
+    { title: 'Sztuka projektowania (The Art of Design)', sub: 'Design course under Karol Śliwka, 1st edition, Gdańsk', years: '2008-2009' },
   ],
 };
 
 export const awards: L10n<Entry[]> = {
   pl: [
-    { title: '1. miejsce — „Golden Pixel”, etykieta dla Browaru Rockmill', sub: 'ART of PACKAGING 2020 PROFESSIONAL', years: '2020' },
-    { title: '3. miejsce — DemonBrew, etykieta piwa kraftowego', sub: 'I konkurs domowych etykiet piwnych', years: '2013' },
+    { title: '1. miejsce: „Golden Pixel”, etykieta dla Browaru Rockmill', sub: 'ART of PACKAGING 2020 PROFESSIONAL', years: '2020' },
+    { title: '3. miejsce: DemonBrew, etykieta piwa kraftowego', sub: 'I konkurs domowych etykiet piwnych', years: '2013' },
   ],
   en: [
-    { title: '1st place — “Golden Pixel”, label for Rockmill Brewery', sub: 'ART of PACKAGING 2020 PROFESSIONAL', years: '2020' },
-    { title: '3rd place — DemonBrew, craft beer label', sub: '1st Homebrew Beer Label Contest', years: '2013' },
+    { title: '1st place: “Golden Pixel”, label for Rockmill Brewery', sub: 'ART of PACKAGING 2020 PROFESSIONAL', years: '2020' },
+    { title: '3rd place: DemonBrew, craft beer label', sub: '1st Homebrew Beer Label Contest', years: '2013' },
   ],
 };
 
 export const volunteering: L10n<string[]> = {
   pl: [
-    'World Usability Day Szczecin 2020 — branding, identyfikacja',
-    'NASA Space Apps Challenge Szczecin — branding, identyfikacja',
+    'World Usability Day Szczecin 2020: branding, identyfikacja',
+    'NASA Space Apps Challenge Szczecin: branding, identyfikacja',
     'Mentoring na Startup Weekend Szczecin',
     'Rowerowy Szczecin',
     'Idee przez miasto',
   ],
   en: [
-    'World Usability Day Szczecin 2020 — branding, visual identity',
-    'NASA Space Apps Challenge Szczecin — branding, visual identity',
+    'World Usability Day Szczecin 2020: branding, visual identity',
+    'NASA Space Apps Challenge Szczecin: branding, visual identity',
     'Mentoring at Startup Weekend Szczecin',
     'Rowerowy Szczecin (cycling advocacy)',
     'Idee przez miasto (urban initiatives)',
@@ -267,6 +267,6 @@ export const volunteering: L10n<string[]> = {
 };
 
 export const languages: L10n<string[]> = {
-  pl: ['Polski — ojczysty', 'Angielski — B1/B2'],
-  en: ['Polish — native', 'English — B1/B2'],
+  pl: ['Polski: ojczysty', 'Angielski: B1/B2'],
+  en: ['Polish: native', 'English: B1/B2'],
 };

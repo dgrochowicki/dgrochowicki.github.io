@@ -1,8 +1,8 @@
-// Podstawowe dane – zmieniaj tutaj.
+// Podstawowe dane, zmieniaj tutaj.
 export const site = {
   name: 'Dominik Grochowicki',
   email: 'dgrochowicki@gmail.com',
-  // Wklej pełny adres, np. 'https://www.linkedin.com/in/twoj-profil' – pusty = link ukryty.
+  // Wklej pełny adres, np. 'https://www.linkedin.com/in/twoj-profil'. Pusty = link ukryty.
   linkedin: '',
   // Plik w folderze public/cv/
   cv: 'cv/dominik-grochowicki-cv.pdf',

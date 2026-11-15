@@ -29,10 +29,10 @@ export type CaseStudy = { slug: string; cover: string; content: L10n<CaseContent
 
 export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: string; text: string }[] }> = {
   pl: {
-    title: 'Tidio · Product Designer · 2021–2026',
+    title: 'Tidio · Product Designer · 2021-2026',
     text: [
       'W Tidio projektowałem narzędzia do obsługi klienta: od chatbotów, analityki i inboxa, przez automatyzację rozmów, po funkcje AI wspierające konsultantów. Koordynowałem też prace nad design systemem.',
-      'Ostatnie lata poświęciłem Lyro — pierwszemu konwersacyjnemu agentowi AI w Tidio i najszybciej rosnącemu produktowi w historii firmy. Prowadziłem design wszystkich produktów AI od początku: Lyro, AI Panel Agent (Ask) i Copilota. Tidio używa ponad 300 tys. firm.',
+      'Ostatnie lata poświęciłem Lyro, pierwszemu konwersacyjnemu agentowi AI w Tidio i najszybciej rosnącemu produktowi w historii firmy. Prowadziłem design wszystkich produktów AI od początku: Lyro, AI Panel Agent (Ask) i Copilota. Tidio używa ponad 300 tys. firm.',
       'Poniżej cztery wybrane case studies z Lyro.',
     ],
     areas: [
@@ -46,10 +46,10 @@ export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: st
     ],
   },
   en: {
-    title: 'Tidio · Product Designer · 2021–2026',
+    title: 'Tidio · Product Designer · 2021-2026',
     text: [
       'At Tidio I designed customer service tools: from chatbots, analytics and the inbox, through conversation automation, to AI features that support human agents. I also coordinated work on the design system.',
-      "I spent the last few years on Lyro — Tidio's first conversational AI agent and the fastest-growing product in the company's history. I led design of all AI products from the start: Lyro, the AI Panel Agent (Ask) and Copilot. Tidio is used by 300K+ businesses.",
+      "I spent the last few years on Lyro, Tidio's first conversational AI agent and the fastest-growing product in the company's history. I led design of all AI products from the start: Lyro, the AI Panel Agent (Ask) and Copilot. Tidio is used by 300K+ businesses.",
       'Below are four selected case studies from Lyro.',
     ],
     areas: [
@@ -77,7 +77,7 @@ export const cases: CaseStudy[] = [
         role: 'Research, model konfiguracji, user flows, UI',
         tldr: {
           problem: 'Lyro korzystało z jednej bazy wiedzy dla wszystkich. Więksi klienci potrzebowali, by agent nie „mówił” wszystkiego każdemu.',
-          solution: 'Audiences — grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.',
+          solution: 'Audiences: grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.',
           effect: 'Funkcja dla większych firm. Ten sam mechanizm trafił później do Guidance, Procedures, Actions i wykluczania grup z rozmów z Lyro.',
         },
         sections: [
@@ -110,7 +110,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Prosty, addytywny model',
-                text: 'Klient może należeć do kilku grup naraz — bez priorytetów i konfliktów. Domyślnie wszystko jest dla Everyone, więc wdrożenie niczego nie psuje. Rozmowy można sprawdzić w inboxie, w folderze Lyro.',
+                text: 'Klient może należeć do kilku grup naraz, bez priorytetów i konfliktów. Domyślnie wszystko jest dla Everyone, więc wdrożenie niczego nie psuje. Rozmowy można sprawdzić w inboxie, w folderze Lyro.',
               },
               {
                 title: 'Jeden mechanizm dla całego agenta',
@@ -127,7 +127,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Przykład: audience „English users”',
             steps: [
-              { title: 'Kanały', text: 'All channels, Live chat lub Messenger — gdzie grupa w ogóle obowiązuje.' },
+              { title: 'Kanały', text: 'Gdzie grupa w ogóle obowiązuje: All channels, Live chat lub Messenger.' },
               { title: 'Warunki', text: 'Bloki warunków: AND w bloku, OR między blokami. Np. język przeglądarki = English AND konkretny URL.' },
               {
                 title: 'Przypisanie',
@@ -147,7 +147,7 @@ export const cases: CaseStudy[] = [
         role: 'Research, configuration model, user flows, UI',
         tldr: {
           problem: "Lyro used one knowledge base for every visitor. Larger customers needed the agent not to tell everyone everything.",
-          solution: 'Audiences — visitor groups built from channels and conditions, assigned to knowledge sources. Default: Everyone.',
+          solution: 'Audiences: visitor groups built from channels and conditions, assigned to knowledge sources. Default: Everyone.',
           effect: 'A feature for larger companies. The same mechanism later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
         },
         sections: [
@@ -180,7 +180,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'A simple, additive model',
-                text: 'A customer can belong to several groups at once — no priorities, no conflicts. Everything defaults to Everyone, so rolling it out breaks nothing. Conversations can be reviewed in the inbox, in the Lyro folder.',
+                text: 'A customer can belong to several groups at once, with no priorities and no conflicts. Everything defaults to Everyone, so rolling it out breaks nothing. Conversations can be reviewed in the inbox, in the Lyro folder.',
               },
               {
                 title: 'One mechanism for the whole agent',
@@ -197,7 +197,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Example: the “English users” audience',
             steps: [
-              { title: 'Channels', text: 'All channels, Live chat or Messenger — where the group applies at all.' },
+              { title: 'Channels', text: 'Where the group applies at all: All channels, Live chat or Messenger.' },
               { title: 'Conditions', text: 'Condition blocks: AND within a block, OR between blocks. E.g. browser language = English AND a specific URL.' },
               {
                 title: 'Assignment',
@@ -221,7 +221,7 @@ export const cases: CaseStudy[] = [
       pl: {
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: agent gotowy w kilka minut',
-        summary: 'Zamiast dokładać kolejne punkty do listy „to do” — osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
+        summary: 'Zamiast kolejnych punktów na liście „to do”: osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
         role: 'Koncepcja, user flows, wireframes, UI',
         tldr: {
           problem: 'Wraz z rozwojem agenta lista setupu przestała spełniać swoją rolę, a dokładanie kolejnych kroków było najsłabsze z punktu widzenia UX.',
@@ -241,11 +241,11 @@ export const cases: CaseStudy[] = [
             title: 'Rozwiązanie',
             text: ['Ekran Setup prowadzi przez konfigurację z perspektywy agenta („I’m joining your team”) w pięciu krokach:'],
             list: [
-              'Who Lyro is — imię, kontekst firmy, język i ton',
-              'What Lyro knows about your company — źródła wiedzy',
-              'What Lyro knows about your products — katalog produktów',
-              'How Lyro behaves — test odpowiedzi',
-              'Where Lyro responds — kanały działania',
+              'Who Lyro is: imię, kontekst firmy, język i ton',
+              'What Lyro knows about your company: źródła wiedzy',
+              'What Lyro knows about your products: katalog produktów',
+              'How Lyro behaves: test odpowiedzi',
+              'Where Lyro responds: kanały działania',
             ],
           },
           {
@@ -261,11 +261,11 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Nowa lista onboardingowa',
-                text: 'Tylko najważniejsze kroki do pierwszego uruchomienia. Onboarding nie jest zamkniętym tourem — przyciski CTA prowadzą do konkretnych miejsc w strukturze agenta, żeby użytkownik poznał jego budowę i wiedział, gdzie później szukać ustawień.',
+                text: 'Tylko najważniejsze kroki do pierwszego uruchomienia. Onboarding nie jest zamkniętym tourem. Przyciski CTA prowadzą do konkretnych miejsc w strukturze agenta, żeby użytkownik poznał jego budowę i wiedział, gdzie później szukać ustawień.',
               },
               {
                 title: 'Aktywacja: co dalej z listą',
-                text: 'Aktywacja na dowolnym kanale chowa stronę onboardingu. Agent zaczyna pracę, a użytkownik musi śledzić jego działanie — dlatego w miejscu Setupu pokazujemy Hub, a niewykonane kroki jako „recommended steps”.',
+                text: 'Aktywacja na dowolnym kanale chowa stronę onboardingu. Agent zaczyna pracę, a użytkownik musi śledzić jego działanie, dlatego w miejscu Setupu pokazujemy Hub, a niewykonane kroki jako „recommended steps”.',
               },
             ],
             images: ['onboarding/setup', 'onboarding/hub'],
@@ -298,7 +298,7 @@ export const cases: CaseStudy[] = [
       en: {
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: an agent ready in minutes',
-        summary: 'Instead of adding more items to a to-do list — a dedicated Setup screen where the agent introduces itself like a new teammate.',
+        summary: 'Instead of more items on a to-do list: a dedicated Setup screen where the agent introduces itself like a new teammate.',
         role: 'Concept, user flows, wireframes, UI',
         tldr: {
           problem: 'As the agent grew, the setup checklist stopped doing its job, and adding more steps was the weakest option from a UX point of view.',
@@ -318,11 +318,11 @@ export const cases: CaseStudy[] = [
             title: 'Solution',
             text: ['The Setup screen guides users through configuration from the agent’s point of view (“I’m joining your team”) in five steps:'],
             list: [
-              'Who Lyro is — name, company context, language and tone',
-              'What Lyro knows about your company — knowledge sources',
-              'What Lyro knows about your products — product catalog',
-              'How Lyro behaves — testing answers',
-              'Where Lyro responds — channels',
+              'Who Lyro is: name, company context, language and tone',
+              'What Lyro knows about your company: knowledge sources',
+              'What Lyro knows about your products: product catalog',
+              'How Lyro behaves: testing answers',
+              'Where Lyro responds: channels',
             ],
           },
           {
@@ -338,11 +338,11 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'A new onboarding list',
-                text: 'Only the steps essential for the first launch. Onboarding isn’t a closed tour — CTAs lead to specific places in the agent’s structure, so users learn how it’s built and where to find settings later.',
+                text: 'Only the steps essential for the first launch. Onboarding isn’t a closed tour. CTAs lead to specific places in the agent’s structure, so users learn how it’s built and where to find settings later.',
               },
               {
                 title: 'Activation: what happens to the list',
-                text: 'Activating any channel hides the onboarding page. The agent starts working and the user needs to monitor it — so the Hub replaces Setup and any skipped steps appear as “recommended steps”.',
+                text: 'Activating any channel hides the onboarding page. The agent starts working and the user needs to monitor it, so the Hub replaces Setup and any skipped steps appear as “recommended steps”.',
               },
             ],
             images: ['onboarding/setup', 'onboarding/hub'],
@@ -387,15 +387,15 @@ export const cases: CaseStudy[] = [
         role: 'Analiza, model nawigacji, prototypy HTML, UI',
         tldr: {
           problem: 'Ustawienia rozproszone między Configure, Behavior, Handoff i kanały. Użytkownicy gubili się, gdzie co jest.',
-          solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem — z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
+          solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem, z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
           effect: 'Decyzja o wdrożeniu. Mniej zapytań do supportu o to, jak ustawić agenta.',
         },
         sections: [
           {
             title: 'Problem',
             text: [
-              'Lyro rosło funkcja po funkcji: część ustawień trafiała do Configure, inne do Behavior. Ze zgłoszeń do customer supportu Tidio wiedzieliśmy, że użytkownicy gubili się w tym, gdzie znajdują się ustawienia agenta. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, kanały — każda funkcja dokładała własne miejsce w nawigacji, aż model produktu przestał być czytelny zarówno dla nowych, jak i obecnych klientów.',
-              'Celem było uproszczenie struktury tak, żeby konfiguracja agenta była przewidywalna — bez przebudowy całego backendu.',
+              'Lyro rosło funkcja po funkcji: część ustawień trafiała do Configure, inne do Behavior. Ze zgłoszeń do customer supportu Tidio wiedzieliśmy, że użytkownicy gubili się w tym, gdzie znajdują się ustawienia agenta. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, kanały: każda funkcja dokładała własne miejsce w nawigacji, aż model produktu przestał być czytelny zarówno dla nowych, jak i obecnych klientów.',
+              'Celem było uproszczenie struktury tak, żeby konfiguracja agenta była przewidywalna, bez przebudowy całego backendu.',
             ],
             images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
             captions: ['Mapa obecnej nawigacji', 'Struktura nowego modelu', 'Dokument: model agenta i nawigacji (v17)'],
@@ -411,11 +411,11 @@ export const cases: CaseStudy[] = [
             steps: [
               {
                 title: 'Agent jako członek zespołu, nie strona ustawień',
-                text: 'Zamiast zakładek — profil: tożsamość, powitanie, kontekst firmy (generowany ze strony), język i ton. Copilot przeniesiony poza Lyro, bo to narzędzie dla konsultantów, a nie część agenta.',
+                text: 'Zamiast zakładek jest profil: tożsamość, powitanie, kontekst firmy (generowany ze strony), język i ton. Copilot przeniesiony poza Lyro, bo to narzędzie dla konsultantów, a nie część agenta.',
               },
               {
                 title: '„How Lyro works with your team” w jednym miejscu',
-                text: 'Kiedy agent odpowiada, kogo pomija (wykluczone audiences) i jak przekazuje rozmowy — razem, ale osobno dla live chatu i e-maili. Domyślny handoff działa, gdy klient prosi o człowieka.',
+                text: 'Kiedy agent odpowiada, kogo pomija (wykluczone audiences) i jak przekazuje rozmowy. Wszystko w jednym miejscu, ale osobno dla live chatu i e-maili. Domyślny handoff działa, gdy klient prosi o człowieka.',
               },
               {
                 title: 'Podgląd obok ustawień',
@@ -430,7 +430,7 @@ export const cases: CaseStudy[] = [
             compare: {
               before: {
                 list: [
-                  'Configure z zakładkami General (tożsamość, opis firmy, język, dostęp do danych), Audiences i Copilot — ustawienia zupełnie różnej natury w jednym miejscu',
+                  'Configure z zakładkami General (tożsamość, opis firmy, język, dostęp do danych), Audiences i Copilot: ustawienia zupełnie różnej natury w jednym miejscu',
                   'To, jak i kiedy agent odpowiada oraz przekazuje rozmowy, było w innych miejscach: Handoff, Channels',
                 ],
                 images: ['agent-profile/configure', 'agent-profile/handoff'],
@@ -439,7 +439,7 @@ export const cases: CaseStudy[] = [
                 list: [
                   'Kim jest: nazwa, tożsamość AI, powitanie i kontekst firmy generowany ze strony',
                   'Jak mówi: język domyślny, obsługiwane języki, ton',
-                  'Jak pracuje z zespołem: kiedy odpowiada, wykluczone audiences i domyślny handoff — osobno dla live chatu i e-maili',
+                  'Jak pracuje z zespołem: kiedy odpowiada, wykluczone audiences i domyślny handoff, osobno dla live chatu i e-maili',
                   'Podgląd rozmowy obok ustawień',
                   'Copilot przeniesiony poza Lyro',
                 ],
@@ -457,15 +457,15 @@ export const cases: CaseStudy[] = [
         role: 'Analysis, navigation model, HTML prototypes, UI',
         tldr: {
           problem: 'Settings were scattered across Configure, Behavior, Handoff and channels. Users got lost looking for things.',
-          solution: 'An agent profile: who it is, how it talks and how it works with the team — with a live conversation preview. Iterated on clickable HTML prototypes.',
+          solution: 'An agent profile: who it is, how it talks and how it works with the team, with a live conversation preview. Iterated on clickable HTML prototypes.',
           effect: 'Approved for implementation. Fewer support requests about how to set up the agent.',
         },
         sections: [
           {
             title: 'Problem',
             text: [
-              "Lyro grew feature by feature: some settings landed in Configure, others in Behavior. Support tickets showed that users got lost looking for agent settings. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, channels — each added its own place in the navigation until the product model was no longer clear to new or existing customers.",
-              'The goal was to simplify the structure so configuring the agent became predictable — without rebuilding the entire backend.',
+              "Lyro grew feature by feature: some settings landed in Configure, others in Behavior. Support tickets showed that users got lost looking for agent settings. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, channels: each added its own place in the navigation until the product model was no longer clear to new or existing customers.",
+              'The goal was to simplify the structure so configuring the agent became predictable, without rebuilding the entire backend.',
             ],
             images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
             captions: ['Map of the current navigation', 'Structure of the new model', 'Doc: agent and navigation model (v17)'],
@@ -481,11 +481,11 @@ export const cases: CaseStudy[] = [
             steps: [
               {
                 title: 'The agent as a teammate, not a settings page',
-                text: 'Instead of tabs — a profile: identity, greeting, company context (generated from the website), language and tone. Copilot moved out of Lyro, because it is a tool for human agents, not part of the AI agent.',
+                text: 'Instead of tabs, a profile: identity, greeting, company context (generated from the website), language and tone. Copilot moved out of Lyro, because it is a tool for human agents, not part of the AI agent.',
               },
               {
                 title: '“How Lyro works with your team” in one place',
-                text: 'When the agent responds, whom it skips (excluded audiences) and how it hands over conversations — together, but separately for live chat and email. Default handoff kicks in when a customer asks for a human.',
+                text: 'When the agent responds, whom it skips (excluded audiences) and how it hands over conversations. All in one place, but separately for live chat and email. Default handoff kicks in when a customer asks for a human.',
               },
               {
                 title: 'Preview next to settings',
@@ -500,7 +500,7 @@ export const cases: CaseStudy[] = [
             compare: {
               before: {
                 list: [
-                  'Configure with General (identity, company description, language, data access), Audiences and Copilot tabs — settings of a completely different nature in one place',
+                  'Configure with General (identity, company description, language, data access), Audiences and Copilot tabs: settings of a completely different nature in one place',
                   'How and when the agent responds and hands over lived elsewhere: Handoff, Channels',
                 ],
                 images: ['agent-profile/configure', 'agent-profile/handoff'],
@@ -509,7 +509,7 @@ export const cases: CaseStudy[] = [
                 list: [
                   'Who it is: name, AI identity, greeting and company context generated from the website',
                   'How it talks: default language, supported languages, tone',
-                  'How it works with the team: when it responds, excluded audiences and default handoff — separately for live chat and email',
+                  'How it works with the team: when it responds, excluded audiences and default handoff, separately for live chat and email',
                   'Conversation preview next to the settings',
                   'Copilot moved out of Lyro',
                 ],
@@ -518,7 +518,7 @@ export const cases: CaseStudy[] = [
             },
           },
         ],
-        lesson: 'Navigation isn’t a list of features — it’s a model of how users understand the product. Design it early, before the features pile up.',
+        lesson: 'Navigation isn’t a list of features. It’s a model of how users understand the product. Design it early, before the features pile up.',
       },
     },
   },
@@ -542,7 +542,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'W Data sources każde źródło miało osobny typ: Manual (Q&A dodawane ręcznie), Inbox (Q&A zapisane z inboxa), CSV, Website, PDF. W praktyce wszystkie były tym samym — zbiorem pytań i odpowiedzi, z których korzysta agent. Typ źródła mieszał się z typem treści: użytkownik widział pięć różnych rzeczy tam, gdzie była jedna.',
+              'W Data sources każde źródło miało osobny typ: Manual (Q&A dodawane ręcznie), Inbox (Q&A zapisane z inboxa), CSV, Website, PDF. W praktyce wszystkie były tym samym: zbiorem pytań i odpowiedzi, z których korzysta agent. Typ źródła mieszał się z typem treści: użytkownik widział pięć różnych rzeczy tam, gdzie była jedna.',
             ],
             images: ['knowledge/process'],
             captions: ['Hipotezy, research, obecna i nowa struktura'],
@@ -564,7 +564,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Manual i Inbox to teraz „Q&A”',
-                text: 'Inbox był martwym źródłem — Q&A z inboxa trafiały jako sugestie albo Q&A utworzone z rozmowy. Dla użytkownika nie ma znaczenia, skąd pytanie przyszło: to zawsze Q&A, więc dwa źródła zastąpiła jedna etykieta.',
+                text: 'Inbox był martwym źródłem. Q&A z inboxa trafiały jako sugestie albo Q&A utworzone z rozmowy. Dla użytkownika nie ma znaczenia, skąd pytanie przyszło: to zawsze Q&A, więc dwa źródła zastąpiła jedna etykieta.',
               },
               {
                 title: 'Source → Type',
@@ -580,7 +580,7 @@ export const cases: CaseStudy[] = [
                   'Osobne źródła Manual i Inbox (Inbox: tylko sugestie i Q&A z rozmów)',
                   'Q&A w folderach oznaczone nazwą folderu: Website, CSV, PDF',
                   'Lyro i Copilot jako chipy w jednej kolumnie „Used by”',
-                  'Filtr „Show: All / Q&A / Folders” — „Q&A” pokazywało tylko Manual i Inbox, choć strony i pliki też zawierały Q&A',
+                  'Filtr „Show: All / Q&A / Folders”, w którym „Q&A” pokazywało tylko Manual i Inbox, choć strony i pliki też zawierały Q&A',
                 ],
                 images: ['knowledge/before'],
               },
@@ -624,7 +624,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'In Data sources each source had its own type: Manual (Q&As added by hand), Inbox (Q&As saved from the inbox), CSV, Website, PDF. In practice they were all the same — sets of questions and answers the agent uses. Source type got mixed up with content type: users saw five different things where there was only one.',
+              'In Data sources each source had its own type: Manual (Q&As added by hand), Inbox (Q&As saved from the inbox), CSV, Website, PDF. In practice they were all the same: sets of questions and answers the agent uses. Source type got mixed up with content type: users saw five different things where there was only one.',
             ],
             images: ['knowledge/process'],
             captions: ['Hypotheses, research, current and new structure'],
@@ -646,7 +646,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Manual and Inbox are now “Q&A”',
-                text: 'Inbox was a dead source — Q&As from the inbox arrived as suggestions or Q&As created from conversations. Users don’t care where a question came from: it’s always a Q&A, so one label replaced two sources.',
+                text: 'Inbox was a dead source. Q&As from the inbox arrived as suggestions or Q&As created from conversations. Users don’t care where a question came from: it’s always a Q&A, so one label replaced two sources.',
               },
               {
                 title: 'Source → Type',
@@ -662,7 +662,7 @@ export const cases: CaseStudy[] = [
                   'Separate Manual and Inbox sources (Inbox: only suggestions and Q&As from conversations)',
                   'Q&As in folders labelled with the folder name: Website, CSV, PDF',
                   'Lyro and Copilot as chips in a single “Used by” column',
-                  '“Show: All / Q&A / Folders” filter — “Q&A” only showed Manual and Inbox, even though pages and files also contained Q&As',
+                  '“Show: All / Q&A / Folders” filter, where “Q&A” only showed Manual and Inbox, even though pages and files also contained Q&As',
                 ],
                 images: ['knowledge/before'],
               },
@@ -690,7 +690,7 @@ export const cases: CaseStudy[] = [
             note: 'This concept had not been implemented by the time I left Tidio.',
           },
         ],
-        lesson: 'When users see five things where there is one, the problem isn’t the UI — it’s the model. Simplifying the model simplifies everything built on top of it.',
+        lesson: 'When users see five things where there is one, the problem isn’t the UI. It’s the model. Simplifying the model simplifies everything built on top of it.',
       },
     },
   },

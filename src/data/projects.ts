@@ -2,7 +2,7 @@ import type { L10n } from '../lib/i18n';
 
 /**
  * Wcześniejsze projekty. Obrazy: wszystkie pliki z src/img/projects/<slug>/ (kolejność wg nazwy: 1, 2, 3...).
- * Opisy to szkic na podstawie zrzutów — popraw je, jeśli coś się nie zgadza.
+ * Opisy to szkic na podstawie zrzutów, popraw je, jeśli coś się nie zgadza.
  */
 export type Category = 'product' | 'fintech' | 'web';
 export type Project = { slug: string; title: string; category: Category; content: L10n<{ summary: string; text: string }> };
@@ -21,11 +21,11 @@ export const projects: Project[] = [
     content: {
       pl: {
         summary: 'Panel do wysyłki i monitorowania maili transakcyjnych i marketingowych.',
-        text: 'Kompletny panel użytkownika (UI/UX) dla platformy do wysyłania i monitorowania wiadomości e-mail przez SMTP i API: statystyki dostarczalności, aktywność, subskrybenci, import, konta wysyłkowe. Do tego design system i landing page. Omnicorp, 2019–2021.',
+        text: 'Kompletny panel użytkownika (UI/UX) dla platformy do wysyłania i monitorowania wiadomości e-mail przez SMTP i API: statystyki dostarczalności, aktywność, subskrybenci, import, konta wysyłkowe. Do tego design system i landing page. Omnicorp, 2019-2021.',
       },
       en: {
         summary: 'A dashboard for sending and monitoring transactional and marketing email.',
-        text: 'The complete user dashboard (UI/UX) for a platform that sends and monitors email via SMTP and API: deliverability stats, activity, subscribers, imports, sending accounts. Plus the design system and landing page. Omnicorp, 2019–2021.',
+        text: 'The complete user dashboard (UI/UX) for a platform that sends and monitors email via SMTP and API: deliverability stats, activity, subscribers, imports, sending accounts. Plus the design system and landing page. Omnicorp, 2019-2021.',
       },
     },
   },
@@ -66,11 +66,11 @@ export const projects: Project[] = [
     content: {
       pl: {
         summary: 'Aplikacja do prognozowania zorzy polarnej.',
-        text: 'Projekt, który powstał z własnej potrzeby: aplikacja śledząca warunki do obserwacji zorzy z dowolnego miejsca na Ziemi — aktywność zorzy, magnetometr, indeks Kp, wiatr słoneczny, zachmurzenie i jasność nieba.',
+        text: 'Projekt, który powstał z własnej potrzeby: aplikacja śledząca warunki do obserwacji zorzy z dowolnego miejsca na Ziemi: aktywność zorzy, magnetometr, indeks Kp, wiatr słoneczny, zachmurzenie i jasność nieba.',
       },
       en: {
         summary: 'An app for forecasting the northern lights.',
-        text: 'A side project born out of a personal need: an app that tracks aurora viewing conditions from anywhere on Earth — aurora activity, magnetometer, Kp index, solar wind, cloud cover and sky brightness.',
+        text: 'A side project born out of a personal need: an app that tracks aurora viewing conditions from anywhere on Earth: aurora activity, magnetometer, Kp index, solar wind, cloud cover and sky brightness.',
       },
     },
   },
@@ -88,8 +88,8 @@ export const projects: Project[] = [
     title: 'Child Reward',
     category: 'product',
     content: {
-      pl: { summary: 'Aplikacja mobilna: zadania i nagrody dla dzieci.', text: 'Aplikacja dla rodzin — rodzic dodaje zadania, dziecko zbiera punkty i wymienia je na nagrody. Lekka, kolorowa stylistyka i ilustracje.' },
-      en: { summary: 'A mobile app: tasks and rewards for kids.', text: 'An app for families — parents add tasks, kids collect points and exchange them for rewards. Light, colourful style with illustrations.' },
+      pl: { summary: 'Aplikacja mobilna: zadania i nagrody dla dzieci.', text: 'Aplikacja dla rodzin: rodzic dodaje zadania, dziecko zbiera punkty i wymienia je na nagrody. Lekka, kolorowa stylistyka i ilustracje.' },
+      en: { summary: 'A mobile app: tasks and rewards for kids.', text: 'An app for families: parents add tasks, kids collect points and exchange them for rewards. Light, colourful style with illustrations.' },
     },
   },
   {

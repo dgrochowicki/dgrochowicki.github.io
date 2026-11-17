@@ -31,7 +31,7 @@ const L = {
         <h1>{site.name}</h1>
         <p class="role">{t.role}</p>
         {intro[lang].bio.map((p) => <p>{p}</p>)}
-        <div class="btns"><a class="btn primary" href={asset(site.cv)} target="_blank" rel="noopener">{t.downloadCv} ↓</a></div>
+        <div class="btns"><a class="btn primary" href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.downloadCv} ↓</a></div>
       </div>
       <div class="photo">
         <Image src={img('about/photo')} alt={site.name} widths={[400, 700]} sizes="(max-width: 860px) 60vw, 380px" loading="eager" />

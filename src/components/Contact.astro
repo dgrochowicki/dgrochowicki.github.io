@@ -11,7 +11,7 @@ const t = ui[Astro.props.lang];
     <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
     <div class="btns">
       <a class="btn primary" href={`mailto:${site.email}`}>{t.write}</a>
-      <a class="btn" href={asset(site.cv)} target="_blank" rel="noopener">{t.downloadCv} ↓</a>
+      <a class="btn" href={asset(site.cv[Astro.props.lang])} target="_blank" rel="noopener">{t.downloadCv} ↓</a>
       {site.linkedin && <a class="btn" href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
     </div>
   </div>

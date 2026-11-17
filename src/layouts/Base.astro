@@ -41,7 +41,7 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
         <nav aria-label="Menu">
           <a href={href('portfolio', lang)} aria-current={active === 'portfolio' ? 'page' : undefined}>{t.navPortfolio}</a>
           <a href={href(aboutPath, lang)} aria-current={active === 'about' ? 'page' : undefined}>{t.navAbout}</a>
-          <a href={asset(site.cv)} target="_blank" rel="noopener" class="hide-sm">{t.navCv}</a>
+          <a href={asset(site.cv[lang])} target="_blank" rel="noopener" class="hide-sm">{t.navCv}</a>
           <a class="lang" href={href(alt, other)} hreflang={other} title={t.otherLangLabel}>{t.otherLang}</a>
         </nav>
       </div>
@@ -58,7 +58,7 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
         <div class="links">
           <a href={`mailto:${site.email}`}>{site.email}</a>
           {site.linkedin && <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
-          <a href={asset(site.cv)} target="_blank" rel="noopener">{t.navCv}</a>
+          <a href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.navCv}</a>
         </div>
       </div>
     </footer>

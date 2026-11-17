@@ -15,7 +15,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
     - Knowledge: uproszczony model źródeł wiedzy
   - **Wcześniejsze projekty (2012-2021):** 21 projektów, czyli aplikacje mobilne, produkty SaaS, fintech i strony www, z filtrem kategorii.
 - **O mnie:** doświadczenie, umiejętności, edukacja, nagrody, języki i wolontariat.
-- **CV w PDF** do pobrania.
+- **CV w PDF** do pobrania, osobno po polsku i po angielsku.
 
 ## Technologia
 
@@ -36,7 +36,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
 | Widoki stron | `src/views/` |
 | Komponenty (kafelki, zrzuty, kontakt) | `src/components/` |
 | Kolory i fonty | `src/styles/global.css` |
-| CV do pobrania | `public/cv/dominik-grochowicki-cv.pdf` |
+| CV do pobrania (PL i EN) | `public/cv/dominik-grochowicki-cv_pl.pdf`, `public/cv/dominik-grochowicki-cv_en.pdf` |
 | Favicona | `public/favicon.svg` |
 
 ## Obrazy (`src/img/`)

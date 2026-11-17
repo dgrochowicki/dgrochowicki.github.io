@@ -168,53 +168,43 @@ export const experience: L10n<Job[]> = {
   ],
 };
 
-export const skills: L10n<{ competencies: string[]; tools: string[] }> = {
-  pl: {
-    competencies: [
-      'Projektowanie UX/UI',
-      'Testy użyteczności',
-      'Analiza danych produktowych',
-      'Prototypowanie',
-      'User flows',
-      'Design systems',
-      'Analiza potrzeb użytkowników',
-    ],
-    tools: [
-      'Figma',
-      'Claude Design (Artifacts): design systems, prototypy',
-      'Amplitude',
-      'HTML, CSS',
-      'Photoshop',
-      'Illustrator',
-      'InDesign',
-      'Branding i identyfikacja wizualna',
-      'Projektowanie stron www',
-      'DTP',
-    ],
-  },
-  en: {
-    competencies: [
-      'UX/UI design',
-      'Usability testing',
-      'Product data analysis',
-      'Prototyping',
-      'User flows',
-      'Design systems',
-      'User needs analysis',
-    ],
-    tools: [
-      'Figma',
-      'Claude Design (Artifacts): design systems, prototypes',
-      'Amplitude',
-      'HTML, CSS',
-      'Photoshop',
-      'Illustrator',
-      'InDesign',
-      'Branding & visual identity',
-      'Web design',
-      'DTP',
-    ],
-  },
+export const skills: L10n<{ title: string; items: string[] }[]> = {
+  pl: [
+    {
+      title: 'Projektowanie produktu',
+      items: ['UX/UI', 'projektowanie produktów AI', 'architektura informacji', 'przepływy użytkownika', 'prototypowanie (Figma i Claude)', 'design systems'],
+    },
+    {
+      title: 'Badania i dane',
+      items: ['testy użyteczności', 'analiza rozmów użytkowników', 'analityka produktowa', 'analiza potrzeb użytkowników'],
+    },
+    {
+      title: 'Narzędzia',
+      items: ['Figma', 'Claude (prototypowanie, design systems)', 'Amplitude', 'HTML, CSS'],
+    },
+    {
+      title: 'Dodatkowo',
+      items: ['branding i identyfikacja wizualna', 'projektowanie stron internetowych', 'Photoshop', 'Illustrator', 'InDesign', 'DTP'],
+    },
+  ],
+  en: [
+    {
+      title: 'Product design',
+      items: ['UX/UI design', 'AI product design (AI agents, assistants)', 'information architecture', 'user flows', 'prototyping (Figma and code with Claude)', 'design systems'],
+    },
+    {
+      title: 'Research and data',
+      items: ['usability testing', 'user conversation analysis', 'product analytics', 'user needs analysis'],
+    },
+    {
+      title: 'Tools',
+      items: ['Figma', 'Claude (prototyping, design systems)', 'Amplitude', 'HTML, CSS'],
+    },
+    {
+      title: 'Also',
+      items: ['branding and visual identity', 'web design', 'Photoshop', 'Illustrator', 'InDesign', 'DTP'],
+    },
+  ],
 };
 
 type Entry = { title: string; sub: string; years: string };

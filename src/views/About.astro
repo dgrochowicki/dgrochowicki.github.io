@@ -15,8 +15,6 @@ const L = {
   about: pl ? 'O mnie' : 'About',
   exp: pl ? 'Doświadczenie' : 'Experience',
   skills: pl ? 'Umiejętności' : 'Skills',
-  comp: pl ? 'Kompetencje' : 'Competencies',
-  tools: pl ? 'Narzędzia i dodatkowe umiejętności' : 'Tools & other skills',
   edu: pl ? 'Edukacja' : 'Education',
   lang: pl ? 'Języki' : 'Languages',
   awards: pl ? 'Nagrody' : 'Awards',
@@ -60,8 +58,7 @@ const L = {
     <div class="row">
       <div class="label">{L.skills}</div>
       <div class="skills">
-        <div><h3>{L.comp}</h3><ul class="bullets plain">{skills[lang].competencies.map((s) => <li>{s}</li>)}</ul></div>
-        <div><h3>{L.tools}</h3><ul class="bullets plain">{skills[lang].tools.map((s) => <li>{s}</li>)}</ul></div>
+        {skills[lang].map((g) => <div><h3>{g.title}</h3><ul class="bullets plain">{g.items.map((s) => <li>{s}</li>)}</ul></div>)}
       </div>
     </div>
 
@@ -119,7 +116,8 @@ const L = {
   .job-role { margin: 2px 0 10px; }
   .bullets { padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
   .bullets.plain { margin: 0; }
-  .skills { display: flex; flex-direction: column; gap: 28px; }
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 40px; }
+  @media (max-width: 600px) { .skills { grid-template-columns: 1fr; gap: 28px; } }
   .skills h3 { font-size: 16px; margin-bottom: 12px; }
   .entries { list-style: none; display: flex; flex-direction: column; gap: 28px; max-width: 920px; }
   .entries p { margin: 4px 0 0; }

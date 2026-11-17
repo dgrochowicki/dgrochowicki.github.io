@@ -226,7 +226,7 @@ export const education: L10n<Entry[]> = {
       sub: 'Studia magisterskie, informatyka, specjalizacja: techniki multimedialne',
       years: '1998-2003',
     },
-    { title: 'Sztuka projektowania', sub: 'Kurs designu pod patronatem Karola Śliwki, I edycja, Gdańsk', years: '2008-2009' },
+    { title: 'Sztuka projektowania', sub: 'Kurs designu pod patronatem Karola Śliwki, I edycja, Gdańsk', years: '2018-2019' },
   ],
   en: [
     {
@@ -234,7 +234,7 @@ export const education: L10n<Entry[]> = {
       sub: "Master's degree in Computer Science, specialisation: multimedia technologies",
       years: '1998-2003',
     },
-    { title: 'Sztuka projektowania (The Art of Design)', sub: 'Design course under Karol Śliwka, 1st edition, Gdańsk', years: '2008-2009' },
+    { title: 'Sztuka projektowania (The Art of Design)', sub: 'Design course under Karol Śliwka, 1st edition, Gdańsk', years: '2018-2019' },
   ],
 };
 

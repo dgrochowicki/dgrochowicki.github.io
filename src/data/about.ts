@@ -14,9 +14,9 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     hero: 'I design digital products. From research and prototyping to a\u00A0shipped interface.',
     lead: 'For the past 5 years at Tidio I designed customer service tools, including Lyro, an AI agent that resolves customer conversations on its own. Before that, I spent 15 years designing apps, fintech platforms, SaaS products and mobile games.',
     bio: [
-      'I am a Product Designer with many years of experience in interface design and visual communication. I started out in graphics and animation for games on palmtops and mobile phones, then expanded into branding and web and app design.',
-      'For the past five years at Tidio I have been designing digital products, including AI solutions, combining UX/UI design with research and data analysis. I also coordinated work on the design system.',
-      'I have a degree in computer science, which lets me design within real technical constraints and talk architecture with developers.',
+      'I am a Product Designer with many years of experience in interface design and visual communication. I started out creating graphics and animation for games on PDAs and mobile phones, then moved into branding and web and app design.',
+      'For the past five years at Tidio, I designed digital products, including AI solutions, combining UX/UI design with research and data analysis. I also coordinated work on the design system.',
+      'I have a degree in computer science, so I design within real technical constraints and work well with developers.',
     ],
   },
 };

@@ -5,9 +5,9 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     hero: 'Projektuję produkty cyfrowe. Od\u00A0researchu, przez prototyp, po\u00A0gotowy interfejs.',
     lead: 'Przez ostatnie 5 lat w Tidio projektowałem narzędzia do obsługi klienta, w tym Lyro, agenta AI, który samodzielnie rozwiązuje rozmowy z klientami. Wcześniej przez 15 lat projektowałem aplikacje, platformy fintech, produkty SaaS i gry mobilne.',
     bio: [
-      'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od grafiki i animacji do gier na palmtopy i telefony komórkowe, następnie rozwijałem się w brandingu oraz projektowaniu stron i aplikacji.',
+      'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od tworzenia grafiki i animacji do gier na palmtopy i telefony komórkowe, a potem zająłem się brandingiem oraz projektowaniem stron i aplikacji.',
       'Przez ostatnie pięć lat w Tidio projektowałem produkty cyfrowe, w tym rozwiązania AI, łącząc projektowanie UX/UI z badaniami i analizą danych. Koordynowałem też prace nad design systemem.',
-      'Z wykształcenia jestem informatykiem. Dzięki temu projektuję w realnych ograniczeniach technicznych i dobrze dogaduję się z developerami.',
+      'Z wykształcenia jestem informatykiem, więc projektuję w realnych ograniczeniach technicznych i dobrze współpracuję z developerami.',
     ],
   },
   en: {

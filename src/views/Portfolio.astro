@@ -115,7 +115,7 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
   @media (max-width: 860px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
   @media (min-width: 861px) and (max-width: 1080px) { .grid3 { grid-template-columns: 1fr 1fr; } }
 
-  .areas { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
+  .areas { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: clamp(56px, 7vw, 88px); }
   .areas li { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 14px; font-size: 15px; }
   /* Ostatni obszar (Design system) na całą szerokość */
   .areas li:last-child { grid-column: 1 / -1; }

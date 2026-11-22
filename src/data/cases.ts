@@ -21,6 +21,10 @@ export type CaseContent = {
   title: string;
   summary: string;
   role: string;
+  /** Skład zespołu (opcjonalne) */
+  team?: string;
+  /** Kiedy i jak długo (opcjonalne) */
+  timeline?: string;
   tldr: { problem: string; solution: string; effect: string };
   sections: Section[];
   lesson: string;
@@ -75,6 +79,7 @@ export const cases: CaseStudy[] = [
         title: 'Audiences: różne odpowiedzi dla różnych klientów',
         summary: 'Jak jeden prosty mechanizm grup odwiedzających zastąpił osobne bazy wiedzy i stał się wspólnym językiem całego agenta.',
         role: 'Research, model konfiguracji, user flows, UI',
+        team: 'PM, EM, QA oraz min. 2 osoby na backendzie i 2 na frontendzie. Przez większość czasu byłem jedynym designerem w zespole Lyro.',
         tldr: {
           problem: 'Lyro korzystało z jednej bazy wiedzy dla wszystkich. Więksi klienci potrzebowali, by agent nie „mówił” wszystkiego każdemu.',
           solution: 'Audiences: grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.',
@@ -145,6 +150,7 @@ export const cases: CaseStudy[] = [
         title: 'Audiences: different answers for different customers',
         summary: 'How one simple visitor-group mechanism replaced separate knowledge bases and became a shared language across the whole agent.',
         role: 'Research, configuration model, user flows, UI',
+        team: 'PM, EM, QA and at least 2 backend and 2 frontend engineers. I was the only designer on the Lyro team for most of that time.',
         tldr: {
           problem: "Lyro used one knowledge base for every visitor. Larger customers needed the agent not to tell everyone everything.",
           solution: 'Audiences: visitor groups built from channels and conditions, assigned to knowledge sources. Default: Everyone.',
@@ -223,6 +229,7 @@ export const cases: CaseStudy[] = [
         title: 'Onboarding: agent gotowy w kilka minut',
         summary: 'Zamiast kolejnych punktów na liście „to do”: osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
         role: 'Koncepcja, user flows, wireframes, UI',
+        team: 'PM, EM, QA oraz min. 2 osoby na backendzie i 2 na frontendzie. Przez większość czasu byłem jedynym designerem w zespole Lyro.',
         tldr: {
           problem: 'Wraz z rozwojem agenta lista setupu przestała spełniać swoją rolę, a dokładanie kolejnych kroków było najsłabsze z punktu widzenia UX.',
           solution: 'Ekran Setup prowadzący przez konfigurację z perspektywy agenta („I’m joining your team”) w pięciu krokach.',
@@ -300,6 +307,7 @@ export const cases: CaseStudy[] = [
         title: 'Onboarding: an agent ready in minutes',
         summary: 'Instead of more items on a to-do list: a dedicated Setup screen where the agent introduces itself like a new teammate.',
         role: 'Concept, user flows, wireframes, UI',
+        team: 'PM, EM, QA and at least 2 backend and 2 frontend engineers. I was the only designer on the Lyro team for most of that time.',
         tldr: {
           problem: 'As the agent grew, the setup checklist stopped doing its job, and adding more steps was the weakest option from a UX point of view.',
           solution: 'A Setup screen that walks through configuration from the agent’s perspective (“I’m joining your team”) in five steps.',
@@ -385,6 +393,7 @@ export const cases: CaseStudy[] = [
         title: 'Profil agenta zamiast zakładek ustawień',
         summary: 'Przebudowa modelu mentalnego Lyro i nawigacji: ustawienia ułożone wokół tego, kim jest agent i jak pracuje z zespołem.',
         role: 'Analiza, model nawigacji, prototypy HTML, UI',
+        team: 'PM, EM, QA oraz min. 2 osoby na backendzie i 2 na frontendzie. Przez większość czasu byłem jedynym designerem w zespole Lyro.',
         tldr: {
           problem: 'Ustawienia rozproszone między Configure, Behavior, Handoff i kanały. Użytkownicy gubili się, gdzie co jest.',
           solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem, z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
@@ -455,6 +464,7 @@ export const cases: CaseStudy[] = [
         title: 'An agent profile instead of settings tabs',
         summary: "Rebuilding Lyro's mental model and navigation: settings organised around who the agent is and how it works with the team.",
         role: 'Analysis, navigation model, HTML prototypes, UI',
+        team: 'PM, EM, QA and at least 2 backend and 2 frontend engineers. I was the only designer on the Lyro team for most of that time.',
         tldr: {
           problem: 'Settings were scattered across Configure, Behavior, Handoff and channels. Users got lost looking for things.',
           solution: 'An agent profile: who it is, how it talks and how it works with the team, with a live conversation preview. Iterated on clickable HTML prototypes.',
@@ -533,6 +543,7 @@ export const cases: CaseStudy[] = [
         title: 'Knowledge: uproszczony model źródeł wiedzy',
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
         role: 'Inicjatywa własna, analiza modelu danych, UI',
+        team: 'PM, EM, QA oraz min. 2 osoby na backendzie i 2 na frontendzie. Przy pracy nad Knowledge w zespole było dwóch designerów.',
         tldr: {
           problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
           solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
@@ -615,6 +626,7 @@ export const cases: CaseStudy[] = [
         title: 'Knowledge: a simpler model of knowledge sources',
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
         role: 'Own initiative, data model analysis, UI',
+        team: 'PM, EM, QA and at least 2 backend and 2 frontend engineers. During the Knowledge work there were two designers on the team.',
         tldr: {
           problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
           solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',

@@ -55,6 +55,8 @@ export const ui = {
     footer: 'Strona zbudowana w Astro, hostowana na GitHub Pages.',
     close: 'Zamknij',
     myRole: 'Moja rola',
+    team: 'Zespół',
+    timeline: 'Czas',
   },
   en: {
     role: 'Product Designer · UX/UI',
@@ -89,5 +91,7 @@ export const ui = {
     footer: 'Built with Astro, hosted on GitHub Pages.',
     close: 'Close',
     myRole: 'My role',
+    team: 'Team',
+    timeline: 'Timeline',
   },
 } as const;

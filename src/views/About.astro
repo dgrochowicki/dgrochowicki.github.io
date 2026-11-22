@@ -27,7 +27,7 @@ const L = {
       <div>
         <p class="eyebrow">{L.about}</p>
         <h1>{site.name}</h1>
-        <p class="role">{t.role} · {t.workMode}</p>
+        <p class="role">{t.role}<br /><span class="work-mode">{t.workMode}</span></p>
         {intro[lang].bio.map((p) => <p>{p}</p>)}
         <div class="btns"><a class="btn primary" href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.downloadCv} ↓</a></div>
       </div>
@@ -95,6 +95,7 @@ const L = {
   .intro { display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 6vw, 96px); align-items: stretch; }
   .intro h1 { font-size: clamp(34px, 5vw, 56px); margin-top: 12px; letter-spacing: -0.025em; }
   .role { color: var(--muted); font-size: 20px; margin: 6px 0 28px; }
+  .work-mode { font-size: 16px; }
   .intro p:not(.eyebrow):not(.role) { max-width: var(--text); }
   .intro .btns { margin-top: 28px; }
   /* Zdjęcie rozciąga się na wysokość kolumny z tekstem (do przycisku CV) */

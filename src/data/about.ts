@@ -2,7 +2,7 @@ import type { L10n } from '../lib/i18n';
 
 export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
   pl: {
-    hero: 'Cześć, jestem Dominik. Projektuję złożone produkty tak, żeby były proste w\u00A0użyciu.',
+    hero: 'Cześć, jestem Dominik.\nProjektuję złożone produkty tak, żeby były proste w\u00A0użyciu.',
     lead: 'Ponad 5 lat pracowałem jako Product Designer w Tidio, w czterech zespołach: od chatbotów (Flows), przez analitykę i inbox, po Lyro, agenta AI do obsługi klienta, którego projektowałem od pierwszej wersji. Wcześniej projektowałem produkty SaaS, platformy fintech i grafikę do gier mobilnych, a od 2017 roku prowadzę własne studio Deque (UI/UX i branding). Z wykształcenia jestem informatykiem.',
     bio: [
       'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od tworzenia grafiki i animacji do gier na palmtopy i telefony komórkowe, a potem zająłem się brandingiem oraz projektowaniem stron i aplikacji.',
@@ -11,7 +11,7 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     ],
   },
   en: {
-    hero: "Hi, I'm Dominik. I design complex products so they're simple to\u00A0use.",
+    hero: "Hi, I'm Dominik.\nI design complex products so they're simple to\u00A0use.",
     lead: "I spent over 5 years as a Product Designer at Tidio, across four teams: from chatbots (Flows), through analytics and the inbox, to Lyro, an AI customer service agent I designed from its very first version. Before that, I designed SaaS products, fintech platforms and graphics for mobile games, and since 2017 I've run my own studio, Deque (UI/UX and branding). I have a degree in computer science.",
     bio: [
       'I am a Product Designer with many years of experience in interface design and visual communication. I started out creating graphics and animation for games on PDAs and mobile phones, then moved into branding and web and app design.',

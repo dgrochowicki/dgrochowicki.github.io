@@ -19,7 +19,7 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Product Designer · UX/UI · Szczecin</p>
-      <h1>{i.hero}</h1>
+      <h1>{i.hero.split('\n').map((line, n) => <>{n > 0 && <br />}{line}</>)}</h1>
       <p class="lead">{i.lead}</p>
       <div class="btns">
         <a class="btn primary" href={href('portfolio', lang)}>{t.seeCases}</a>
@@ -76,8 +76,8 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
 
 <style>
   .hero { padding: clamp(64px, 12vw, 140px) 0 clamp(56px, 8vw, 96px); }
-  .hero h1 { font-size: clamp(34px, 5.6vw, 64px); max-width: 15em; margin: 16px 0 24px; letter-spacing: -0.025em; }
-  .lead { font-size: clamp(18px, 2vw, 21px); max-width: 36em; color: var(--muted); margin-bottom: 32px; }
+  .hero h1 { font-size: clamp(30px, 4.4vw, 52px); max-width: 17em; margin: 16px 0 24px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(16px, 1.6vw, 18px); max-width: 40em; color: var(--muted); margin-bottom: 32px; }
   .stats { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: clamp(48px, 7vw, 80px); }
   .stats li { border-top: 1px solid var(--fg); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
   @media (prefers-color-scheme: dark) { .stats li { border-top-color: #4b5058; } }

@@ -13,7 +13,9 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = ui[lang];
 const ti = tidioIntro[lang];
-const cats = Object.keys(categories) as Category[];
+const earlier = projects.filter((p) => p.category !== 'lab');
+const side = projects.filter((p) => p.category === 'lab');
+const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some((p) => p.category === c));
 ---
 <Base lang={lang} title="Portfolio" alt="portfolio" active="portfolio">
   <section class="section">
@@ -57,9 +59,23 @@ const cats = Object.keys(categories) as Category[];
           {cats.map((c) => <button class="tag" data-filter={c}>{categories[c][lang]}</button>)}
         </div>
       </div>
-      <div class="grid3 projects">{projects.map((p) => <ProjectCard item={p} lang={lang} />)}</div>
+      <div class="grid3 projects">{earlier.map((p) => <ProjectCard item={p} lang={lang} />)}</div>
     </div>
   </section>
+
+  {side.length > 0 && (
+    <section class="section" id="side-projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2 class="title other">{t.sideProjects}</h2>
+            <p class="muted">{t.sideProjectsLead}</p>
+          </div>
+        </div>
+        <div class="grid3">{side.map((p) => <ProjectCard item={p} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
 
   <Contact lang={lang} />
 </Base>

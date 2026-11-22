@@ -4,13 +4,15 @@ import type { L10n } from '../lib/i18n';
  * Wcześniejsze projekty. Obrazy: wszystkie pliki z src/img/projects/<slug>/ (kolejność wg nazwy: 1, 2, 3...).
  * Opisy to szkic na podstawie zrzutów, popraw je, jeśli coś się nie zgadza.
  */
-export type Category = 'product' | 'fintech' | 'web';
-export type Project = { slug: string; title: string; category: Category; content: L10n<{ summary: string; text: string }> };
+export type Category = 'product' | 'fintech' | 'web' | 'lab';
+/** category 'lab' = Side projects (osobna sekcja). url = link zewnętrzny do działającej wersji (opcjonalny). */
+export type Project = { slug: string; title: string; category: Category; url?: string; content: L10n<{ summary: string; text: string }> };
 
 export const categories: Record<Category, L10n> = {
   product: { pl: 'Produkty / SaaS', en: 'Products / SaaS' },
   fintech: { pl: 'Fintech / gaming', en: 'Fintech / gaming' },
   web: { pl: 'Strony www', en: 'Websites' },
+  lab: { pl: 'Side project', en: 'Side project' },
 };
 
 export const projects: Project[] = [
@@ -62,7 +64,8 @@ export const projects: Project[] = [
   {
     slug: 'aurora-now',
     title: 'Aurora Now',
-    category: 'product',
+    category: 'lab',
+    url: 'https://dgrochowicki.github.io/Aurora/',
     content: {
       pl: {
         summary: 'Aplikacja do prognozowania zorzy polarnej.',

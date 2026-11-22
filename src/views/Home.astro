@@ -12,7 +12,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = ui[lang];
 const i = intro[lang];
-const featured = ['coresender', 'aurora-now', 'trading'].map((s) => projects.find((p) => p.slug === s)!);
+const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.find((p) => p.slug === s)!);
 ---
 <Base lang={lang} alt="" description={i.lead}>
   <section class="hero">

@@ -22,6 +22,7 @@ const next = projects[(idx + 1) % projects.length];
     <p class="eyebrow">{categories[item.category][lang]}</p>
     <h1>{item.title}</h1>
     <p class="lead">{c.text}</p>
+    {item.url && <a class="btn primary live" href={item.url} target="_blank" rel="noopener">{t.openLive} ↗</a>}
   </header>
   <div class="wrap imgs">
     {images.map((src, n) => <Figure src={src} eager={n === 0} alt={item.title} />)}
@@ -37,6 +38,7 @@ const next = projects[(idx + 1) % projects.length];
   .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
   .head h1 { font-size: clamp(32px, 5vw, 56px); margin: 14px 0 20px; letter-spacing: -0.025em; }
   .lead { font-size: clamp(17px, 1.8vw, 20px); color: var(--muted); max-width: 38em; }
+  .live { margin-top: 28px; }
   .imgs { display: flex; flex-direction: column; gap: 24px; }
   .pn { display: flex; justify-content: space-between; gap: 24px; padding-top: 56px; padding-bottom: 96px; }
   .pn a { display: flex; flex-direction: column; gap: 4px; text-decoration: none; }

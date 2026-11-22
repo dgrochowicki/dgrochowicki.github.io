@@ -7,7 +7,7 @@ const t = ui[Astro.props.lang];
 <section class="section contact">
   <div class="wrap">
     <h2>{t.contactTitle}</h2>
-    <p class="muted">{t.contactText}</p>
+    <p class="muted">{t.contactText.split('\n').map((line, n) => <>{n > 0 && <br />}{line}</>)}</p>
     <div class="mail-row">
       <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
       <button class="copy" type="button" data-copy={site.email} data-done={t.copied} aria-label={t.copy} title={t.copy}>

@@ -13,7 +13,8 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
     - Onboarding: agent gotowy w kilka minut
     - Profil agenta zamiast zakładek ustawień
     - Knowledge: uproszczony model źródeł wiedzy
-  - **Wcześniejsze projekty (2012-2021):** 21 projektów, czyli aplikacje mobilne, produkty SaaS, fintech i strony www, z filtrem kategorii.
+  - **Wcześniejsze projekty (2012-2021):** 20 projektów, czyli aplikacje mobilne, produkty SaaS, fintech i strony www, z filtrem kategorii.
+  - **Side projects:** projekty po godzinach, budowane z pomocą AI (Aurora Now). W `src/data/projects.ts` mają kategorię `lab` i opcjonalny link `url`.
 - **O mnie:** doświadczenie, umiejętności, edukacja, nagrody, języki i wolontariat.
 - **CV w PDF** do pobrania, osobno po polsku i po angielsku.
 
@@ -38,6 +39,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
 | Kolory i fonty | `src/styles/global.css` |
 | CV do pobrania (PL i EN) | `public/cv/dominik-grochowicki-cv_pl.pdf`, `public/cv/dominik-grochowicki-cv_en.pdf` |
 | Favicona | `public/favicon.svg` |
+| Obrazek podglądu linku (LinkedIn, Slack) | `public/og.png` (1200×630) |
 
 ## Obrazy (`src/img/`)
 

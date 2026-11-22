@@ -46,7 +46,7 @@ export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: st
       { name: 'Flows', text: 'Chatboty budowane wg scenariusza w edytorze graficznym.' },
       { name: 'Inbox', text: 'Integracja koszyka Shopify w inboxie, widok rozmów Lyro i podgląd źródeł, z których agent zbudował odpowiedź.' },
       { name: 'Analityka', text: 'Projektowałem strukturę i wygląd analityki w panelu Tidio.' },
-      { name: 'Design system', text: 'Koordynowałem utrzymanie design systemu i współpracę z frontendem. Przeprowadziłem migrację biblioteki z Figmy do Claude Design. Praca na design systemie to podstawa, a migracja do Claude Design pozwoliła całemu zespołowi designu, a także PM-om, tworzyć prototypy, szybciej sprawdzać własne pomysły i łatwiej pokazywać je zespołowi.' },
+      { name: 'Design system', text: 'Koordynowałem utrzymanie design systemu i współpracę z frontendem. Przeprowadziłem migrację biblioteki z Figmy do Claude Design. Praca na design systemie to podstawa, a ta migracja pozwoliła całemu zespołowi designu, a także PM-om, tworzyć prototypy, szybciej sprawdzać własne pomysły i łatwiej pokazywać je zespołowi.' },
     ],
   },
   en: {
@@ -63,7 +63,7 @@ export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: st
       { name: 'Flows', text: 'Scenario-based chatbots built in a visual editor.' },
       { name: 'Inbox', text: 'Shopify cart integration in the inbox, a view of Lyro conversations and a preview of the sources the agent used to build its answer.' },
       { name: 'Analytics', text: 'I designed the structure and look of analytics in the Tidio panel.' },
-      { name: 'Design system', text: 'I coordinated design system upkeep and collaboration with frontend, and migrated the library from Figma to Claude Design. Working from the design system is the foundation, and the move to Claude Design let the whole design team, and PMs too, build prototypes, test their own ideas faster and show them to the team more easily.' },
+      { name: 'Design system', text: 'I coordinated design system upkeep and collaboration with frontend, and migrated the library from Figma to Claude Design. Working from the design system is the foundation, and this move let the whole design team, and PMs too, build prototypes, test their own ideas faster and show them to the team more easily.' },
     ],
   },
 };

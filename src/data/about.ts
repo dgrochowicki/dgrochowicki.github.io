@@ -2,8 +2,8 @@ import type { L10n } from '../lib/i18n';
 
 export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
   pl: {
-    hero: 'Projektuję produkty cyfrowe. Od\u00A0researchu, przez prototyp, po\u00A0gotowy interfejs.',
-    lead: 'Przez ostatnie 5 lat w Tidio projektowałem narzędzia do obsługi klienta, w tym Lyro, agenta AI, który samodzielnie rozwiązuje rozmowy z klientami. Wcześniej przez 15 lat projektowałem aplikacje, platformy fintech, produkty SaaS i gry mobilne.',
+    hero: 'Cześć, jestem Dominik. Projektuję złożone produkty tak, żeby były proste w\u00A0użyciu.',
+    lead: 'Ponad 5 lat pracowałem jako Product Designer w Tidio, w czterech zespołach: od chatbotów (Flows), przez analitykę i inbox, po Lyro, agenta AI do obsługi klienta, którego projektowałem od pierwszej wersji. Wcześniej projektowałem produkty SaaS, platformy fintech i grafikę do gier mobilnych, a od 2017 roku prowadzę własne studio Deque (UI/UX i branding). Z wykształcenia jestem informatykiem.',
     bio: [
       'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od tworzenia grafiki i animacji do gier na palmtopy i telefony komórkowe, a potem zająłem się brandingiem oraz projektowaniem stron i aplikacji.',
       'Przez ostatnie pięć lat w Tidio projektowałem produkty cyfrowe, w tym rozwiązania AI, łącząc projektowanie UX/UI z badaniami i analizą danych. Koordynowałem też prace nad design systemem.',
@@ -11,8 +11,8 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     ],
   },
   en: {
-    hero: 'I design digital products. From research and prototyping to a\u00A0shipped interface.',
-    lead: 'For the past 5 years at Tidio I designed customer service tools, including Lyro, an AI agent that resolves customer conversations on its own. Before that, I spent 15 years designing apps, fintech platforms, SaaS products and mobile games.',
+    hero: "Hi, I'm Dominik. I design complex products so they're simple to\u00A0use.",
+    lead: "I spent over 5 years as a Product Designer at Tidio, across four teams: from chatbots (Flows), through analytics and the inbox, to Lyro, an AI customer service agent I designed from its very first version. Before that, I designed SaaS products, fintech platforms and graphics for mobile games, and since 2017 I've run my own studio, Deque (UI/UX and branding). I have a degree in computer science.",
     bio: [
       'I am a Product Designer with many years of experience in interface design and visual communication. I started out creating graphics and animation for games on PDAs and mobile phones, then moved into branding and web and app design.',
       'For the past five years at Tidio, I designed digital products, including AI solutions, combining UX/UI design with research and data analysis. I also coordinated work on the design system.',
@@ -23,16 +23,16 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
 
 export const stats: L10n<{ value: string; label: string }[]> = {
   pl: [
-    { value: '20+ lat', label: 'w projektowaniu UI i grafice' },
-    { value: 'Ponad 5 lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
-    { value: '3 lata', label: 'przy produktach AI: Lyro, Copilot, Ask' },
-    { value: 'Od gier do AI', label: 'mgr informatyki, rozumiem, jak działa to, co projektuję' },
+    { value: '20+ lat', label: 'w projektowaniu interfejsów i grafiki' },
+    { value: '5+ lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
+    { value: '3+ lata', label: 'przy Lyro i produktach AI, od pierwszej wersji' },
+    { value: 'mgr informatyki', label: 'rozumiem, jak działa to, co projektuję' },
   ],
   en: [
-    { value: '20+ yrs', label: 'in UI and graphic design' },
+    { value: '20+ yrs', label: 'in interface and graphic design' },
     { value: '5+ yrs', label: 'as a Product Designer at Tidio, 4 teams' },
-    { value: '3 yrs', label: 'on AI products: Lyro, Copilot, Ask' },
-    { value: 'From games to AI', label: 'MSc in Computer Science, I know how what I design works' },
+    { value: '3+ yrs', label: 'on Lyro and AI products, from v1' },
+    { value: 'MSc in CS', label: 'I know how what I design is built' },
   ],
 };
 

@@ -236,7 +236,7 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: agent gotowy w kilka minut',
         summary: 'Zamiast kolejnych punktów na liście „to do”: osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
-        role: 'Koncepcja, user flows, wireframes, UI, testy z użytkownikami',
+        role: 'Koncepcja, user flows, wireframes, UI, testy z użytkownikami, analiza danych (Amplitude)',
         team: 'PM, EM, QA oraz min. 2 osoby na backendzie i 2 na frontendzie.',
         tldr: {
           problem: 'Wraz z rozwojem agenta lista setupu przestała spełniać swoją rolę, a dokładanie kolejnych kroków było najsłabsze z punktu widzenia UX.',
@@ -278,7 +278,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Aktywacja: co dalej z listą',
-                text: 'Aktywacja na dowolnym kanale chowa stronę onboardingu. Agent zaczyna pracę, a użytkownik musi śledzić jego działanie, dlatego w miejscu Setupu pokazujemy Hub, a niewykonane kroki jako „recommended steps”.',
+                text: 'Aktywacja na dowolnym kanale chowa stronę onboardingu. Agent zaczyna pracę, a użytkownik musi śledzić jego działanie, dlatego w miejscu Setupu pokazujemy Hub, a niewykonane kroki jako „recommended steps”. Sam Hub przebudowałem na podstawie danych: w Amplitude, gdzie śledziłem adopcję funkcji Lyro, było widać, że części jego elementów prawie nikt nie klikał, bo użytkownicy wchodzili w te same miejsca z menu.',
               },
             ],
             images: ['onboarding/setup', 'onboarding/hub'],
@@ -318,7 +318,7 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: an agent ready in minutes',
         summary: 'Instead of more items on a to-do list: a dedicated Setup screen where the agent introduces itself like a new teammate.',
-        role: 'Concept, user flows, wireframes, UI, user testing',
+        role: 'Concept, user flows, wireframes, UI, user testing, data analysis (Amplitude)',
         team: 'PM, EM, QA and at least 2 backend and 2 frontend engineers.',
         tldr: {
           problem: 'As the agent grew, the setup checklist stopped doing its job, and adding more steps was the weakest option from a UX point of view.',
@@ -360,7 +360,7 @@ export const cases: CaseStudy[] = [
               },
               {
                 title: 'Activation: what happens to the list',
-                text: 'Activating any channel hides the onboarding page. The agent starts working and the user needs to monitor it, so the Hub replaces Setup and any skipped steps appear as “recommended steps”.',
+                text: 'Activating any channel hides the onboarding page. The agent starts working and the user needs to monitor it, so the Hub replaces Setup and any skipped steps appear as “recommended steps”. I also redesigned the Hub itself based on data: Amplitude, where I tracked adoption of Lyro features, showed that some of its elements were barely clicked because users reached the same places from the menu.',
               },
             ],
             images: ['onboarding/setup', 'onboarding/hub'],

@@ -102,8 +102,6 @@ export const cases: CaseStudy[] = [
             text: [
               'W Knowledge / Data sources użytkownicy dodawali treści, z których Lyro budowało odpowiedzi. Każde źródło było dostępne w każdej rozmowie.',
             ],
-            images: ['audiences/process-1', 'audiences/process-2'],
-            captions: ['Hipotezy i research', 'User flows: filtrowanie, akcje zbiorcze, przypisywanie audiences'],
           },
           {
             title: 'Kluczowe decyzje',
@@ -142,6 +140,12 @@ export const cases: CaseStudy[] = [
             images: ['audiences/example-modal', 'audiences/example-source'],
             captions: ['Definicja audience', 'Przypisanie audience do pojedynczego Q&A'],
           },
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['audiences/process-1', 'audiences/process-2'],
+            captions: ['Mapa hipotez i researchu: od zgłoszeń większych klientów do modelu grup', 'User flows: filtrowanie, akcje zbiorcze i przypisywanie audiences'],
+          },
         ],
         lesson: 'Prosty prymityw zamiast łatki: zaczął od jednego PDF-a, skończył jako wspólny język całego agenta.',
       },
@@ -173,8 +177,6 @@ export const cases: CaseStudy[] = [
             text: [
               'In Knowledge / Data sources users added the content Lyro built its answers from. Every source was available in every conversation.',
             ],
-            images: ['audiences/process-1', 'audiences/process-2'],
-            captions: ['Hypotheses and research', 'User flows: filtering, bulk actions, assigning audiences'],
           },
           {
             title: 'Key decisions',
@@ -213,6 +215,12 @@ export const cases: CaseStudy[] = [
             images: ['audiences/example-modal', 'audiences/example-source'],
             captions: ['Audience definition', 'Assigning an audience to a single Q&A'],
           },
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['audiences/process-1', 'audiences/process-2'],
+            captions: ['Hypothesis and research map: from larger customers’ requests to a group model', 'User flows: filtering, bulk actions and assigning audiences'],
+          },
         ],
         lesson: 'A simple primitive instead of a patch: it started with a single PDF and ended up as a shared language for the whole agent.',
       },
@@ -241,8 +249,6 @@ export const cases: CaseStudy[] = [
             text: [
               'Wraz z rozwojem AI agenta rosła liczba jego funkcji. Ówczesna lista setupu nie spełniała już swojej roli. Dodanie kolejnych kroków było najprostszym rozwiązaniem deweloperskim, ale z punktu widzenia UX najsłabszym. Potrzebowaliśmy miejsca, w którym użytkownik skupi się na konkretnym zadaniu.',
             ],
-            images: ['onboarding/process-1', 'onboarding/process-2'],
-            captions: ['Hipotezy i research', 'Statusy, kroki i wireframes'],
           },
           {
             title: 'Rozwiązanie',
@@ -299,6 +305,12 @@ export const cases: CaseStudy[] = [
               },
             },
           },
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['onboarding/process-1', 'onboarding/process-2'],
+            captions: ['Mapa hipotez i researchu: dlaczego lista „to do” przestała działać', 'Statusy, kroki i wireframes ekranu Setup'],
+          },
         ],
         lesson: 'Gdy produkt rośnie, onboarding nie może rosnąć razem z nim. Musi skupiać się na tym, co najważniejsze na starcie.',
       },
@@ -319,8 +331,6 @@ export const cases: CaseStudy[] = [
             text: [
               'As the AI agent evolved, the number of features grew. The setup checklist no longer served its purpose. Adding more steps was the easiest solution for development but the weakest for UX. We needed a place where users could focus on one specific task.',
             ],
-            images: ['onboarding/process-1', 'onboarding/process-2'],
-            captions: ['Hypotheses and research', 'States, steps and wireframes'],
           },
           {
             title: 'Solution',
@@ -377,6 +387,12 @@ export const cases: CaseStudy[] = [
               },
             },
           },
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['onboarding/process-1', 'onboarding/process-2'],
+            captions: ['Hypothesis and research map: why the to-do list stopped working', 'States, steps and wireframes for the Setup screen'],
+          },
         ],
         lesson: 'As a product grows, onboarding can’t grow with it. It has to focus on what matters most at the start.',
       },
@@ -406,8 +422,6 @@ export const cases: CaseStudy[] = [
               'Lyro rosło funkcja po funkcji: część ustawień trafiała do Configure, inne do Behavior. Ze zgłoszeń do customer supportu Tidio wiedzieliśmy, że użytkownicy gubili się w tym, gdzie znajdują się ustawienia agenta. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, kanały: każda funkcja dokładała własne miejsce w nawigacji, aż model produktu przestał być czytelny zarówno dla nowych, jak i obecnych klientów.',
               'Celem było uproszczenie struktury tak, żeby konfiguracja agenta była przewidywalna, bez przebudowy całego backendu.',
             ],
-            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
-            captions: ['Mapa obecnej nawigacji', 'Struktura nowego modelu', 'Dokument: model agenta i nawigacji (v17)'],
           },
           {
             title: 'Rozwiązanie',
@@ -456,6 +470,12 @@ export const cases: CaseStudy[] = [
               },
             },
           },
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
+            captions: ['Mapa obecnej nawigacji: gdzie były rozproszone ustawienia agenta', 'Struktura nowego modelu: profil, praca z zespołem, ustawienia domyślne', 'Dokument roboczy: model agenta i nawigacji (wersja 17)'],
+          },
         ],
         lesson: 'Nawigacja to nie lista funkcji, tylko model tego, jak użytkownik rozumie produkt. Warto go projektować od początku, zanim funkcji przybędzie.',
       },
@@ -477,8 +497,6 @@ export const cases: CaseStudy[] = [
               "Lyro grew feature by feature: some settings landed in Configure, others in Behavior. Support tickets showed that users got lost looking for agent settings. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, channels: each added its own place in the navigation until the product model was no longer clear to new or existing customers.",
               'The goal was to simplify the structure so configuring the agent became predictable, without rebuilding the entire backend.',
             ],
-            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
-            captions: ['Map of the current navigation', 'Structure of the new model', 'Doc: agent and navigation model (v17)'],
           },
           {
             title: 'Solution',
@@ -527,6 +545,12 @@ export const cases: CaseStudy[] = [
               },
             },
           },
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
+            captions: ['Map of the current navigation: where agent settings were scattered', 'Structure of the new model: profile, working with the team, defaults', 'Working doc: agent and navigation model (version 17)'],
+          },
         ],
         lesson: 'Navigation isn’t a list of features. It’s a model of how users understand the product. Design it early, before the features pile up.',
       },
@@ -555,8 +579,6 @@ export const cases: CaseStudy[] = [
             text: [
               'W Data sources każde źródło miało osobny typ: Manual (Q&A dodawane ręcznie), Inbox (Q&A zapisane z inboxa), CSV, Website, PDF. W praktyce wszystkie były tym samym: zbiorem pytań i odpowiedzi, z których korzysta agent. Typ źródła mieszał się z typem treści: użytkownik widział pięć różnych rzeczy tam, gdzie była jedna.',
             ],
-            images: ['knowledge/process'],
-            captions: ['Hipotezy, research, obecna i nowa struktura'],
           },
           {
             title: 'Rozwiązanie',
@@ -618,6 +640,12 @@ export const cases: CaseStudy[] = [
             captions: ['Poziom 1: foldery', 'Poziom 2: Q&A wewnątrz folderu'],
             note: 'Ta koncepcja nie została wdrożona do czasu zakończenia mojej pracy w Tidio.',
           },
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['knowledge/process'],
+            captions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
+          },
         ],
         lesson: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, problemem nie jest UI, tylko model. Uproszczenie modelu upraszcza wszystko, co powstaje na nim później.',
       },
@@ -638,8 +666,6 @@ export const cases: CaseStudy[] = [
             text: [
               'In Data sources each source had its own type: Manual (Q&As added by hand), Inbox (Q&As saved from the inbox), CSV, Website, PDF. In practice they were all the same: sets of questions and answers the agent uses. Source type got mixed up with content type: users saw five different things where there was only one.',
             ],
-            images: ['knowledge/process'],
-            captions: ['Hypotheses, research, current and new structure'],
           },
           {
             title: 'Solution',
@@ -700,6 +726,12 @@ export const cases: CaseStudy[] = [
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Level 1: folders', 'Level 2: Q&As inside a folder'],
             note: 'This concept had not been implemented by the time I left Tidio.',
+          },
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['knowledge/process'],
+            captions: ['Hypothesis and research map: the current and new knowledge source structure'],
           },
         ],
         lesson: 'When users see five things where there is one, the problem isn’t the UI. It’s the model. Simplifying the model simplifies everything built on top of it.',

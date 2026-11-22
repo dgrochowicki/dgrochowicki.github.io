@@ -10,6 +10,9 @@
   --line: #e6e7ea;
   --accent: #e1ffc1;
   --accent-fg: #161616;
+  /* Tło zielonych elementów (kafelki, Efekt, numery). W trybie ciemnym głęboka zieleń. */
+  --accent-bg: var(--accent);
+  --accent-bg-fg: var(--accent-fg);
   --link: #0b57d0;
   --max: 1200px;
   --text: 680px;
@@ -26,6 +29,8 @@
     --muted: #9aa1ad;
     --line: #2a2c30;
     --link: #8ab4f8;
+    --accent-bg: #1f3a17;
+    --accent-bg-fg: #e1ffc1;
   }
 }
 

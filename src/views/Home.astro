@@ -6,7 +6,8 @@ import Contact from '../components/Contact.astro';
 import { intro, stats, principles } from '../data/about';
 import { cases } from '../data/cases';
 import { projects } from '../data/projects';
-import { href, ui, type Lang } from '../lib/i18n';
+import { href, asset, ui, type Lang } from '../lib/i18n';
+import { site } from '../data/site';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -23,6 +24,7 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
       <div class="btns">
         <a class="btn primary" href={href('portfolio', lang)}>{t.seeCases}</a>
         <a class="btn" href={href(lang === 'pl' ? 'o-mnie' : 'about', lang)}>{t.navAbout}</a>
+        <a class="btn" href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.downloadCv}</a>
       </div>
       <ul class="stats">
         {stats[lang].map((s) => <li><strong>{s.value}</strong><span>{s.label}</span></li>)}

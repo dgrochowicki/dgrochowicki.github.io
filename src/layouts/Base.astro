@@ -36,12 +36,13 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
       <div class="wrap bar">
         <a class="brand" href={href('', lang)}>
           <svg class="logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1C11.8451 1 15 4.06746 15 7.97559C14.9998 11.8836 11.845 15 8 15H1V1H8ZM3.02148 2.97852V12.9717H8C10.7605 12.9717 12.9793 10.7458 12.9795 7.97559C12.9795 5.20527 10.7606 2.97852 8 2.97852H3.02148ZM8.0498 4.94434C9.72594 4.94434 11.0566 6.27618 11.0566 7.95215C11.0564 9.6279 9.72578 10.959 8.0498 10.959H5.04297V7.95215H7.01465V8.9375H8.00098C8.54291 8.93728 8.98607 8.49403 8.98633 7.95215C8.98633 7.41006 8.54307 6.96604 8.00098 6.96582H4.99316V4.94434H8.0498Z"/></svg>
-          <strong>{site.name}</strong>
+          <strong class="name-full">{site.name}</strong>
+          <strong class="name-short">{site.name.split(' ')[0]} {site.name.split(' ')[1]?.[0]}.</strong>
         </a>
         <nav aria-label="Menu">
           <a href={href('portfolio', lang)} aria-current={active === 'portfolio' ? 'page' : undefined}>{t.navPortfolio}</a>
           <a href={href(aboutPath, lang)} aria-current={active === 'about' ? 'page' : undefined}>{t.navAbout}</a>
-          <a href={asset(site.cv[lang])} target="_blank" rel="noopener" class="hide-sm">{t.navCv}</a>
+          <a href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.navCv.replace(' (PDF)', '')}<span class="cv-pdf"> (PDF)</span></a>
           <a class="lang" href={href(alt, other)} hreflang={other} title={t.otherLangLabel}>{t.otherLang}</a>
         </nav>
       </div>
@@ -116,11 +117,16 @@ const aboutPath = lang === 'pl' ? 'o-mnie' : 'about';
   .brand { text-decoration: none; display: flex; gap: 10px; align-items: center; font-size: 15px; white-space: nowrap; color: var(--fg); }
   .logo { width: 22px; height: 22px; flex: none; }
   nav { display: flex; gap: clamp(14px, 2.5vw, 28px); font-size: 15px; align-items: center; }
-  nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+  nav a { text-decoration: none; color: var(--muted); font-weight: 500; white-space: nowrap; }
+  .name-short { display: none; }
   nav a:hover, nav a[aria-current='page'] { color: var(--fg); }
   .lang { border: 1px solid var(--line); padding: 3px 9px; border-radius: 999px; font-size: 13px; }
-  @media (max-width: 720px) {
-    .hide-sm { display: none; }
+  @media (max-width: 460px) {
+    .bar { gap: 12px; }
+    nav { gap: 12px; }
+    .name-full { display: none; }
+    .name-short { display: inline; }
+    .cv-pdf { display: none; }
   }
 
   .site-footer { border-top: 1px solid var(--line); padding: 40px 0 56px; font-size: 15px; }

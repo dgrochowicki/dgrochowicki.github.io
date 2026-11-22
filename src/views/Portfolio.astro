@@ -36,11 +36,8 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
       <div class="grid2">{cases.map((c, idx) => <CaseCard item={c} lang={lang} index={idx} />)}</div>
 
       <h2 class="sub">{lang === 'pl' ? 'Obszary, przy których pracowałem' : 'Product areas I worked on'}</h2>
-      <ul class="areas four">
-        {ti.areas.slice(0, 4).map((a) => <li><strong>{a.name}</strong><span class="muted">{a.text}</span></li>)}
-      </ul>
-      <ul class="areas three">
-        {ti.areas.slice(4).map((a) => <li><strong>{a.name}</strong><span class="muted">{a.text}</span></li>)}
+      <ul class="areas">
+        {ti.areas.map((a) => <li><strong>{a.name}</strong><span class="muted">{a.text}</span></li>)}
       </ul>
       <div class="gallery">
         {['tidio/overview-1', 'tidio/overview-3', 'tidio/areas-2', 'tidio/lyro-2', 'tidio/lyro-3', 'tidio/areas-3'].map((s) => (
@@ -118,13 +115,14 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
   @media (max-width: 860px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
   @media (min-width: 861px) and (max-width: 1080px) { .grid3 { grid-template-columns: 1fr 1fr; } }
 
-  .areas { list-style: none; display: grid; gap: 24px 32px; margin-bottom: 32px; }
-  .areas.four { grid-template-columns: repeat(4, 1fr); }
-  .areas.three { grid-template-columns: repeat(3, 1fr); margin-bottom: 48px; }
+  .areas { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
   .areas li { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 14px; font-size: 15px; }
+  /* Ostatni obszar (Design system) na całą szerokość */
+  .areas li:last-child { grid-column: 1 / -1; }
+  .areas li:last-child span { max-width: 52em; }
   .areas strong { font-weight: 600; }
-  @media (max-width: 860px) { .areas.four { grid-template-columns: repeat(2, 1fr); } .areas.three { grid-template-columns: 1fr; } }
-  @media (max-width: 520px) { .areas.four { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .areas { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .areas { grid-template-columns: 1fr; } }
   .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 860px) { .gallery { grid-template-columns: 1fr; } }
 

@@ -7,7 +7,7 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     bio: [
       'Jestem Product Designerem z wieloletnim doświadczeniem w projektowaniu interfejsów i komunikacji wizualnej. Zaczynałem od tworzenia grafiki i animacji do gier na palmtopy i telefony komórkowe, a potem zająłem się brandingiem oraz projektowaniem stron i aplikacji.',
       'Przez ostatnie pięć lat w Tidio projektowałem produkty cyfrowe, w tym rozwiązania AI, łącząc projektowanie UX/UI z badaniami i analizą danych. Koordynowałem też prace nad design systemem.',
-      'Z wykształcenia jestem informatykiem, więc projektuję w realnych ograniczeniach technicznych i dobrze współpracuję z developerami.',
+      'Z wykształcenia jestem informatykiem, więc projektuję w realnych ograniczeniach technicznych i dobrze współpracuję z developerami. Jestem dostępny do pracy zdalnej lub hybrydowej w Szczecinie.',
     ],
   },
   en: {
@@ -16,7 +16,7 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
     bio: [
       'I am a Product Designer with many years of experience in interface design and visual communication. I started out creating graphics and animation for games on PDAs and mobile phones, then moved into branding and web and app design.',
       'For the past five years at Tidio, I designed digital products, including AI solutions, combining UX/UI design with research and data analysis. I also coordinated work on the design system.',
-      'I have a degree in computer science, so I design within real technical constraints and work well with developers.',
+      "I have a degree in computer science, so I design within real technical constraints and work well with developers. I'm available for remote work or hybrid work in Szczecin.",
     ],
   },
 };

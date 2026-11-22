@@ -1,6 +1,6 @@
 ---
 import { site } from '../data/site';
-import { asset, ui, type Lang } from '../lib/i18n';
+import { ui, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const t = ui[Astro.props.lang];
 ---
@@ -8,18 +8,35 @@ const t = ui[Astro.props.lang];
   <div class="wrap">
     <h2>{t.contactTitle}</h2>
     <p class="muted">{t.contactText}</p>
-    <p class="avail"><span class="dot" aria-hidden="true"></span>{t.availability}</p>
-    <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
+    <div class="mail-row">
+      <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
+      <button class="copy" type="button" data-copy={site.email} data-done={t.copied} aria-label={t.copy} title={t.copy}>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+        <span class="copied" aria-live="polite"></span>
+      </button>
+    </div>
     <div class="btns">
       <a class="btn primary" href={`mailto:${site.email}`}>{t.write}</a>
-      <a class="btn" href={asset(site.cv[Astro.props.lang])} target="_blank" rel="noopener">{t.downloadCv} ↓</a>
       {site.linkedin && <a class="btn" href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
     </div>
   </div>
 </section>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) =>
+    b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.copy!); } catch { return; }
+      const label = b.querySelector('.copied')!;
+      label.textContent = b.dataset.done!;
+      b.classList.add('done');
+      setTimeout(() => { label.textContent = ''; b.classList.remove('done'); }, 1800);
+    }),
+  );
+</script>
 <style>
   .contact h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 12px; }
-  .avail { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 15px; font-weight: 500; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: #3cc85a; box-shadow: 0 0 0 4px color-mix(in srgb, #3cc85a 22%, transparent); flex: none; }
-  .mail { display: inline-block; font-size: clamp(20px, 3vw, 28px); margin: 12px 0 28px; text-decoration-color: var(--accent); text-decoration-thickness: 4px; text-underline-offset: 6px; }
+  .mail-row { display: flex; align-items: center; gap: 12px; margin: 12px 0 28px; flex-wrap: wrap; }
+  .copy { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 6px; border-radius: 8px; color: var(--muted); cursor: pointer; font: inherit; font-size: 14px; }
+  .copy:hover, .copy.done { color: var(--fg); }
+  .copy:hover { background: var(--bg-soft); }
+  .mail { display: inline-block; font-size: clamp(20px, 3vw, 28px); text-decoration-color: var(--accent); text-decoration-thickness: 4px; text-underline-offset: 6px; }
 </style>

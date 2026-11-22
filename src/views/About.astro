@@ -27,7 +27,7 @@ const L = {
       <div>
         <p class="eyebrow">{L.about}</p>
         <h1>{site.name}</h1>
-        <p class="role">{t.role}</p>
+        <p class="role">{t.role} · {t.workMode}</p>
         {intro[lang].bio.map((p) => <p>{p}</p>)}
         <div class="btns"><a class="btn primary" href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.downloadCv} ↓</a></div>
       </div>

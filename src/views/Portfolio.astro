@@ -15,6 +15,7 @@ const t = ui[lang];
 const ti = tidioIntro[lang];
 const earlier = projects.filter((p) => p.category !== 'lab');
 const side = projects.filter((p) => p.category === 'lab');
+const SHOW = 6;
 const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some((p) => p.category === c));
 ---
 <Base lang={lang} title="Portfolio" alt="portfolio" active="portfolio">
@@ -59,7 +60,12 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
           {cats.map((c) => <button class="tag" data-filter={c}>{categories[c][lang]}</button>)}
         </div>
       </div>
-      <div class="grid3 projects">{earlier.map((p) => <ProjectCard item={p} lang={lang} />)}</div>
+      <div class="grid3 projects collapsed">
+        {earlier.map((p, n) => <div class:list={['pitem', { extra: n >= SHOW }]} data-cat={p.category}><ProjectCard item={p} lang={lang} /></div>)}
+      </div>
+      {earlier.length > SHOW && (
+        <div class="more"><button class="btn" type="button" data-more>{t.showMore} ({earlier.length - SHOW})</button></div>
+      )}
     </div>
   </section>
 
@@ -82,9 +88,14 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
 
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
-  const cards = document.querySelectorAll<HTMLElement>('.projects [data-cat]');
+  const cards = document.querySelectorAll<HTMLElement>('.projects .pitem');
+  const grid = document.querySelector('.projects');
+  const more = document.querySelector<HTMLElement>('[data-more]');
+  const expand = () => { grid?.classList.remove('collapsed'); more?.parentElement?.remove(); };
+  more?.addEventListener('click', expand);
   buttons.forEach((b) =>
     b.addEventListener('click', () => {
+      expand();
       buttons.forEach((x) => x.classList.toggle('active', x === b));
       cards.forEach((c) => (c.hidden = b.dataset.filter !== 'all' && c.dataset.cat !== b.dataset.filter));
     }),
@@ -115,6 +126,11 @@ const cats = (Object.keys(categories) as Category[]).filter((c) => earlier.some(
   .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 860px) { .gallery { grid-template-columns: 1fr; } }
 
+  .projects.collapsed .extra { display: none; }
+  .pitem[hidden] { display: none; }
+  .more { display: flex; justify-content: center; margin-top: 40px; }
+  .more .btn { background: transparent; color: var(--fg); font-family: inherit; cursor: pointer; }
+  .more .btn:hover { background: var(--fg); color: var(--bg); }
   .filters { display: flex; gap: 8px; flex-wrap: wrap; }
   .filters button { border: 1px solid transparent; cursor: pointer; font: inherit; font-size: 14px; color: var(--fg); }
   .filters button.active { background: var(--fg); color: var(--bg); }

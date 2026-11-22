@@ -69,8 +69,8 @@ const ogImage = new URL(asset('og.png'), siteUrl).href;
           <div class="muted">{t.role} · Szczecin</div>
         </div>
         <div class="links">
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-          {site.linkedin && <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+          <a href={href('portfolio', lang)}>{t.navPortfolio}</a>
+          <a href={href(aboutPath, lang)}>{t.navAbout}</a>
           <a href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.navCv}</a>
         </div>
       </div>

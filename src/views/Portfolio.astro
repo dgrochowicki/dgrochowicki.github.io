@@ -91,8 +91,8 @@ const cats = Object.keys(categories) as Category[];
   @media (max-width: 860px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
   @media (min-width: 861px) and (max-width: 1080px) { .grid3 { grid-template-columns: 1fr 1fr; } }
 
-  .areas { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px 32px; margin-bottom: 40px; }
-  .areas li { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding-top: 12px; font-size: 15px; }
+  .areas { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px 32px; margin-bottom: 40px; }
+  .areas li { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 15px; }
   .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 860px) { .gallery { grid-template-columns: 1fr; } }
 

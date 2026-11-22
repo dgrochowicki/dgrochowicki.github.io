@@ -226,7 +226,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Wraz z rozwojem agenta lista setupu przestała spełniać swoją rolę, a dokładanie kolejnych kroków było najsłabsze z punktu widzenia UX.',
           solution: 'Ekran Setup prowadzący przez konfigurację z perspektywy agenta („I’m joining your team”) w pięciu krokach.',
-          effect: 'Jeden ekran setupu, jeden ekran overview. Więcej klientów kończyło cały onboarding.',
+          effect: 'Jeden ekran setupu i jeden ekran overview. Wdrożone tuż po moim odejściu z Tidio (XI 2026), więc nie znam wyników. Miarą sukcesu miał być „Aha! moment”: przejście onboardingu, uruchomienie agenta i pierwsza rozmowa rozwiązana przez Lyro.',
         },
         sections: [
           {
@@ -303,7 +303,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'As the agent grew, the setup checklist stopped doing its job, and adding more steps was the weakest option from a UX point of view.',
           solution: 'A Setup screen that walks through configuration from the agent’s perspective (“I’m joining your team”) in five steps.',
-          effect: 'One setup screen, one overview screen. More customers completed the whole onboarding.',
+          effect: "One setup screen and one overview screen. Shipped right after I left Tidio (Nov 2026), so I haven't seen the results. Success was to be measured by the “Aha! moment”: completing onboarding, launching the agent and Lyro resolving its first conversation.",
         },
         sections: [
           {
@@ -388,7 +388,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Ustawienia rozproszone między Configure, Behavior, Handoff i kanały. Użytkownicy gubili się, gdzie co jest.',
           solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem, z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
-          effect: 'Decyzja o wdrożeniu. Mniej zapytań do supportu o to, jak ustawić agenta.',
+          effect: 'Koncepcja brana pod uwagę w dalszych planach, nie trafiła do wdrożenia przed moim odejściem. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
         },
         sections: [
           {
@@ -458,7 +458,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Settings were scattered across Configure, Behavior, Handoff and channels. Users got lost looking for things.',
           solution: 'An agent profile: who it is, how it talks and how it works with the team, with a live conversation preview. Iterated on clickable HTML prototypes.',
-          effect: 'Approved for implementation. Fewer support requests about how to set up the agent.',
+          effect: 'Considered for future implementation, but not shipped before I left. Goal: fewer support tickets asking where agent settings live.',
         },
         sections: [
           {

@@ -46,7 +46,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
 | Folder | Gdzie na stronie |
 |---|---|
 | `about/` | zdjęcie na stronie O mnie |
-| `tidio/` | sekcja Tidio w Portfolio (`hero` to kolaż) |
+| `tidio/` | galeria w sekcji Tidio w Portfolio (`hero` to kolaż, nieużywany na stronie, był źródłem dla `og.png`) |
 | `audiences/`, `onboarding/`, `agent-profile/`, `knowledge/` | case studies, nazwy plików są w `src/data/cases.ts` |
 | `projects/<projekt>/` | wcześniejsze projekty: wszystkie pliki z folderu po kolei, pierwszy jest okładką |
 

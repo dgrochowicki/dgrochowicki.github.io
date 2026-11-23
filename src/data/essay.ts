@@ -22,7 +22,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
       title: 'Czego nauczyło mnie projektowanie agenta AI',
       summary: 'Sześć lekcji z ponad trzech lat pracy nad Lyro: o granicach wiedzy, przekazywaniu rozmów ludziom, zaufaniu i upraszczaniu modelu produktu.',
       intro:
-        'Przez ponad trzy lata projektowałem Lyro, agenta AI, który samodzielnie rozmawia z klientami firm korzystających z Tidio. Agent AI to nie jest zwykła funkcja w produkcie. Mówi w imieniu firmy, więc musi znać granice swojej wiedzy: gdy czegoś nie wie, mówi to wprost, zamiast zgadywać. Poniżej sześć lekcji z tej pracy. Każda to konkretna sytuacja, decyzja i powód, dla którego ją podjęliśmy.',
+        'Przez ponad trzy lata projektowałem Lyro, agenta AI, który samodzielnie rozmawia z klientami firm korzystających z Tidio. Agent AI to nie jest zwykła funkcja w produkcie. Mówi w imieniu firmy. Odpowiada na podstawie dodanej wiedzy i instrukcji. Poniżej sześć lekcji z tej pracy. Każda to konkretna sytuacja, decyzja i powód, dla którego ją podjęliśmy.',
       lessons: [
         {
           title: 'Agent nie może mówić wszystkiego każdemu',
@@ -104,7 +104,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
       title: 'What designing an AI agent taught me',
       summary: 'Six lessons from over three years of work on Lyro: knowledge boundaries, handing conversations to humans, trust, and simplifying the product model.',
       intro:
-        'For over three years I designed Lyro, an AI agent that talks to customers on its own on behalf of businesses using Tidio. An AI agent isn’t just another feature. It speaks for the company, so it has to know the limits of its knowledge: when it doesn’t know something, it says so instead of guessing. Below are six lessons from that work. Each one is a specific situation, a decision, and the reason we made it.',
+        'For over three years I designed Lyro, an AI agent that talks to customers on its own on behalf of businesses using Tidio. An AI agent isn’t just another feature. It speaks for the company. It answers based on the knowledge and instructions it’s been given. Below are six lessons from that work. Each one is a specific situation, a decision, and the reason we made it.',
       lessons: [
         {
           title: 'An agent shouldn’t tell everything to everyone',

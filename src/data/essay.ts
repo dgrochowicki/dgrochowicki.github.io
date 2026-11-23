@@ -3,7 +3,7 @@ import type { L10n } from '../lib/i18n';
 /** Esej „Czego nauczyło mnie projektowanie agenta AI”. Strona: /portfolio/ai-agent-lessons */
 /** images: klucze z src/img/ (opcjonalne), captions: podpisy w tej samej kolejności */
 /** cases: slugi powiązanych case studies (linki w obie strony) */
-export type Lesson = { title: string; situation: string; decision: string[]; why: string; images?: string[]; captions?: string[]; cases?: string[] };
+export type Lesson = { title: string; situation: string; decision: string[]; why: string; images?: string[]; captions?: string[]; cases?: string[]; diagram?: 'handoff' };
 export type EssayContent = {
   label: string;
   title: string;
@@ -45,6 +45,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Do tego dla każdego kanału można było ustawić, czy Lyro odpowiada zawsze, czy tylko wtedy, gdy zespół jest offline.',
           ],
           why: 'Nie da się przewidzieć wszystkich sytuacji w jednym formularzu. Proste ustawienia domyślne działają od pierwszego dnia, a elastyczne reguły obsługują wyjątki.',
+          diagram: 'handoff',
           images: ['agent-profile/handoff'],
           captions: ['Domyślne reguły handoffu (online / offline) i lista handoff guidance dla sytuacji szczególnych'],
         },
@@ -126,6 +127,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'On top of that, each channel could be set so that Lyro responds always or only when the team is offline.',
           ],
           why: 'You can’t predict every situation in a single form. Simple defaults work from day one, and flexible rules handle the exceptions.',
+          diagram: 'handoff',
           images: ['agent-profile/handoff'],
           captions: ['Default handoff rules (online / offline) and handoff guidance for special situations'],
         },

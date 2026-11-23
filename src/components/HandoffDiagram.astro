@@ -1,0 +1,66 @@
+---
+import type { Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const pl = Astro.props.lang === 'pl';
+const T = pl
+  ? {
+      trigger: 'Klient prosi o człowieka',
+      l1: 'Warstwa 1 · domyślne zachowanie',
+      l1note: 'ustawiane raz, działa od pierwszego dnia',
+      online: 'Zespół online',
+      onlineDo: 'Przekaż rozmowę konsultantowi',
+      offline: 'Zespół offline',
+      offlineDo: 'Utwórz ticket',
+      l2: 'Warstwa 2 · sytuacje szczególne',
+      l2note: 'Procedures i Guidance, opisane zwykłym językiem',
+      ex: '„Gdy klient jest zdenerwowany, zaproponuj rozmowę z konsultantem”',
+    }
+  : {
+      trigger: 'Customer asks for a human',
+      l1: 'Layer 1 · default behaviour',
+      l1note: 'set once, works from day one',
+      online: 'Team online',
+      onlineDo: 'Transfer the conversation',
+      offline: 'Team offline',
+      offlineDo: 'Create a ticket',
+      l2: 'Layer 2 · special situations',
+      l2note: 'Procedures and Guidance, written in plain language',
+      ex: '“If the customer is upset, offer to talk to a teammate”',
+    };
+---
+<figure class="diagram" aria-label={`${T.l1}. ${T.l2}.`}>
+  <div class="trigger">{T.trigger}</div>
+  <div class="arrow" aria-hidden="true">→</div>
+  <div class="layers">
+    <div class="layer">
+      <p class="eyebrow">{T.l1}</p>
+      <div class="rule"><span>{T.online}</span><span class="to" aria-hidden="true">→</span><strong>{T.onlineDo}</strong></div>
+      <div class="rule"><span>{T.offline}</span><span class="to" aria-hidden="true">→</span><strong>{T.offlineDo}</strong></div>
+      <p class="note">{T.l1note}</p>
+    </div>
+    <div class="layer two">
+      <p class="eyebrow">{T.l2}</p>
+      <p class="ex">{T.ex}</p>
+      <p class="note">{T.l2note}</p>
+    </div>
+  </div>
+</figure>
+
+<style>
+  .diagram { display: grid; grid-template-columns: 180px 40px 1fr; align-items: center; gap: 0; margin: 8px 0 24px; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); font-size: 15px; }
+  .trigger { background: var(--fg); color: var(--bg); border-radius: 12px; padding: 14px 16px; font-weight: 600; text-align: center; }
+  .arrow { text-align: center; font-size: 22px; color: var(--muted); }
+  .layers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .layer { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+  .layer.two { border-style: dashed; }
+  .rule { display: grid; grid-template-columns: auto auto 1fr; gap: 8px; align-items: baseline; }
+  .rule span { color: var(--muted); white-space: nowrap; }
+  .rule .to { color: var(--muted); }
+  .ex { font-style: italic; }
+  .note { color: var(--muted); font-size: 13px; margin-top: auto; }
+  @media (max-width: 860px) {
+    .diagram { grid-template-columns: 1fr; gap: 10px; }
+    .arrow { transform: rotate(90deg); }
+    .layers { grid-template-columns: 1fr; }
+  }
+</style>

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Figure from '../components/Figure.astro';
 import { cases, type CaseStudy } from '../data/cases';
+import { essay } from '../data/essay';
 import { href, ui, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang; item: CaseStudy }
@@ -10,6 +11,8 @@ const t = ui[lang];
 const c = item.content[lang];
 const idx = cases.findIndex((x) => x.slug === item.slug);
 const next = cases[(idx + 1) % cases.length];
+const lessonIdx = essay.content[lang].lessons.findIndex((l) => l.cases?.includes(item.slug));
+const relLesson = lessonIdx >= 0 ? essay.content[lang].lessons[lessonIdx] : undefined;
 const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(max-width: 1248px) 100vw, 1200px');
 ---
 <Base lang={lang} title={c.title} alt={`portfolio/${item.slug}`} active="portfolio" description={c.summary}>
@@ -85,6 +88,16 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       </div>
     </section>
 
+    {relLesson && (
+      <section class="wrap">
+        <a class="essay-link" href={`${href(`portfolio/${essay.slug}`, lang)}#lekcja-${lessonIdx + 1}`}>
+          <span class="eyebrow">{t.inEssay}</span>
+          <strong>{t.lessonN} {lessonIdx + 1}: {relLesson.title} →</strong>
+          <span class="muted">{essay.content[lang].title}</span>
+        </a>
+      </section>
+    )}
+
     <nav class="wrap next">
       <a href={href(`portfolio/${next.slug}`, lang)}>
         <span class="eyebrow">{t.next} case study</span>
@@ -143,6 +156,10 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   /* W ciemnym motywie jasny blok za mocno się wybija: spokojne, ciemne tło */
   @media (prefers-color-scheme: dark) { .lesson { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
 
+  .essay-link { display: flex; flex-direction: column; gap: 6px; margin-top: 24px; padding: 22px 26px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; transition: .2s; }
+  .essay-link:hover { border-color: var(--muted); }
+  .essay-link strong { font-size: 18px; font-weight: 600; }
+  .essay-link .muted { font-size: 14px; }
   .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
   .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }

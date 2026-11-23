@@ -2,7 +2,8 @@ import type { L10n } from '../lib/i18n';
 
 /** Esej „Czego nauczyło mnie projektowanie agenta AI”. Strona: /portfolio/ai-agent-lessons */
 /** images: klucze z src/img/ (opcjonalne), captions: podpisy w tej samej kolejności */
-export type Lesson = { title: string; situation: string; decision: string[]; why: string; images?: string[]; captions?: string[] };
+/** cases: slugi powiązanych case studies (linki w obie strony) */
+export type Lesson = { title: string; situation: string; decision: string[]; why: string; images?: string[]; captions?: string[]; cases?: string[] };
 export type EssayContent = {
   label: string;
   title: string;
@@ -31,6 +32,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Zamiast osobnych baz wiedzy zaprojektowałem Audiences: grupy odwiedzających budowane z kanałów i warunków. Baza wiedzy zostaje jedna, a grupy tylko zawężają, kto widzi dane źródło. Domyślnie wszystko jest dla wszystkich, więc wdrożenie niczego nie psuło.',
           ],
           why: 'Kilka baz to kilka kopii tych samych treści do utrzymania. Prosty, wspólny mechanizm okazał się ważniejszy niż sama funkcja: Audiences trafiły później do Guidance, Procedures, Actions i do wykluczania grup z rozmów z Lyro.',
+          cases: ['lyro-audiences'],
           images: ['audiences/add-audience'],
           captions: ['Audience: kanały i warunki, jedna baza wiedzy'],
         },
@@ -73,6 +75,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Onboarding przebudowałem tak, że agent przedstawia się w pierwszej osobie: „I’m joining your team. Set me up in a few minutes.” Zaproponowałem też profil agenta: jedno miejsce z jego tożsamością, sposobem mówienia i tym, jak pracuje z ludzkim zespołem, z podglądem rozmowy obok ustawień. Profil nie został wdrożony przed moim odejściem z Tidio.',
           ],
           why: 'Ludzie łatwiej rozumieją agenta jako nowego współpracownika niż jako zestaw przełączników. Ten model od razu mówi, co i gdzie można ustawić.',
+          cases: ['lyro-onboarding', 'lyro-agent-profile'],
           images: ['onboarding/setup', 'agent-profile/profile'],
           captions: ['Setup: agent przedstawia się w pierwszej osobie', 'Propozycja profilu agenta z podglądem rozmowy'],
         },
@@ -84,6 +87,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Zaproponowałem połączenie trzech sekcji w jedną, z oznaczeniem typu instrukcji i jednym edytorem, żeby tworząc instrukcję, użytkownik od razu wiedział, czy dotyczy handoffu, czy innego zachowania agenta. W bazie wiedzy zaproponowałem prostszy model: każda pozycja to Q&A, a plik czy strona to tylko miejsce, z którego pochodzi. Obie propozycje nie zostały wdrożone przed moim odejściem, ale lekcja zostaje.',
           ],
           why: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, poprawki w UI nie pomogą. Trzeba uprościć model, a wtedy upraszcza się wszystko, co na nim powstaje.',
+          cases: ['lyro-knowledge'],
           images: ['knowledge/before', 'knowledge/after'],
           captions: ['Przed: osobne typy źródeł i filtry', 'Po (propozycja): każda pozycja to Q&A, typ to tylko pochodzenie'],
         },
@@ -109,6 +113,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Instead of separate knowledge bases, I designed Audiences: visitor groups built from channels and conditions. There is still one knowledge base, and groups only narrow down who sees a given source. By default everything is for everyone, so rolling it out broke nothing.',
           ],
           why: 'Several bases mean several copies of the same content to maintain. A simple, shared mechanism turned out to matter more than the feature itself: Audiences later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
+          cases: ['lyro-audiences'],
           images: ['audiences/add-audience'],
           captions: ['An audience: channels and conditions, one knowledge base'],
         },
@@ -151,6 +156,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'I redesigned onboarding so the agent introduces itself in the first person: “I’m joining your team. Set me up in a few minutes.” I also proposed an agent profile: one place with its identity, the way it speaks and how it works with the human team, with a conversation preview next to the settings. The profile wasn’t shipped before I left Tidio.',
           ],
           why: 'People understand an agent more easily as a new co-worker than as a set of toggles. This model tells them right away what they can set and where.',
+          cases: ['lyro-onboarding', 'lyro-agent-profile'],
           images: ['onboarding/setup', 'agent-profile/profile'],
           captions: ['Setup: the agent introduces itself in the first person', 'Proposed agent profile with conversation preview'],
         },
@@ -162,6 +168,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'I proposed merging the three sections into one, with an instruction type and a single editor, so that while writing an instruction users would know right away whether it’s about handoff or another agent behaviour. For the knowledge base I proposed a simpler model: every item is a Q&A, and a file or page is just where it came from. Neither proposal was shipped before I left, but the lesson stands.',
           ],
           why: 'When users see five things where there is one, UI tweaks won’t help. You have to simplify the model, and then everything built on top of it gets simpler too.',
+          cases: ['lyro-knowledge'],
           images: ['knowledge/before', 'knowledge/after'],
           captions: ['Before: separate source types and filters', 'After (proposal): every item is a Q&A, type is only the origin'],
         },

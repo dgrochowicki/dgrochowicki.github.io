@@ -11,61 +11,63 @@ const { lang } = Astro.props;
 const t = ui[lang];
 const c = essay.content[lang];
 const first = cases[0];
-const pad = (n: number) => String(n + 1).padStart(2, '0');
 ---
 <Base lang={lang} title={c.title} alt={`portfolio/${essay.slug}`} active="portfolio" description={c.summary}>
-  <article>
-    <header class="wrap head">
+  <article class="wrap essay">
+    <!-- Jedna kolumna: tekst max var(--text) (jak środkowa kolumna w O mnie), obrazy max 900px, wspólna oś -->
+    <header class="col head">
       <a class="back text-link" href={href('portfolio', lang)}>← {t.back}</a>
       <p class="eyebrow">{c.label} · {t.readTime(readingMinutes(lang))}</p>
       <h1>{c.title}</h1>
       <p class="lead">{c.intro}</p>
-      <ol class="toc">
-        {c.lessons.map((l, n) => <li><a href={`#lekcja-${n + 1}`}><span class="muted">{pad(n)}</span> {l.title}</a></li>)}
-      </ol>
+      <nav class="toc" aria-label={lang === 'pl' ? 'Spis lekcji' : 'Lessons'}>
+        <ol>
+          {c.lessons.map((l, n) => <li><a href={`#lekcja-${n + 1}`}>{l.title}</a></li>)}
+        </ol>
+      </nav>
     </header>
 
     {c.lessons.map((l, n) => (
-      <section class="wrap lesson-block" id={`lekcja-${n + 1}`}>
-        <div class="row">
-          <div class="label"><span class="num">{pad(n)}</span><span class="muted">{t.lessonN} {n + 1}</span></div>
-          <div class="content">
-            <h2>{l.title}</h2>
-            <h3 class="eyebrow">{t.situation}</h3>
-            <p>{l.situation}</p>
-            <h3 class="eyebrow">{t.decision}</h3>
-            {l.decision.map((p) => <p>{p}</p>)}
-            <div class="why">
-              <h3 class="eyebrow">{t.why}</h3>
-              <p>{l.why}</p>
-            </div>
-            {l.cases && (
-              <ul class="related">
-                {l.cases.map((slug) => {
-                  const cs = cases.find((x) => x.slug === slug)!;
-                  return <li><a class="text-link" href={href(`portfolio/${slug}`, lang)}>{t.moreInCase}: {cs.content[lang].title} →</a></li>;
-                })}
-              </ul>
-            )}
+      <section class="lesson" id={`lekcja-${n + 1}`}>
+        <div class="col">
+          <p class="eyebrow kicker">{t.lessonN} {n + 1}</p>
+          <h2>{l.title}</h2>
+          <h3 class="eyebrow">{t.situation}</h3>
+          <p>{l.situation}</p>
+          <h3 class="eyebrow">{t.decision}</h3>
+          {l.decision.map((p) => <p>{p}</p>)}
+          <div class="why">
+            <h3 class="eyebrow">{t.why}</h3>
+            <p>{l.why}</p>
           </div>
+          {l.cases && (
+            <ul class="related">
+              {l.cases.map((slug) => {
+                const cs = cases.find((x) => x.slug === slug)!;
+                return <li><a class="text-link" href={href(`portfolio/${slug}`, lang)}>{t.moreInCase}: {cs.content[lang].title} →</a></li>;
+              })}
+            </ul>
+          )}
         </div>
-        {l.diagram === 'handoff' && <HandoffDiagram lang={lang} />}
-        {l.images && (
-          <div class:list={['imgs', `n${l.images.length}`]}>
-            {l.images.map((src, k) => <Figure src={src} caption={l.captions?.[k]} sizes={l.images!.length > 1 ? '(max-width: 860px) 100vw, 600px' : '(max-width: 1248px) 100vw, 1200px'} />)}
+        {(l.diagram || l.images) && (
+          <div class="media">
+            {l.diagram === 'handoff' && <HandoffDiagram lang={lang} />}
+            {l.images && (
+              <div class:list={['imgs', `n${l.images.length}`]}>
+                {l.images.map((src, k) => <Figure src={src} caption={l.captions?.[k]} sizes={l.images!.length > 1 ? '(max-width: 860px) 100vw, 440px' : '(max-width: 960px) 100vw, 900px'} />)}
+              </div>
+            )}
           </div>
         )}
       </section>
     ))}
 
-    <section class="wrap">
-      <div class="closing">
-        <p class="eyebrow">{c.closingTitle}</p>
-        {c.closing.map((p) => <p>{p}</p>)}
-      </div>
+    <section class="col closing">
+      <p class="eyebrow">{c.closingTitle}</p>
+      {c.closing.map((p) => <p>{p}</p>)}
     </section>
 
-    <nav class="wrap next">
+    <nav class="col next">
       <a href={href(`portfolio/${first.slug}`, lang)}>
         <span class="eyebrow">Case study 01</span>
         <strong>{first.content[lang].title} →</strong>
@@ -75,40 +77,43 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
 </Base>
 
 <style>
-  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 24px; }
+  .col { max-width: var(--text); margin-left: auto; margin-right: auto; }
+  .media { max-width: 900px; margin: 32px auto 0; }
+
+  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 8px; }
   .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
-  .head h1 { font-size: clamp(32px, 5vw, 56px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
-  .lead { font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); max-width: 40em; }
-  .toc { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
+  .head h1 { font-size: clamp(30px, 4.2vw, 46px); margin: 14px 0 20px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); }
+  .toc { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .toc ol { padding-left: 1.4em; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
+  .toc li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
   .toc a { text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
-  .toc span { display: inline-block; min-width: 2em; font-variant-numeric: tabular-nums; }
 
-  .lesson-block { padding-top: clamp(32px, 5vw, 56px); scroll-margin-top: 72px; }
-  .label { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-  .num { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-weight: 600; font-size: 15px; }
-  .content { max-width: var(--text); }
-  .content h2 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; margin-bottom: 24px; }
-  .content h3.eyebrow { margin: 20px 0 6px; }
-  .content h2 + h3.eyebrow { margin-top: 0; }
-  .content p { margin: 0 0 10px; }
+  /* Kotwice ze spisu: sekcja ma własny padding, więc 32px wystarcza, żeby „Lekcja N” nie chowała się pod nagłówkiem (64px) */
+  .lesson { padding-top: clamp(48px, 7vw, 80px); scroll-margin-top: 32px; }
+  .kicker { margin-bottom: 8px; }
+  .lesson h2 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; margin-bottom: 24px; }
+  .lesson h3.eyebrow { margin: 20px 0 6px; }
+  .lesson h2 + h3.eyebrow { margin-top: 0; }
+  .lesson .col p { margin: 0 0 10px; }
   .why { margin-top: 24px; padding: 18px 22px; background: var(--bg-soft); border-radius: 12px; }
   .why h3.eyebrow { margin-top: 0 !important; }
-  .why p { margin: 0; }
-
+  .why p { margin: 0 !important; }
   .related { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
-  .imgs { display: grid; gap: 24px; margin-top: 8px; }
-  .imgs.n2 { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 860px) { .imgs.n2 { grid-template-columns: 1fr; } }
 
-  .closing { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
+  .imgs { display: grid; gap: 20px; }
+  .imgs.n2 { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 760px) { .imgs.n2 { grid-template-columns: 1fr; } }
+
+  .closing { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); }
   .closing .eyebrow { color: var(--accent); margin-bottom: 16px; }
-  .closing p:not(.eyebrow) { font-size: clamp(17px, 1.8vw, 20px); line-height: 1.5; max-width: 38em; margin: 0 0 14px; }
+  .closing p:not(.eyebrow) { font-size: clamp(17px, 1.8vw, 19px); line-height: 1.55; margin: 0 0 14px; }
   .closing p:last-child { margin-bottom: 0; }
   @media (prefers-color-scheme: dark) { .closing { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
 
   .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
-  .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }
+  .next strong { font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; }
   .next a:hover strong { text-decoration: underline; }
 </style>

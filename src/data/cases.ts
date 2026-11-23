@@ -571,7 +571,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
           solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
-          effect: 'Prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
+          effect: 'Koncepcja niewdrożona przed moim odejściem z Tidio. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         },
         sections: [
           {
@@ -658,7 +658,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
           solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',
-          effect: 'A simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
+          effect: 'Concept not shipped before I left Tidio. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         },
         sections: [
           {

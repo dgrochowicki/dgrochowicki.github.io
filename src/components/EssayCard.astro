@@ -1,6 +1,6 @@
 ---
 import { href, ui, type Lang } from '../lib/i18n';
-import { essay } from '../data/essay';
+import { essay, readingMinutes } from '../data/essay';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -9,7 +9,7 @@ const c = essay.content[lang];
 ---
 <a class="essay" href={href(`portfolio/${essay.slug}`, lang)}>
   <div class="body">
-    <span class="eyebrow">{t.essayEyebrow}</span>
+    <span class="eyebrow">{t.essayEyebrow} · {t.readTime(readingMinutes(lang))}</span>
     <h3>{c.title}</h3>
     <p class="muted">{c.summary}</p>
     <span class="text-link">{t.readEssay} →</span>

@@ -21,18 +21,19 @@ export const intro: L10n<{ hero: string; lead: string; bio: string[] }> = {
   },
 };
 
-export const stats: L10n<{ value: string; label: string }[]> = {
+/** short: krótsza wartość na telefon (opcjonalna) */
+export const stats: L10n<{ value: string; short?: string; label: string }[]> = {
   pl: [
     { value: '20+ lat', label: 'w projektowaniu interfejsów i grafiki' },
     { value: '5+ lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
     { value: '3+ lata', label: 'przy Lyro i produktach AI, od pierwszej wersji' },
-    { value: 'mgr informatyki', label: 'rozumiem, jak działa to, co projektuję' },
+    { value: 'mgr informatyki', short: 'mgr inf.', label: 'rozumiem, jak działa to, co projektuję' },
   ],
   en: [
     { value: '20+ yrs', label: 'in interface and graphic design' },
     { value: '5+ yrs', label: 'as a Product Designer at Tidio, 4 teams' },
     { value: '3+ yrs', label: 'on Lyro and AI products, from v1' },
-    { value: 'MSc in CS', label: 'I know how what I design is built' },
+    { value: 'MSc in CS', short: 'MSc', label: 'I know how what I design is built' },
   ],
 };
 

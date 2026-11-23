@@ -42,7 +42,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Lyro oddawało rozmowę konsultantowi, gdy klient poprosił o człowieka. Ale co, jeśli jest 3 w nocy i nikogo nie ma? Prośba o człowieka, gdy zespół jest offline, to zupełnie inna sytuacja niż w godzinach pracy.',
           decision: [
             'Podzieliliśmy handoff na dwie warstwy. Pierwsza to domyślne zachowanie zależne od tego, czy zespół jest online, czy offline: użytkownik ustawia raz, co Lyro ma wtedy zrobić. Druga to sytuacje szczególne opisane zwykłym językiem w Procedures i Guidance, np. „gdy klient jest zdenerwowany, zaproponuj rozmowę z konsultantem”.',
-            'Do tego dochodziło ustawienie kanału, kiedy Lyro w ogóle odpowiada: „Only when human agents are offline” albo „Always”, z planem dodania konkretnego harmonogramu i godzin otwarcia. Można też było całkowicie wyłączyć wybrane grupy klientów z rozmów z Lyro.',
+            'Do tego dla każdego kanału można było ustawić, czy Lyro odpowiada zawsze, czy tylko wtedy, gdy zespół jest offline.',
           ],
           why: 'Nie da się przewidzieć wszystkich sytuacji w jednym formularzu. Proste ustawienia domyślne działają od pierwszego dnia, a elastyczne reguły obsługują wyjątki.',
           images: ['agent-profile/handoff'],
@@ -123,7 +123,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
             'Lyro handed the conversation to a support agent when a customer asked for a human. But what if it’s 3 a.m. and nobody is there? Asking for a human when the team is offline is a completely different situation than during working hours.',
           decision: [
             'We split handoff into two layers. The first is default behaviour that depends on whether the team is online or offline: the user sets once what Lyro should do. The second is special situations described in plain language in Procedures and Guidance, e.g. “if the customer is upset, offer to talk to a teammate”.',
-            'On top of that, a channel setting decided when Lyro responds at all: “Only when human agents are offline” or “Always”, with a plan to add a specific schedule and opening hours. Selected customer groups could also be excluded from Lyro conversations entirely.',
+            'On top of that, each channel could be set so that Lyro responds always or only when the team is offline.',
           ],
           why: 'You can’t predict every situation in a single form. Simple defaults work from day one, and flexible rules handle the exceptions.',
           images: ['agent-profile/handoff'],
@@ -181,3 +181,10 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
     },
   },
 };
+
+/** Szacowany czas czytania w minutach (ok. 200 słów na minutę). */
+export function readingMinutes(lang: 'pl' | 'en'): number {
+  const c = essay.content[lang];
+  const text = [c.intro, ...c.lessons.flatMap((l) => [l.title, l.situation, ...l.decision, l.why]), ...c.closing].join(' ');
+  return Math.max(1, Math.round(text.split(/\s+/).length / 200));
+}

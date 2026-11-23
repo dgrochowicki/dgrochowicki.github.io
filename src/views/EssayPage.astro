@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Figure from '../components/Figure.astro';
-import { essay } from '../data/essay';
+import { essay, readingMinutes } from '../data/essay';
 import { cases } from '../data/cases';
 import { href, ui, type Lang } from '../lib/i18n';
 
@@ -16,7 +16,7 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
   <article>
     <header class="wrap head">
       <a class="back text-link" href={href('portfolio', lang)}>← {t.back}</a>
-      <p class="eyebrow">{c.label}</p>
+      <p class="eyebrow">{c.label} · {t.readTime(readingMinutes(lang))}</p>
       <h1>{c.title}</h1>
       <p class="lead">{c.intro}</p>
       <ol class="toc">

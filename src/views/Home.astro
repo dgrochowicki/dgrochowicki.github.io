@@ -20,7 +20,7 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Product Designer · UX/UI · Szczecin</p>
-      <h1>{i.hero.split('\n').map((line, n) => <>{n > 0 && <br />}{line}</>)}</h1>
+      <h1>{i.hero.split('\n').map((line, n) => <>{n > 0 && <> <br class="br-desk" /></>}{line}</>)}</h1>
       <p class="lead">{i.lead}</p>
       <div class="btns">
         <a class="btn primary" href={href('portfolio', lang)}>{t.seeCases}</a>
@@ -28,7 +28,7 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
         <a class="btn" href={asset(site.cv[lang])} target="_blank" rel="noopener">{t.downloadCv}</a>
       </div>
       <ul class="stats">
-        {stats[lang].map((s) => <li><strong>{s.value}</strong><span>{s.label}</span></li>)}
+        {stats[lang].map((s) => <li><strong>{s.short ? <><span class="v-full">{s.value}</span><span class="v-short">{s.short}</span></> : s.value}</strong><span>{s.label}</span></li>)}
       </ul>
     </div>
   </section>
@@ -80,12 +80,17 @@ const featured = ['coresender', 'child-reward', 'trading'].map((s) => projects.f
   .hero { padding: clamp(64px, 12vw, 140px) 0 clamp(56px, 8vw, 96px); }
   .hero h1 { font-size: clamp(30px, 4.4vw, 52px); max-width: 17em; margin: 16px 0 24px; letter-spacing: -0.025em; }
   .lead { font-size: clamp(16px, 1.6vw, 18px); max-width: 40em; color: var(--muted); margin-bottom: 32px; }
+  /* Ręczne łamanie nagłówka tylko na szerszych ekranach */
+  @media (max-width: 760px) { .hero h1 :global(.br-desk) { display: none; } }
   .stats { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: clamp(48px, 7vw, 80px); }
   .stats li { border-top: 1px solid var(--fg); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
   @media (prefers-color-scheme: dark) { .stats li { border-top-color: #4b5058; } }
   .stats strong { font-size: clamp(26px, 3vw, 36px); font-weight: 500; letter-spacing: -0.02em; }
   .stats span { color: var(--muted); font-size: 14px; line-height: 1.4; }
   @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; gap: 28px 16px; } }
+  .stats strong span { color: inherit; font-size: inherit; line-height: inherit; }
+  .v-short { display: none; }
+  @media (max-width: 760px) { .v-full { display: none; } .v-short { display: inline; } }
 
   .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }

@@ -567,7 +567,7 @@ export const cases: CaseStudy[] = [
         title: 'Knowledge: uproszczony model źródeł wiedzy',
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
         role: 'Inicjatywa własna, analiza modelu danych, UI, testy z użytkownikami',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. Przy pracy nad Knowledge w zespole było dwóch designerów.',
+        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. Byłem designerem zespołu, przy Knowledge współpracował ze mną drugi designer.',
         tldr: {
           problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
           solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
@@ -654,7 +654,7 @@ export const cases: CaseStudy[] = [
         title: 'Knowledge: a simpler model of knowledge sources',
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
         role: 'Own initiative, data model analysis, UI, user testing',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. During the Knowledge work there were two designers on the team.',
+        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. I was the team’s designer, and a second designer collaborated with me on Knowledge.',
         tldr: {
           problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
           solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',

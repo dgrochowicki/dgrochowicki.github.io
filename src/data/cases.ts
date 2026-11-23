@@ -413,7 +413,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Ustawienia rozproszone między Configure, Behavior, Handoff i kanały. Użytkownicy gubili się, gdzie co jest.',
           solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem, z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
-          effect: 'Koncepcja brana pod uwagę w dalszych planach, nie trafiła do wdrożenia przed moim odejściem. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
+          effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
         },
         sections: [
           {
@@ -488,7 +488,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Settings were scattered across Configure, Behavior, Handoff and channels. Users got lost looking for things.',
           solution: 'An agent profile: who it is, how it talks and how it works with the team, with a live conversation preview. Iterated on clickable HTML prototypes.',
-          effect: 'Considered for future implementation, but not shipped before I left. Goal: fewer support tickets asking where agent settings live.',
+          effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: fewer support tickets asking where agent settings live.',
         },
         sections: [
           {
@@ -571,7 +571,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
           solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
-          effect: 'Koncepcja niewdrożona przed moim odejściem z Tidio. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
+          effect: 'Zakończyłem pracę w Tidio, zanim koncepcja doczekała się wdrożenia. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         },
         sections: [
           {
@@ -638,7 +638,7 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Poziom 1: foldery', 'Poziom 2: Q&A wewnątrz folderu'],
-            note: 'Ta koncepcja nie została wdrożona do czasu zakończenia mojej pracy w Tidio.',
+            note: 'Zakończyłem pracę w Tidio, zanim ta koncepcja doczekała się wdrożenia.',
           },
           {
             title: 'Proces',
@@ -658,7 +658,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
           solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',
-          effect: 'Concept not shipped before I left Tidio. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
+          effect: 'I left Tidio before the concept came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         },
         sections: [
           {
@@ -725,7 +725,7 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Level 1: folders', 'Level 2: Q&As inside a folder'],
-            note: 'This concept had not been implemented by the time I left Tidio.',
+            note: 'I left Tidio before this concept came up for implementation.',
           },
           {
             title: 'Process',

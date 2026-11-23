@@ -73,7 +73,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
           situation:
             'Wraz z kolejnymi funkcjami ustawienia agenta rozlewały się po produkcie. Część trafiała do Configure, część do Behavior, a opcje handoffu były w kilku miejscach naraz. Ze zgłoszeń do supportu wiedzieliśmy, że użytkownicy gubili się w tym, gdzie co ustawić.',
           decision: [
-            'Onboarding przebudowałem tak, że agent przedstawia się w pierwszej osobie: „I’m joining your team. Set me up in a few minutes.” Zaproponowałem też profil agenta: jedno miejsce z jego tożsamością, sposobem mówienia i tym, jak pracuje z ludzkim zespołem, z podglądem rozmowy obok ustawień. Profil nie został wdrożony przed moim odejściem z Tidio.',
+            'Onboarding przebudowałem tak, że agent przedstawia się w pierwszej osobie: „I’m joining your team. Set me up in a few minutes.” Zaproponowałem też profil agenta: jedno miejsce z jego tożsamością, sposobem mówienia i tym, jak pracuje z ludzkim zespołem, z podglądem rozmowy obok ustawień. Profil trafił do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jego wdrożenie.',
           ],
           why: 'Ludzie łatwiej rozumieją agenta jako nowego współpracownika niż jako zestaw przełączników. Ten model od razu mówi, co i gdzie można ustawić.',
           cases: ['lyro-onboarding', 'lyro-agent-profile'],
@@ -85,7 +85,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
           situation:
             'Guidance, Handoff i Procedures wyglądały i działały podobnie, różniły się kilkoma detalami. Użytkownicy nie wiedzieli, gdzie i jakie instrukcje wpisywać. Podobnie w bazie wiedzy: pięć „typów źródeł” było w praktyce tym samym.',
           decision: [
-            'Zaproponowałem połączenie trzech sekcji w jedną, z oznaczeniem typu instrukcji i jednym edytorem, żeby tworząc instrukcję, użytkownik od razu wiedział, czy dotyczy handoffu, czy innego zachowania agenta. W bazie wiedzy zaproponowałem prostszy model: każda pozycja to Q&A, a plik czy strona to tylko miejsce, z którego pochodzi. Obie propozycje nie zostały wdrożone przed moim odejściem, ale lekcja zostaje.',
+            'Zaproponowałem połączenie trzech sekcji w jedną, z oznaczeniem typu instrukcji i jednym edytorem, żeby tworząc instrukcję, użytkownik od razu wiedział, czy dotyczy handoffu, czy innego zachowania agenta. W bazie wiedzy zaproponowałem prostszy model: każda pozycja to Q&A, a plik czy strona to tylko miejsce, z którego pochodzi. Zakończyłem pracę w Tidio, zanim obie propozycje doczekały się wdrożenia, ale lekcja zostaje.',
           ],
           why: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, poprawki w UI nie pomogą. Trzeba uprościć model, a wtedy upraszcza się wszystko, co na nim powstaje.',
           cases: ['lyro-knowledge'],
@@ -155,7 +155,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
           situation:
             'With every new feature, agent settings spread across the product. Some ended up in Configure, some in Behavior, and handoff options lived in several places at once. Support tickets told us users got lost looking for where to set things.',
           decision: [
-            'I redesigned onboarding so the agent introduces itself in the first person: “I’m joining your team. Set me up in a few minutes.” I also proposed an agent profile: one place with its identity, the way it speaks and how it works with the human team, with a conversation preview next to the settings. The profile wasn’t shipped before I left Tidio.',
+            'I redesigned onboarding so the agent introduces itself in the first person: “I’m joining your team. Set me up in a few minutes.” I also proposed an agent profile: one place with its identity, the way it speaks and how it works with the human team, with a conversation preview next to the settings. The profile was planned for a later stage, but I left Tidio before it came up for implementation.',
           ],
           why: 'People understand an agent more easily as a new co-worker than as a set of toggles. This model tells them right away what they can set and where.',
           cases: ['lyro-onboarding', 'lyro-agent-profile'],
@@ -167,7 +167,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
           situation:
             'Guidance, Handoff and Procedures looked and worked alike, differing only in a few details. Users didn’t know where to write which instructions. The same happened in the knowledge base: five “source types” were in practice the same thing.',
           decision: [
-            'I proposed merging the three sections into one, with an instruction type and a single editor, so that while writing an instruction users would know right away whether it’s about handoff or another agent behaviour. For the knowledge base I proposed a simpler model: every item is a Q&A, and a file or page is just where it came from. Neither proposal was shipped before I left, but the lesson stands.',
+            'I proposed merging the three sections into one, with an instruction type and a single editor, so that while writing an instruction users would know right away whether it’s about handoff or another agent behaviour. For the knowledge base I proposed a simpler model: every item is a Q&A, and a file or page is just where it came from. I left Tidio before either proposal came up for implementation, but the lesson stands.',
           ],
           why: 'When users see five things where there is one, UI tweaks won’t help. You have to simplify the model, and then everything built on top of it gets simpler too.',
           cases: ['lyro-knowledge'],

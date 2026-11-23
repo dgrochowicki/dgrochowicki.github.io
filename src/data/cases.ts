@@ -36,7 +36,7 @@ export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: st
     title: 'Tidio · Product Designer · 2021-2026',
     text: [
       'W Tidio projektowałem narzędzia do obsługi klienta: od chatbotów, analityki i inboxa, przez automatyzację rozmów, po funkcje AI wspierające konsultantów. Koordynowałem też prace nad design systemem.',
-      'Ostatnie lata poświęciłem Lyro, pierwszemu konwersacyjnemu agentowi AI w Tidio i najszybciej rosnącemu produktowi w historii firmy. Prowadziłem design wszystkich produktów AI od początku: Lyro, AI Panel Agent (Ask) i Copilota. Tidio używa ponad 300 tys. firm.',
+      'Ostatnie lata poświęciłem Lyro, pierwszemu konwersacyjnemu agentowi AI w Tidio i najszybciej rosnącemu produktowi w historii firmy. Projektowałem od początku produkty AI: Lyro, AI Panel Agent (Ask) i Copilota. Tidio używa ponad 300 tys. firm.',
       'Poniżej cztery wybrane case studies z Lyro.',
     ],
     areas: [
@@ -53,7 +53,7 @@ export const tidioIntro: L10n<{ title: string; text: string[]; areas: { name: st
     title: 'Tidio · Product Designer · 2021-2026',
     text: [
       'At Tidio I designed customer service tools: from chatbots, analytics and the inbox, through conversation automation, to AI features that support human agents. I also coordinated work on the design system.',
-      "I spent the last few years on Lyro, Tidio's first conversational AI agent and the fastest-growing product in the company's history. I led design of all AI products from the start: Lyro, the AI Panel Agent (Ask) and Copilot. Tidio is used by 300K+ businesses.",
+      "I spent the last few years on Lyro, Tidio's first conversational AI agent and the fastest-growing product in the company's history. I designed the AI products from the start: Lyro, the AI Panel Agent (Ask) and Copilot. Tidio is used by 300K+ businesses.",
       'Below are four selected case studies from Lyro.',
     ],
     areas: [

@@ -571,7 +571,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
           solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
-          effect: 'Zakończyłem pracę w Tidio, zanim koncepcja doczekała się wdrożenia. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
+          effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         },
         sections: [
           {
@@ -638,7 +638,7 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Poziom 1: foldery', 'Poziom 2: Q&A wewnątrz folderu'],
-            note: 'Zakończyłem pracę w Tidio, zanim ta koncepcja doczekała się wdrożenia.',
+            note: 'Ta koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie.',
           },
           {
             title: 'Proces',
@@ -658,7 +658,7 @@ export const cases: CaseStudy[] = [
         tldr: {
           problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
           solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',
-          effect: 'I left Tidio before the concept came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
+          effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         },
         sections: [
           {
@@ -725,7 +725,7 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Level 1: folders', 'Level 2: Q&As inside a folder'],
-            note: 'I left Tidio before this concept came up for implementation.',
+            note: 'This concept was planned for a later stage, but I left Tidio before it came up for implementation.',
           },
           {
             title: 'Process',

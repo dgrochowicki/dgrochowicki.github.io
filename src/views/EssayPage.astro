@@ -14,8 +14,8 @@ const first = cases[0];
 ---
 <Base lang={lang} title={c.title} alt={`portfolio/${essay.slug}`} active="portfolio" description={c.summary}>
   <article class="wrap essay">
-    <!-- Jedna kolumna: tekst max var(--text) (jak środkowa kolumna w O mnie), obrazy max 900px, wspólna oś -->
-    <header class="col head">
+    <!-- Układ jak w O mnie: lewa kolumna z etykietą (Lekcja N), treść w kolumnie obok -->
+    <header class="head">
       <a class="back text-link" href={href('portfolio', lang)}>← {t.back}</a>
       <p class="eyebrow">{c.label} · {t.readTime(readingMinutes(lang))}</p>
       <h1>{c.title}</h1>
@@ -27,47 +27,53 @@ const first = cases[0];
       </nav>
     </header>
 
-    {c.lessons.map((l, n) => (
-      <section class="lesson" id={`lekcja-${n + 1}`}>
-        <div class="col">
-          <p class="eyebrow kicker">{t.lessonN} {n + 1}</p>
-          <h2>{l.title}</h2>
-          <h3 class="eyebrow">{t.situation}</h3>
-          <p>{l.situation}</p>
-          <h3 class="eyebrow">{t.decision}</h3>
-          {l.decision.map((p) => <p>{p}</p>)}
-          <div class="why">
-            <h3 class="eyebrow">{t.why}</h3>
-            <p>{l.why}</p>
-          </div>
-          {l.cases && (
-            <ul class="related">
-              {l.cases.map((slug) => {
-                const cs = cases.find((x) => x.slug === slug)!;
-                return <li><a class="text-link" href={href(`portfolio/${slug}`, lang)}>{t.moreInCase}: {cs.content[lang].title} →</a></li>;
-              })}
-            </ul>
-          )}
-        </div>
-        {(l.diagram || l.images) && (
-          <div class="media">
-            {l.diagram === 'handoff' && <HandoffDiagram lang={lang} />}
-            {l.images && (
-              <div class:list={['imgs', `n${l.images.length}`]}>
-                {l.images.map((src, k) => <Figure src={src} caption={l.captions?.[k]} sizes={l.images!.length > 1 ? '(max-width: 860px) 100vw, 440px' : '(max-width: 960px) 100vw, 900px'} />)}
+    <div class="rows">
+      {c.lessons.map((l, n) => (
+        <section class="row lesson" id={`lekcja-${n + 1}`}>
+          <h2 class="label">{t.lessonN} {n + 1}</h2>
+          <div class="content">
+            <div class="text">
+              <h3 class="title">{l.title}</h3>
+              <h4 class="eyebrow">{t.situation}</h4>
+              <p>{l.situation}</p>
+              <h4 class="eyebrow">{t.decision}</h4>
+              {l.decision.map((p) => <p>{p}</p>)}
+              <div class="why">
+                <h4 class="eyebrow">{t.why}</h4>
+                <p>{l.why}</p>
+              </div>
+              {l.cases && (
+                <ul class="related">
+                  {l.cases.map((slug) => {
+                    const cs = cases.find((x) => x.slug === slug)!;
+                    return <li><a class="text-link" href={href(`portfolio/${slug}`, lang)}>{t.moreInCase}: {cs.content[lang].title} →</a></li>;
+                  })}
+                </ul>
+              )}
+            </div>
+            {(l.diagram || l.images) && (
+              <div class="media">
+                {l.diagram === 'handoff' && <HandoffDiagram lang={lang} />}
+                {l.images && (
+                  <div class:list={['imgs', `n${l.images.length}`]}>
+                    {l.images.map((src, k) => <Figure src={src} caption={l.captions?.[k]} sizes={l.images!.length > 1 ? '(max-width: 860px) 100vw, 440px' : '(max-width: 960px) 100vw, 900px'} />)}
+                  </div>
+                )}
               </div>
             )}
           </div>
-        )}
+        </section>
+      ))}
+
+      <section class="row closing">
+        <h2 class="label">{c.closingTitle}</h2>
+        <div class="content text">
+          {c.closing.map((p) => <p>{p}</p>)}
+        </div>
       </section>
-    ))}
+    </div>
 
-    <section class="col closing">
-      <p class="eyebrow">{c.closingTitle}</p>
-      {c.closing.map((p) => <p>{p}</p>)}
-    </section>
-
-    <nav class="col next">
+    <nav class="next">
       <a href={href(`portfolio/${first.slug}`, lang)}>
         <span class="eyebrow">Case study 01</span>
         <strong>{first.content[lang].title} →</strong>
@@ -77,42 +83,40 @@ const first = cases[0];
 </Base>
 
 <style>
-  .col { max-width: var(--text); margin-left: auto; margin-right: auto; }
-  .media { max-width: 900px; margin: 32px auto 0; }
-
-  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 8px; }
+  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(32px, 5vw, 56px); }
   .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
-  .head h1 { font-size: clamp(30px, 4.2vw, 46px); margin: 14px 0 20px; letter-spacing: -0.025em; }
-  .lead { font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); }
-  .toc { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .head h1 { font-size: clamp(30px, 4.6vw, 52px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); max-width: 40em; }
+  .toc { margin-top: 28px; }
   .toc ol { padding-left: 1.4em; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
   .toc li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
   .toc a { text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
 
-  /* Kotwice ze spisu: sekcja ma własny padding, więc 32px wystarcza, żeby „Lekcja N” nie chowała się pod nagłówkiem (64px) */
-  .lesson { padding-top: clamp(48px, 7vw, 80px); scroll-margin-top: 32px; }
-  .kicker { margin-bottom: 8px; }
-  .lesson h2 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; margin-bottom: 24px; }
-  .lesson h3.eyebrow { margin: 20px 0 6px; }
-  .lesson h2 + h3.eyebrow { margin-top: 0; }
-  .lesson .col p { margin: 0 0 10px; }
+  /* Wiersze jak w O mnie (.row z global.css: etykieta 220px | treść) */
+  .rows .row:first-child { border-top: 1px solid var(--line); }
+  /* h2 wygląda jak etykieta w O mnie */
+  .row > h2.label { font-size: inherit; line-height: inherit; letter-spacing: normal; }
+  /* Kotwice: odstęp pod przyklejonym nagłówkiem (64px) */
+  .lesson { scroll-margin-top: 72px; padding: clamp(40px, 5vw, 56px) 0; }
+  .text { max-width: var(--text); }
+  .title { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; margin-bottom: 20px; }
+  h4.eyebrow { margin: 20px 0 6px; }
+  .title + h4.eyebrow { margin-top: 0; }
+  .text p { margin: 0 0 10px; }
   .why { margin-top: 24px; padding: 18px 22px; background: var(--bg-soft); border-radius: 12px; }
-  .why h3.eyebrow { margin-top: 0 !important; }
+  .why h4.eyebrow { margin-top: 0; }
   .why p { margin: 0 !important; }
   .related { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
 
+  .media { max-width: 900px; margin-top: 32px; }
   .imgs { display: grid; gap: 20px; }
   .imgs.n2 { grid-template-columns: 1fr 1fr; }
   @media (max-width: 760px) { .imgs.n2 { grid-template-columns: 1fr; } }
 
-  .closing { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); }
-  .closing .eyebrow { color: var(--accent); margin-bottom: 16px; }
-  .closing p:not(.eyebrow) { font-size: clamp(17px, 1.8vw, 19px); line-height: 1.55; margin: 0 0 14px; }
-  .closing p:last-child { margin-bottom: 0; }
-  @media (prefers-color-scheme: dark) { .closing { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
+  .closing .text p { font-size: clamp(17px, 1.8vw, 19px); line-height: 1.55; }
 
-  .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
+  .next { padding-top: 8px; padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
   .next strong { font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; }
   .next a:hover strong { text-decoration: underline; }

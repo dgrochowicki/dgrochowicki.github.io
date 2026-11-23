@@ -1,6 +1,8 @@
 ---
 import CasePage from '../../../views/CasePage.astro';
 import ProjectPage from '../../../views/ProjectPage.astro';
+import EssayPage from '../../../views/EssayPage.astro';
+import { essay } from '../../../data/essay';
 import { cases } from '../../../data/cases';
 import { projects } from '../../../data/projects';
 
@@ -8,8 +10,9 @@ export function getStaticPaths() {
   return [
     ...cases.map((item) => ({ params: { slug: item.slug }, props: { kind: 'case' as const, item } })),
     ...projects.map((item) => ({ params: { slug: item.slug }, props: { kind: 'project' as const, item } })),
+    { params: { slug: essay.slug }, props: { kind: 'essay' as const, item: essay } },
   ];
 }
 const { kind, item } = Astro.props as any;
 ---
-{kind === 'case' ? <CasePage lang="en" item={item} /> : <ProjectPage lang="en" item={item} />}
+{kind === 'case' ? <CasePage lang="en" item={item} /> : kind === 'essay' ? <EssayPage lang="en" /> : <ProjectPage lang="en" item={item} />}

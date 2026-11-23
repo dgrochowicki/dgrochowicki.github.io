@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import { essay } from '../data/essay';
+import { cases } from '../data/cases';
+import { href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const c = essay.content[lang];
+const first = cases[0];
+const pad = (n: number) => String(n + 1).padStart(2, '0');
+---
+<Base lang={lang} title={c.title} alt={`portfolio/${essay.slug}`} active="portfolio" description={c.summary}>
+  <article>
+    <header class="wrap head">
+      <a class="back text-link" href={href('portfolio', lang)}>← {t.back}</a>
+      <p class="eyebrow">{c.label}</p>
+      <h1>{c.title}</h1>
+      <p class="lead">{c.intro}</p>
+      <ol class="toc">
+        {c.lessons.map((l, n) => <li><a href={`#lekcja-${n + 1}`}><span class="muted">{pad(n)}</span> {l.title}</a></li>)}
+      </ol>
+    </header>
+
+    {c.lessons.map((l, n) => (
+      <section class="wrap lesson-block" id={`lekcja-${n + 1}`}>
+        <div class="row">
+          <div class="label"><span class="num">{pad(n)}</span><span class="muted">{t.lessonN} {n + 1}</span></div>
+          <div class="content">
+            <h2>{l.title}</h2>
+            <h3 class="eyebrow">{t.situation}</h3>
+            <p>{l.situation}</p>
+            <h3 class="eyebrow">{t.decision}</h3>
+            {l.decision.map((p) => <p>{p}</p>)}
+            <div class="why">
+              <h3 class="eyebrow">{t.why}</h3>
+              <p>{l.why}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="wrap">
+      <div class="closing">
+        <p class="eyebrow">{c.closingTitle}</p>
+        {c.closing.map((p) => <p>{p}</p>)}
+      </div>
+    </section>
+
+    <nav class="wrap next">
+      <a href={href(`portfolio/${first.slug}`, lang)}>
+        <span class="eyebrow">Case study 01</span>
+        <strong>{first.content[lang].title} →</strong>
+      </a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .head { padding-top: clamp(40px, 7vw, 80px); padding-bottom: 24px; }
+  .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
+  .head h1 { font-size: clamp(32px, 5vw, 56px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
+  .lead { font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); max-width: 40em; }
+  .toc { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
+  .toc a { text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc span { display: inline-block; min-width: 2em; font-variant-numeric: tabular-nums; }
+
+  .lesson-block { padding-top: clamp(32px, 5vw, 56px); scroll-margin-top: 72px; }
+  .label { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .num { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-weight: 600; font-size: 15px; }
+  .content { max-width: var(--text); }
+  .content h2 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; margin-bottom: 24px; }
+  .content h3.eyebrow { margin: 20px 0 6px; }
+  .content h2 + h3.eyebrow { margin-top: 0; }
+  .content p { margin: 0 0 10px; }
+  .why { margin-top: 24px; padding: 18px 22px; background: var(--bg-soft); border-radius: 12px; }
+  .why h3.eyebrow { margin-top: 0 !important; }
+  .why p { margin: 0; }
+
+  .closing { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
+  .closing .eyebrow { color: var(--accent); margin-bottom: 16px; }
+  .closing p:not(.eyebrow) { font-size: clamp(17px, 1.8vw, 20px); line-height: 1.5; max-width: 38em; margin: 0 0 14px; }
+  .closing p:last-child { margin-bottom: 0; }
+  @media (prefers-color-scheme: dark) { .closing { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
+
+  .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
+  .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
+  .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }
+  .next a:hover strong { text-decoration: underline; }
+</style>

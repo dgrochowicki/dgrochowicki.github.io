@@ -1,0 +1,32 @@
+---
+import { href, ui, type Lang } from '../lib/i18n';
+import { essay } from '../data/essay';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const c = essay.content[lang];
+---
+<a class="essay" href={href(`portfolio/${essay.slug}`, lang)}>
+  <div class="body">
+    <span class="eyebrow">{t.essayEyebrow}</span>
+    <h3>{c.title}</h3>
+    <p class="muted">{c.summary}</p>
+    <span class="text-link">{t.readEssay} →</span>
+  </div>
+  <ol class="list">
+    {c.lessons.map((l, n) => <li><span class="n">{String(n + 1).padStart(2, '0')}</span>{l.title}</li>)}
+  </ol>
+</a>
+
+<style>
+  .essay { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); transition: .2s; background: var(--bg); margin-top: 24px; }
+  .essay:hover { border-color: var(--muted); transform: translateY(-2px); }
+  .body { display: flex; flex-direction: column; gap: 12px; }
+  .body h3 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.015em; }
+  .body p { font-size: 15px; flex: 1; }
+  .list { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+  .list li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; }
+  .n { background: var(--accent); color: var(--accent-fg); font-weight: 600; font-size: 12px; border-radius: 6px; text-align: center; padding: 2px 0; }
+  @media (max-width: 860px) { .essay { grid-template-columns: 1fr; } }
+</style>

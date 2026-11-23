@@ -13,6 +13,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
     - Onboarding: agent gotowy w kilka minut
     - Profil agenta zamiast zakładek ustawień
     - Knowledge: uproszczony model źródeł wiedzy
+  - **Esej „Czego nauczyło mnie projektowanie agenta AI”:** 6 lekcji z pracy nad Lyro (`/portfolio/ai-agent-lessons`), kafelek pod case studies.
   - **Wcześniejsze projekty (2012-2021):** 20 projektów, czyli aplikacje mobilne, produkty SaaS, fintech i strony www, z filtrem kategorii.
   - **Side projects:** projekty po godzinach, budowane z pomocą AI (Aurora Now). W `src/data/projects.ts` mają kategorię `lab` i opcjonalny link `url`.
 - **O mnie:** doświadczenie, umiejętności, edukacja, nagrody, języki i wolontariat.
@@ -32,6 +33,7 @@ Portfolio i CV Product Designera (UX/UI). Strona jest w dwóch wersjach językow
 | E-mail, LinkedIn, plik CV, widoczność w Google | `src/data/site.ts` |
 | Tekst na stronie głównej, O mnie, doświadczenie, umiejętności | `src/data/about.ts` |
 | Case studies Tidio (PL i EN) | `src/data/cases.ts` |
+| Esej o projektowaniu agenta AI (PL i EN) | `src/data/essay.ts` |
 | Wcześniejsze projekty (opisy, kategorie) | `src/data/projects.ts` |
 | Napisy interfejsu (menu, przyciski) | `src/lib/i18n.ts` |
 | Widoki stron | `src/views/` |

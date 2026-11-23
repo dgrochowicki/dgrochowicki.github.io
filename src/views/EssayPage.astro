@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
 import { essay } from '../data/essay';
 import { cases } from '../data/cases';
 import { href, ui, type Lang } from '../lib/i18n';
@@ -39,6 +40,11 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
             </div>
           </div>
         </div>
+        {l.images && (
+          <div class:list={['imgs', `n${l.images.length}`]}>
+            {l.images.map((src, k) => <Figure src={src} caption={l.captions?.[k]} sizes={l.images!.length > 1 ? '(max-width: 860px) 100vw, 600px' : '(max-width: 1248px) 100vw, 1200px'} />)}
+          </div>
+        )}
       </section>
     ))}
 
@@ -79,6 +85,10 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
   .why { margin-top: 24px; padding: 18px 22px; background: var(--bg-soft); border-radius: 12px; }
   .why h3.eyebrow { margin-top: 0 !important; }
   .why p { margin: 0; }
+
+  .imgs { display: grid; gap: 24px; margin-top: 8px; }
+  .imgs.n2 { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 860px) { .imgs.n2 { grid-template-columns: 1fr; } }
 
   .closing { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
   .closing .eyebrow { color: var(--accent); margin-bottom: 16px; }

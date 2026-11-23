@@ -81,7 +81,7 @@ export const cases: CaseStudy[] = [
         role: 'Research, model konfiguracji, user flows, UI, testy z użytkownikami',
         team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
         tldr: {
-          problem: 'Lyro korzystało z jednej bazy wiedzy dla wszystkich. Więksi klienci potrzebowali, by agent nie „mówił” wszystkiego każdemu.',
+          problem: 'Lyro korzystał z jednej bazy wiedzy dla wszystkich. Więksi klienci potrzebowali, by agent nie „mówił” wszystkiego każdemu.',
           solution: 'Audiences: grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.',
           effect: 'Funkcja dla większych firm. Ten sam mechanizm trafił później do Guidance, Procedures, Actions i wykluczania grup z rozmów z Lyro.',
         },
@@ -89,7 +89,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'Lyro korzystało z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci zgłaszali potrzebę wydzielenia części wiedzy agenta tak, by nie mówił wszystkiego każdemu, tylko odpowiadał inaczej różnym grupom. Na przykład:',
+              'Lyro korzystał z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci zgłaszali potrzebę wydzielenia części wiedzy agenta tak, by nie mówił wszystkiego każdemu, tylko odpowiadał inaczej różnym grupom. Na przykład:',
             ],
             list: [
               'inne treści dla klientów z innego kraju lub w innym języku',
@@ -100,7 +100,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Kontekst i ograniczenia',
             text: [
-              'W Knowledge / Data sources użytkownicy dodawali treści, z których Lyro budowało odpowiedzi. Każde źródło było dostępne w każdej rozmowie.',
+              'W Knowledge / Data sources użytkownicy dodawali treści, z których Lyro budował odpowiedzi. Każde źródło było dostępne w każdej rozmowie.',
             ],
           },
           {
@@ -419,7 +419,7 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'Lyro rosło funkcja po funkcji: część ustawień trafiała do Configure, inne do Behavior. Ze zgłoszeń do customer supportu Tidio wiedzieliśmy, że użytkownicy gubili się w tym, gdzie znajdują się ustawienia agenta. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, kanały: każda funkcja dokładała własne miejsce w nawigacji, aż model produktu przestał być czytelny zarówno dla nowych, jak i obecnych klientów.',
+              'Lyro rósł funkcja po funkcji: część ustawień trafiała do Configure, inne do Behavior. Ze zgłoszeń do customer supportu Tidio wiedzieliśmy, że użytkownicy gubili się w tym, gdzie znajdują się ustawienia agenta. Behavior, Guidance, Handoff, Procedures, Actions, Audiences, kanały: każda funkcja dokładała własne miejsce w nawigacji, aż model produktu przestał być czytelny zarówno dla nowych, jak i obecnych klientów.',
               'Celem było uproszczenie struktury tak, żeby konfiguracja agenta była przewidywalna, bez przebudowy całego backendu.',
             ],
           },

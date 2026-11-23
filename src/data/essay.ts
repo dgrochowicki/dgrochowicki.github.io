@@ -27,7 +27,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
         {
           title: 'Agent nie może mówić wszystkiego każdemu',
           situation:
-            'Lyro korzystało z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci potrzebowali, żeby agent inaczej odpowiadał klientom z innego kraju, klientom VIP albo osobom na konkretnej stronie.',
+            'Lyro korzystał z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci potrzebowali, żeby agent inaczej odpowiadał klientom z innego kraju, klientom VIP albo osobom na konkretnej stronie.',
           decision: [
             'Zamiast osobnych baz wiedzy zaprojektowałem Audiences: grupy odwiedzających budowane z kanałów i warunków. Baza wiedzy zostaje jedna, a grupy tylko zawężają, kto widzi dane źródło. Domyślnie wszystko jest dla wszystkich, więc wdrożenie niczego nie psuło.',
           ],
@@ -39,7 +39,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
         {
           title: '„Oddaj człowiekowi” to nie jeden przycisk',
           situation:
-            'Lyro oddawało rozmowę konsultantowi, gdy klient poprosił o człowieka. Ale co, jeśli jest 3 w nocy i nikogo nie ma? Prośba o człowieka, gdy zespół jest offline, to zupełnie inna sytuacja niż w godzinach pracy.',
+            'Lyro oddawał rozmowę konsultantowi, gdy klient poprosił o człowieka. Ale co, jeśli jest 3 w nocy i nikogo nie ma? Prośba o człowieka, gdy zespół jest offline, to zupełnie inna sytuacja niż w godzinach pracy.',
           decision: [
             'Podzieliliśmy handoff na dwie warstwy. Pierwsza to domyślne zachowanie zależne od tego, czy zespół jest online, czy offline: użytkownik ustawia raz, co Lyro ma wtedy zrobić. Druga to sytuacje szczególne opisane zwykłym językiem w Procedures i Guidance, np. „gdy klient jest zdenerwowany, zaproponuj rozmowę z konsultantem”.',
             'Do tego dla każdego kanału można było ustawić, czy Lyro odpowiada zawsze, czy tylko wtedy, gdy zespół jest offline.',
@@ -54,7 +54,7 @@ export const essay: { slug: string; content: L10n<EssayContent> } = {
           situation:
             'To były początki popularnych dziś modeli językowych. Klienci bali się AI i mu nie ufali. Nie chcieli, żeby agent powiedział coś niewłaściwego ich klientom, zanim w ogóle zobaczą, jak działa.',
           decision: [
-            'Zaufanie budowaliśmy na dwa sposoby. Pierwszy to Playground, który Lyro miało od początku: miejsce do przetestowania wiedzy i zachowania agenta przed uruchomieniem. Użytkownik dostawał kilka gotowych pytań albo wpisywał własne. Zaprojektowałem go w dwóch wersjach, dla live chatu i dla e-maila, bo odpowiedzi w tych kanałach wyglądają inaczej i użytkownik chciał zobaczyć dokładnie to, co dostanie jego klient.',
+            'Zaufanie budowaliśmy na dwa sposoby. Pierwszy to Playground, który Lyro miał od początku: miejsce do przetestowania wiedzy i zachowania agenta przed uruchomieniem. Użytkownik dostawał kilka gotowych pytań albo wpisywał własne. Zaprojektowałem go w dwóch wersjach, dla live chatu i dla e-maila, bo odpowiedzi w tych kanałach wyglądają inaczej i użytkownik chciał zobaczyć dokładnie to, co dostanie jego klient.',
             'Drugi to Copilot: prostszy agent, który korzystał z tej samej wiedzy co Lyro, ale nie odpowiadał klientom sam. Podpowiadał odpowiedzi konsultantom, na żywo w trakcie rozmowy albo na żądanie. Człowiek sprawdzał odpowiedź i decydował, czy ją wysłać.',
           ],
           why: 'Przy AI pierwszą barierą nie jest konfiguracja, tylko zaufanie. Playground pozwalał zobaczyć, jak agent odpowiada, zanim zrobi to naprawdę. Copilot szedł krok dalej: zespół na co dzień weryfikował odpowiedzi AI, oszczędzał czas i sam przekonywał się, że warto przejść na w pełni autonomicznego agenta. Zamiast przekonywać do AI, daliśmy ludziom możliwość przekonania się samemu.',

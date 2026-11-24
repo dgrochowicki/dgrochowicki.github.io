@@ -25,6 +25,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <p class="role"><span class="muted">{t.myRole}:</span> {c.role}</p>
       {c.team && <p class="role meta"><span class="muted">{t.team}:</span> {c.team}</p>}
       {c.timeline && <p class="role meta"><span class="muted">{t.timeline}:</span> {c.timeline}</p>}
+      <p class="role meta"><span class="muted">{t.process}:</span> {c.processSteps.join(' → ')}</p>
     </header>
 
     <div class="wrap">
@@ -36,7 +37,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <Figure src={item.cover} eager />
     </div>
 
-    {c.sections.map((s) => (
+    {c.sections.map((s, si) => (
       <section class="wrap block">
         <div class="row">
           <h2 class="label">{s.title}</h2>
@@ -76,6 +77,13 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
         {s.images && (
           <div class:list={['imgs', `n${s.images.length}`]}>
             {s.images.map((src, n) => <Figure src={src} caption={s.captions?.[n]} sizes={imgSizes(s.images!.length)} />)}
+          </div>
+        )}
+
+        {/* Materiały robocze procesu: mniejsze, 2 w rzędzie, pod sekcją Problem */}
+        {si === 0 && (
+          <div class="imgs n2 process">
+            {c.processImages.map((src, n) => <Figure src={src} caption={c.processCaptions[n]} sizes="(max-width: 860px) 100vw, 600px" />)}
           </div>
         )}
       </section>
@@ -140,6 +148,9 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .imgs.n2 { grid-template-columns: 1fr 1fr; }
   .imgs.n3 { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 860px) { .imgs.n2, .imgs.n3 { grid-template-columns: 1fr; } }
+  /* Proces: zawsze 2 w rzędzie, mniejsze odstępy */
+  .imgs.n2.process { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .process :global(figcaption) { font-size: 13px; }
 
   .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .compare .col { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 18px; }

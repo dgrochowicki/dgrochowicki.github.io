@@ -87,6 +87,12 @@ export const cases: CaseStudy[] = [
         },
         sections: [
           {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['audiences/process-1', 'audiences/process-2'],
+            captions: ['Mapa hipotez i researchu: od zgłoszeń większych klientów do modelu grup', 'User flows: filtrowanie, akcje zbiorcze i przypisywanie audiences'],
+          },
+          {
             title: 'Problem',
             text: [
               'Lyro korzystał z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci zgłaszali potrzebę wydzielenia części wiedzy agenta tak, by nie mówił wszystkiego każdemu, tylko odpowiadał inaczej różnym grupom. Na przykład:',
@@ -140,12 +146,6 @@ export const cases: CaseStudy[] = [
             images: ['audiences/example-modal', 'audiences/example-source'],
             captions: ['Definicja audience', 'Przypisanie audience do pojedynczego Q&A'],
           },
-          {
-            title: 'Proces',
-            text: ['Materiały robocze z researchu i projektowania.'],
-            images: ['audiences/process-1', 'audiences/process-2'],
-            captions: ['Mapa hipotez i researchu: od zgłoszeń większych klientów do modelu grup', 'User flows: filtrowanie, akcje zbiorcze i przypisywanie audiences'],
-          },
         ],
         lesson: 'Prosty prymityw zamiast łatki: zaczął od jednego PDF-a, skończył jako wspólny język całego agenta.',
       },
@@ -161,6 +161,12 @@ export const cases: CaseStudy[] = [
           effect: 'A feature for larger companies. The same mechanism later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
         },
         sections: [
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['audiences/process-1', 'audiences/process-2'],
+            captions: ['Hypothesis and research map: from larger customers’ requests to a group model', 'User flows: filtering, bulk actions and assigning audiences'],
+          },
           {
             title: 'Problem',
             text: [
@@ -215,12 +221,6 @@ export const cases: CaseStudy[] = [
             images: ['audiences/example-modal', 'audiences/example-source'],
             captions: ['Audience definition', 'Assigning an audience to a single Q&A'],
           },
-          {
-            title: 'Process',
-            text: ['Working materials from research and design.'],
-            images: ['audiences/process-1', 'audiences/process-2'],
-            captions: ['Hypothesis and research map: from larger customers’ requests to a group model', 'User flows: filtering, bulk actions and assigning audiences'],
-          },
         ],
         lesson: 'A simple primitive instead of a patch: it started with a single PDF and ended up as a shared language for the whole agent.',
       },
@@ -244,6 +244,12 @@ export const cases: CaseStudy[] = [
           effect: 'Jeden ekran setupu i jeden ekran overview. Wdrożone tuż po moim odejściu z Tidio (XI 2026), więc nie znam wyników. Miarą sukcesu miał być „Aha! moment”: przejście onboardingu, uruchomienie agenta i pierwsza rozmowa rozwiązana przez Lyro.',
         },
         sections: [
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['onboarding/process-1', 'onboarding/process-2'],
+            captions: ['Mapa hipotez i researchu: dlaczego lista „to do” przestała działać', 'Statusy, kroki i wireframes ekranu Setup'],
+          },
           {
             title: 'Problem',
             text: [
@@ -305,12 +311,6 @@ export const cases: CaseStudy[] = [
               },
             },
           },
-          {
-            title: 'Proces',
-            text: ['Materiały robocze z researchu i projektowania.'],
-            images: ['onboarding/process-1', 'onboarding/process-2'],
-            captions: ['Mapa hipotez i researchu: dlaczego lista „to do” przestała działać', 'Statusy, kroki i wireframes ekranu Setup'],
-          },
         ],
         lesson: 'Gdy produkt rośnie, onboarding nie może rosnąć razem z nim. Musi skupiać się na tym, co najważniejsze na starcie.',
       },
@@ -326,6 +326,12 @@ export const cases: CaseStudy[] = [
           effect: "One setup screen and one overview screen. Shipped right after I left Tidio (Nov 2026), so I haven't seen the results. Success was to be measured by the “Aha! moment”: completing onboarding, launching the agent and Lyro resolving its first conversation.",
         },
         sections: [
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['onboarding/process-1', 'onboarding/process-2'],
+            captions: ['Hypothesis and research map: why the to-do list stopped working', 'States, steps and wireframes for the Setup screen'],
+          },
           {
             title: 'Problem',
             text: [
@@ -387,12 +393,6 @@ export const cases: CaseStudy[] = [
               },
             },
           },
-          {
-            title: 'Process',
-            text: ['Working materials from research and design.'],
-            images: ['onboarding/process-1', 'onboarding/process-2'],
-            captions: ['Hypothesis and research map: why the to-do list stopped working', 'States, steps and wireframes for the Setup screen'],
-          },
         ],
         lesson: 'As a product grows, onboarding can’t grow with it. It has to focus on what matters most at the start.',
       },
@@ -416,6 +416,12 @@ export const cases: CaseStudy[] = [
           effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
         },
         sections: [
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
+            captions: ['Mapa obecnej nawigacji: gdzie były rozproszone ustawienia agenta', 'Struktura nowego modelu: profil, praca z zespołem, ustawienia domyślne', 'Dokument roboczy: model agenta i nawigacji (wersja 17)'],
+          },
           {
             title: 'Problem',
             text: [
@@ -470,12 +476,6 @@ export const cases: CaseStudy[] = [
               },
             },
           },
-          {
-            title: 'Proces',
-            text: ['Materiały robocze z researchu i projektowania.'],
-            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
-            captions: ['Mapa obecnej nawigacji: gdzie były rozproszone ustawienia agenta', 'Struktura nowego modelu: profil, praca z zespołem, ustawienia domyślne', 'Dokument roboczy: model agenta i nawigacji (wersja 17)'],
-          },
         ],
         lesson: 'Nawigacja to nie lista funkcji, tylko model tego, jak użytkownik rozumie produkt. Warto go projektować od początku, zanim funkcji przybędzie.',
       },
@@ -491,6 +491,12 @@ export const cases: CaseStudy[] = [
           effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: fewer support tickets asking where agent settings live.',
         },
         sections: [
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
+            captions: ['Map of the current navigation: where agent settings were scattered', 'Structure of the new model: profile, working with the team, defaults', 'Working doc: agent and navigation model (version 17)'],
+          },
           {
             title: 'Problem',
             text: [
@@ -545,12 +551,6 @@ export const cases: CaseStudy[] = [
               },
             },
           },
-          {
-            title: 'Process',
-            text: ['Working materials from research and design.'],
-            images: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
-            captions: ['Map of the current navigation: where agent settings were scattered', 'Structure of the new model: profile, working with the team, defaults', 'Working doc: agent and navigation model (version 17)'],
-          },
         ],
         lesson: 'Navigation isn’t a list of features. It’s a model of how users understand the product. Design it early, before the features pile up.',
       },
@@ -574,6 +574,12 @@ export const cases: CaseStudy[] = [
           effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         },
         sections: [
+          {
+            title: 'Proces',
+            text: ['Materiały robocze z researchu i projektowania.'],
+            images: ['knowledge/process'],
+            captions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
+          },
           {
             title: 'Problem',
             text: [
@@ -640,12 +646,6 @@ export const cases: CaseStudy[] = [
             captions: ['Poziom 1: foldery', 'Poziom 2: Q&A wewnątrz folderu'],
             note: 'Ta koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie.',
           },
-          {
-            title: 'Proces',
-            text: ['Materiały robocze z researchu i projektowania.'],
-            images: ['knowledge/process'],
-            captions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
-          },
         ],
         lesson: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, problemem nie jest UI, tylko model. Uproszczenie modelu upraszcza wszystko, co powstaje na nim później.',
       },
@@ -661,6 +661,12 @@ export const cases: CaseStudy[] = [
           effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         },
         sections: [
+          {
+            title: 'Process',
+            text: ['Working materials from research and design.'],
+            images: ['knowledge/process'],
+            captions: ['Hypothesis and research map: the current and new knowledge source structure'],
+          },
           {
             title: 'Problem',
             text: [
@@ -726,12 +732,6 @@ export const cases: CaseStudy[] = [
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Level 1: folders', 'Level 2: Q&As inside a folder'],
             note: 'This concept was planned for a later stage, but I left Tidio before it came up for implementation.',
-          },
-          {
-            title: 'Process',
-            text: ['Working materials from research and design.'],
-            images: ['knowledge/process'],
-            captions: ['Hypothesis and research map: the current and new knowledge source structure'],
           },
         ],
         lesson: 'When users see five things where there is one, the problem isn’t the UI. It’s the model. Simplifying the model simplifies everything built on top of it.',

@@ -258,6 +258,6 @@ export const volunteering: L10n<string[]> = {
 };
 
 export const languages: L10n<string[]> = {
-  pl: ['Polski: ojczysty', 'Angielski: B1/B2'],
-  en: ['Polish: native', 'English: B1/B2'],
+  pl: ['Polski: ojczysty', 'Angielski: B1'],
+  en: ['Polish: native', 'English: B1'],
 };

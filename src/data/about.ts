@@ -27,13 +27,13 @@ export const stats: L10n<{ value: string; short?: string; label: string }[]> = {
     { value: '20+ lat', label: 'w projektowaniu interfejsów i grafiki' },
     { value: '5+ lat', label: 'jako Product Designer w Tidio, 4 zespoły' },
     { value: '3+ lata', label: 'przy Lyro i produktach AI, od pierwszej wersji' },
-    { value: 'mgr informatyki', short: 'mgr inf.', label: 'rozumiem, jak działa to, co projektuję' },
+    { value: 'mgr inż.', label: 'informatyki, więc rozumiem, jak działa to, co projektuję' },
   ],
   en: [
     { value: '20+ yrs', label: 'in interface and graphic design' },
     { value: '5+ yrs', label: 'as a Product Designer at Tidio, 4 teams' },
     { value: '3+ yrs', label: 'on Lyro and AI products, from v1' },
-    { value: 'MSc in CS', short: 'MSc', label: 'I know how what I design is built' },
+    { value: 'MSc Eng.', label: 'in Computer Science, so I know how what I design is built' },
   ],
 };
 
@@ -214,7 +214,7 @@ export const education: L10n<Entry[]> = {
   pl: [
     {
       title: 'Politechnika Szczecińska, Wydział Informatyki',
-      sub: 'Studia magisterskie, informatyka, specjalizacja: techniki multimedialne',
+      sub: 'Magister inżynier informatyki, specjalizacja: techniki multimedialne',
       years: '1998-2003',
     },
     { title: 'Sztuka projektowania', sub: 'Kurs designu pod patronatem Karola Śliwki, I edycja, Gdańsk', years: '2018-2019' },
@@ -222,7 +222,7 @@ export const education: L10n<Entry[]> = {
   en: [
     {
       title: 'Szczecin University of Technology, Faculty of Computer Science',
-      sub: "Master's degree in Computer Science, specialisation: multimedia technologies",
+      sub: "Master of Science in Engineering, Computer Science, specialisation: multimedia technologies",
       years: '1998-2003',
     },
     { title: 'Sztuka projektowania (The Art of Design)', sub: 'Design course under Karol Śliwka, 1st edition, Gdańsk', years: '2018-2019' },

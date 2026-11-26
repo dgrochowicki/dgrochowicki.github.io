@@ -133,9 +133,9 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; gap: 28px 20px; } }
 
   /* Cover: zrzut na tle z gradientem, przycięty od dołu */
-  .cover { background: linear-gradient(180deg, #8f9ab4 0%, #e6e8ed 100%); border-radius: var(--radius); padding: clamp(20px, 5vw, 64px) clamp(16px, 5vw, 60px) 0; max-height: 760px; overflow: hidden; }
-  .cover :global(img) { display: block; border-radius: 8px 8px 0 0; box-shadow: 0 8px 32px rgba(20, 30, 60, .18); }
-  @media (prefers-color-scheme: dark) { .cover { background: linear-gradient(180deg, #3a4258 0%, #1c1d1f 100%); } }
+  .cover { background: linear-gradient(180deg, #a49dd6 0%, #eceaf6 100%); border-radius: var(--radius); padding: clamp(20px, 5vw, 64px) clamp(16px, 5vw, 60px) 0; max-height: 760px; overflow: hidden; }
+  .cover :global(img) { display: block; border-radius: 8px 8px 0 0; box-shadow: 0 8px 32px rgba(40, 30, 90, .18); }
+  @media (prefers-color-scheme: dark) { .cover { background: linear-gradient(180deg, #3b365e 0%, #1c1d1f 100%); } }
 
   .block { padding-top: clamp(40px, 6vw, 72px); }
   .block .row { border-top: 1px solid var(--line); }

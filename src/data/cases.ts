@@ -79,7 +79,7 @@ export const cases: CaseStudy[] = [
   // ───────────────────────────── 01 AUDIENCES
   {
     slug: 'lyro-audiences',
-    cover: 'audiences/example-modal',
+    cover: 'audiences/configure',
     content: {
       pl: {
         label: 'Tidio · Lyro AI Agent',

@@ -25,10 +25,10 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
     </header>
 
     <div class="wrap">
-      <dl class:list={['meta', { 'no-year': !c.year }]}>
+      <dl class="meta">
         <div><dt>{t.myRole}</dt><dd>{c.role}</dd></div>
         <div><dt>{t.scope}</dt><dd><ul>{c.scope.map((x) => <li>{x}</li>)}</ul></dd></div>
-        <div><dt>{t.team}</dt><dd>{c.team.map((x, i) => <><span class="nowrap">{x}</span>{i < c.team.length - 1 && ', '}</>)}</dd></div>
+        {c.team && <div><dt>{t.team}</dt><dd>{c.team.map((x, i) => <><span class="nowrap">{x}</span>{i < c.team!.length - 1 && ', '}</>)}</dd></div>}
         {c.year && <div><dt>{t.year}</dt><dd>{c.year}</dd></div>}
       </dl>
       <div class="cover"><Figure src={item.cover} eager frame={false} /></div>
@@ -125,12 +125,11 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 38em; }
   /* Rząd meta: Rola | Zakres | Zespół | Rok. Nagłówek kolumny z linią pod spodem */
   .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 24px 0 clamp(40px, 6vw, 64px); }
-  .meta.no-year { grid-template-columns: repeat(3, 1fr); }
   .meta dt { font-size: 15px; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid var(--fg); margin-bottom: 14px; }
   .meta dd { margin: 0; font-size: 15px; }
   .nowrap { white-space: nowrap; }
   .meta ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
-  @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; gap: 28px 20px; } }
+  @media (max-width: 760px) { .meta { grid-template-columns: 1fr 1fr; gap: 28px 20px; } }
 
   /* Cover: zrzut na tle z gradientem, przycięty od dołu */
   .cover { background: linear-gradient(180deg, #a49dd6 0%, #eceaf6 100%); border-radius: var(--radius); padding: clamp(20px, 5vw, 64px) clamp(16px, 5vw, 60px) 0; max-height: 760px; overflow: hidden; }

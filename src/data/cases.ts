@@ -24,8 +24,8 @@ export type CaseContent = {
   role: string;
   /** Zakres pracy (lista w kolumnie „Zakres”) */
   scope: string[];
-  /** Skład zespołu (lista) */
-  team: string[];
+  /** Skład zespołu (opcjonalne; pomijamy, gdy projekt nie był wdrażany) */
+  team?: string[];
   /** Rok (kolumna „Rok”, pokazywana, gdy uzupełniona) */
   year?: string;
   /** Efekt: wyróżniony blok po sekcji „Rozwiązanie” */
@@ -527,8 +527,7 @@ export const cases: CaseStudy[] = [
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
         role: 'Product Designer, inicjatywa własna',
         scope: ['Analiza modelu danych', 'UI', 'Testy z użytkownikami'],
-        team: ['PM', 'EM', 'QA', '2–3 BE', '2–4 FE'],
-        year: '2024',
+        year: '2026',
         effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         processImages: ['knowledge/process'],
         processCaptions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
@@ -608,8 +607,7 @@ export const cases: CaseStudy[] = [
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
         role: 'Product Designer, own initiative',
         scope: ['Data model analysis', 'UI', 'User testing'],
-        team: ['PM', 'EM', 'QA', '2–3 BE', '2–4 FE'],
-        year: '2024',
+        year: '2026',
         effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         processImages: ['knowledge/process'],
         processCaptions: ['Hypothesis and research map: the current and new knowledge source structure'],

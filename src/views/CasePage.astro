@@ -28,6 +28,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <dl class="meta">
         <div><dt>{t.myRole}</dt><dd>{c.role}</dd></div>
         <div><dt>{t.scope}</dt><dd><ul>{c.scope.map((x) => <li>{x}</li>)}</ul></dd></div>
+        {!c.team && c.teamNote && <div><dt>{t.team}</dt><dd>{c.teamNote}</dd></div>}
         {c.team && <div><dt>{t.team}</dt><dd>{c.team.map((x, i) => <><span class="nowrap">{x}</span>{i < c.team!.length - 1 && ', '}</>)}</dd></div>}
         {c.year && <div><dt>{t.year}</dt><dd>{c.year}</dd></div>}
       </dl>

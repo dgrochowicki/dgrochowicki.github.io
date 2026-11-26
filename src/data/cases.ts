@@ -26,6 +26,8 @@ export type CaseContent = {
   scope: string[];
   /** Skład zespołu (opcjonalne; pomijamy, gdy projekt nie był wdrażany) */
   team?: string[];
+  /** Tekst w kolumnie „Zespół” zamiast listy osób (np. koncepcja niewdrożona) */
+  teamNote?: string;
   /** Rok (kolumna „Rok”, pokazywana, gdy uzupełniona) */
   year?: string;
   /** Efekt: wyróżniony blok po sekcji „Rozwiązanie” */
@@ -527,6 +529,7 @@ export const cases: CaseStudy[] = [
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
         role: 'Product Designer, inicjatywa własna',
         scope: ['Analiza modelu danych', 'UI', 'Testy z użytkownikami'],
+        teamNote: 'Ta koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie.',
         year: '2026',
         effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         processImages: ['knowledge/process'],
@@ -596,7 +599,6 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Poziom 1: foldery', 'Poziom 2: Q&A wewnątrz folderu'],
-            note: 'Ta koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie.',
           },
         ],
         lesson: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, problemem nie jest UI, tylko model. Uproszczenie modelu upraszcza wszystko, co powstaje na nim później.',
@@ -607,6 +609,7 @@ export const cases: CaseStudy[] = [
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
         role: 'Product Designer, own initiative',
         scope: ['Data model analysis', 'UI', 'User testing'],
+        teamNote: 'This concept was planned for a later stage, but I left Tidio before it came up for implementation.',
         year: '2026',
         effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         processImages: ['knowledge/process'],
@@ -676,7 +679,6 @@ export const cases: CaseStudy[] = [
             ],
             images: ['knowledge/after', 'knowledge/folder'],
             captions: ['Level 1: folders', 'Level 2: Q&As inside a folder'],
-            note: 'This concept was planned for a later stage, but I left Tidio before it came up for implementation.',
           },
         ],
         lesson: 'When users see five things where there is one, the problem isn’t the UI. It’s the model. Simplifying the model simplifies everything built on top of it.',

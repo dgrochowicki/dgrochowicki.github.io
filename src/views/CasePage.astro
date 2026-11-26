@@ -22,22 +22,25 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <p class="eyebrow">{c.label}</p>
       <h1>{c.title}</h1>
       <p class="lead">{c.summary}</p>
-      <p class="role"><span class="muted">{t.myRole}:</span> {c.role}</p>
-      {c.team && <p class="role meta"><span class="muted">{t.team}:</span> {c.team}</p>}
-      {c.timeline && <p class="role meta"><span class="muted">{t.timeline}:</span> {c.timeline}</p>}
-      <p class="role meta"><span class="muted">{t.process}:</span> {c.processSteps.join(' → ')}</p>
     </header>
 
     <div class="wrap">
-      <dl class="tldr">
-        <div><dt>{t.problem}</dt><dd>{c.tldr.problem}</dd></div>
-        <div><dt>{t.solution}</dt><dd>{c.tldr.solution}</dd></div>
-        <div><dt>{t.effect}</dt><dd>{c.tldr.effect}</dd></div>
+      <dl class:list={['meta', { 'no-year': !c.year }]}>
+        <div><dt>{t.myRole}</dt><dd>{c.role}</dd></div>
+        <div><dt>{t.scope}</dt><dd><ul>{c.scope.map((x) => <li>{x}</li>)}</ul></dd></div>
+        <div><dt>{t.team}</dt><dd><ul>{c.team.map((x) => <li>{x}</li>)}</ul></dd></div>
+        {c.year && <div><dt>{t.year}</dt><dd>{c.year}</dd></div>}
       </dl>
       <Figure src={item.cover} eager />
     </div>
 
-    {c.sections.map((s, si) => (
+    {c.sections.map((s) => (
+      <Fragment>
+      {s.title === t.solution && (
+        <div class="wrap imgs n2 process">
+          {c.processImages.map((src, n) => <Figure src={src} caption={c.processCaptions[n]} sizes="(max-width: 860px) 50vw, 600px" />)}
+        </div>
+      )}
       <section class="wrap block">
         <div class="row">
           <h2 class="label">{s.title}</h2>
@@ -79,14 +82,16 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
             {s.images.map((src, n) => <Figure src={src} caption={s.captions?.[n]} sizes={imgSizes(s.images!.length)} />)}
           </div>
         )}
-
-        {/* Materiały robocze procesu: mniejsze, 2 w rzędzie, pod sekcją Problem */}
-        {si === 0 && (
-          <div class="imgs n2 process">
-            {c.processImages.map((src, n) => <Figure src={src} caption={c.processCaptions[n]} sizes="(max-width: 860px) 100vw, 600px" />)}
-          </div>
-        )}
       </section>
+      {s.title === t.solution && (
+        <section class="wrap block">
+          <div class="row">
+            <h2 class="label">{t.effect}</h2>
+            <div class="content"><p class="effect">{c.effect}</p></div>
+          </div>
+        </section>
+      )}
+      </Fragment>
     ))}
 
     <section class="wrap">
@@ -120,15 +125,13 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
   .head h1 { font-size: clamp(32px, 5vw, 56px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
   .lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 38em; }
-  .role { font-size: 15px; margin-top: 20px; max-width: 46em; }
-  .role.meta { margin-top: 6px; }
-
-  .tldr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 0 0 40px; }
-  .tldr div { background: var(--bg); padding: 22px 24px; }
-  .tldr div:last-child { background: var(--accent); color: var(--accent-fg); }
-  .tldr dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; opacity: .7; }
-  .tldr dd { margin: 0; font-size: 16px; }
-  @media (max-width: 860px) { .tldr { grid-template-columns: 1fr; } }
+  /* Rząd meta: Rola | Zakres | Zespół | Rok */
+  .meta { display: grid; grid-template-columns: 1fr 1.3fr 1fr .6fr; gap: 24px 32px; border-top: 1px solid var(--line); padding: 24px 0 0; margin: 0 0 40px; }
+  .meta.no-year { grid-template-columns: 1fr 1.3fr 1fr; }
+  .meta dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+  .meta dd { margin: 0; font-size: 15px; }
+  .meta ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; } }
 
   .block { padding-top: clamp(40px, 6vw, 72px); }
   .block .row { border-top: 1px solid var(--line); }
@@ -150,6 +153,8 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   @media (max-width: 860px) { .imgs.n2, .imgs.n3 { grid-template-columns: 1fr; } }
   /* Proces: zawsze 2 w rzędzie, mniejsze odstępy */
   .imgs.n2.process { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  /* Efekt: wyróżniony blok jak dawna karta TL;DR, tekst w rozmiarze body */
+  .effect { background: var(--accent); color: var(--accent-fg); border-radius: var(--radius); padding: 20px 24px; margin: 0; }
   .process :global(figcaption) { font-size: 13px; }
 
   .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -172,7 +177,8 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .essay-link strong { font-size: 18px; font-weight: 600; }
   .essay-link .muted { font-size: 14px; }
   .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
-  .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border-top: 1px solid var(--line); padding-top: 28px; }
+  .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 32px; transition: .2s; }
+  .next a:hover { border-color: var(--muted); }
   .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }
   .next a:hover strong { text-decoration: underline; }
 </style>

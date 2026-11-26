@@ -72,6 +72,8 @@ export const ui = {
     close: 'Zamknij',
     myRole: 'Moja rola',
     team: 'Zespół',
+    scope: 'Zakres',
+    year: 'Rok',
     timeline: 'Czas',
   },
   en: {
@@ -124,6 +126,8 @@ export const ui = {
     close: 'Close',
     myRole: 'My role',
     team: 'Team',
+    scope: 'Scope',
+    year: 'Year',
     timeline: 'Timeline',
   },
 } as const;

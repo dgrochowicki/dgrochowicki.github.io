@@ -20,14 +20,16 @@ export type CaseContent = {
   label: string;
   title: string;
   summary: string;
+  /** Rola (kolumna „Rola” w rzędzie meta) */
   role: string;
-  /** Skład zespołu (opcjonalne) */
-  team?: string;
-  /** Kiedy i jak długo (opcjonalne) */
-  timeline?: string;
-  tldr: { problem: string; solution: string; effect: string };
-  /** Kroki procesu w jednej linii (pasek pod TL;DR) */
-  processSteps: string[];
+  /** Zakres pracy (lista w kolumnie „Zakres”) */
+  scope: string[];
+  /** Skład zespołu (lista) */
+  team: string[];
+  /** Rok (kolumna „Rok”, pokazywana, gdy uzupełniona) */
+  year?: string;
+  /** Efekt: wyróżniony blok po sekcji „Rozwiązanie” */
+  effect: string;
   /** Miniatury materiałów roboczych (otwierają się w lightboxie) */
   processImages: string[];
   processCaptions: string[];
@@ -83,14 +85,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 01',
         title: 'Audiences: różne odpowiedzi dla różnych klientów',
         summary: 'Jak jeden prosty mechanizm grup odwiedzających zastąpił osobne bazy wiedzy i stał się wspólnym językiem całego agenta.',
-        role: 'Research, model konfiguracji, user flows, UI, testy z użytkownikami',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: 'Lyro korzystał z jednej bazy wiedzy dla wszystkich. Więksi klienci potrzebowali, by agent nie „mówił” wszystkiego każdemu.',
-          solution: 'Audiences: grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.',
-          effect: 'Funkcja dla większych firm. Ten sam mechanizm trafił później do Guidance, Procedures, Actions i wykluczania grup z rozmów z Lyro.',
-        },
-        processSteps: ['Research', 'Hipotezy', 'User flows', 'UI', 'Testy z użytkownikami'],
+        role: 'Product Designer',
+        scope: ['Research', 'Model konfiguracji', 'User flows', 'UI', 'Testy z użytkownikami'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: 'Funkcja dla większych firm. Ten sam mechanizm trafił później do Guidance, Procedures, Actions i wykluczania grup z rozmów z Lyro.',
         processImages: ['audiences/process-1', 'audiences/process-2'],
         processCaptions: ['Mapa hipotez i researchu: od zgłoszeń większych klientów do modelu grup', 'User flows: filtrowanie, akcje zbiorcze i przypisywanie audiences'],
         sections: [
@@ -110,6 +108,10 @@ export const cases: CaseStudy[] = [
             text: [
               'W Knowledge / Data sources użytkownicy dodawali treści, z których Lyro budował odpowiedzi. Każde źródło było dostępne w każdej rozmowie.',
             ],
+          },
+          {
+            title: 'Rozwiązanie',
+            text: ['Audiences: grupy odwiedzających budowane z kanałów i warunków, przypisywane do źródeł wiedzy. Domyślnie: Everyone.'],
           },
           {
             title: 'Kluczowe decyzje',
@@ -155,14 +157,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 01',
         title: 'Audiences: different answers for different customers',
         summary: 'How one simple visitor-group mechanism replaced separate knowledge bases and became a shared language across the whole agent.',
-        role: 'Research, configuration model, user flows, UI, user testing',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: "Lyro used one knowledge base for every visitor. Larger customers needed the agent not to tell everyone everything.",
-          solution: 'Audiences: visitor groups built from channels and conditions, assigned to knowledge sources. Default: Everyone.',
-          effect: 'A feature for larger companies. The same mechanism later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
-        },
-        processSteps: ['Research', 'Hypotheses', 'User flows', 'UI', 'User testing'],
+        role: 'Product Designer',
+        scope: ['Research', 'Configuration model', 'User flows', 'UI', 'User testing'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: 'A feature for larger companies. The same mechanism later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
         processImages: ['audiences/process-1', 'audiences/process-2'],
         processCaptions: ['Hypothesis and research map: from larger customers’ requests to a group model', 'User flows: filtering, bulk actions and assigning audiences'],
         sections: [
@@ -182,6 +180,10 @@ export const cases: CaseStudy[] = [
             text: [
               'In Knowledge / Data sources users added the content Lyro built its answers from. Every source was available in every conversation.',
             ],
+          },
+          {
+            title: 'Solution',
+            text: ['Audiences: visitor groups built from channels and conditions, assigned to knowledge sources. Default: Everyone.'],
           },
           {
             title: 'Key decisions',
@@ -235,14 +237,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: agent gotowy w kilka minut',
         summary: 'Zamiast kolejnych punktów na liście „to do”: osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
-        role: 'Koncepcja, user flows, wireframes, UI, testy z użytkownikami, analiza danych (Amplitude)',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: 'Wraz z rozwojem agenta lista setupu przestała spełniać swoją rolę, a dokładanie kolejnych kroków było najsłabsze z punktu widzenia UX.',
-          solution: 'Ekran Setup prowadzący przez konfigurację z perspektywy agenta („I’m joining your team”) w pięciu krokach.',
-          effect: 'Jeden ekran setupu i jeden ekran overview. Wdrożone tuż po moim odejściu z Tidio (XI 2026), więc nie znam wyników. Miarą sukcesu miał być „Aha! moment”: przejście onboardingu, uruchomienie agenta i pierwsza rozmowa rozwiązana przez Lyro.',
-        },
-        processSteps: ['Research', 'Dane (Amplitude)', 'Hipotezy', 'Wireframes', 'UI', 'Testy z użytkownikami'],
+        role: 'Product Designer',
+        scope: ['Koncepcja', 'User flows', 'Wireframes', 'UI', 'Testy z użytkownikami', 'Analiza danych (Amplitude)'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: 'Jeden ekran setupu i jeden ekran overview. Wdrożone tuż po moim odejściu z Tidio (XI 2026), więc nie znam wyników. Miarą sukcesu miał być „Aha! moment”: przejście onboardingu, uruchomienie agenta i pierwsza rozmowa rozwiązana przez Lyro.',
         processImages: ['onboarding/process-1', 'onboarding/process-2'],
         processCaptions: ['Mapa hipotez i researchu: dlaczego lista „to do” przestała działać', 'Statusy, kroki i wireframes ekranu Setup'],
         sections: [
@@ -314,14 +312,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 02',
         title: 'Onboarding: an agent ready in minutes',
         summary: 'Instead of more items on a to-do list: a dedicated Setup screen where the agent introduces itself like a new teammate.',
-        role: 'Concept, user flows, wireframes, UI, user testing, data analysis (Amplitude)',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: 'As the agent grew, the setup checklist stopped doing its job, and adding more steps was the weakest option from a UX point of view.',
-          solution: 'A Setup screen that walks through configuration from the agent’s perspective (“I’m joining your team”) in five steps.',
-          effect: "One setup screen and one overview screen. Shipped right after I left Tidio (Nov 2026), so I haven't seen the results. Success was to be measured by the “Aha! moment”: completing onboarding, launching the agent and Lyro resolving its first conversation.",
-        },
-        processSteps: ['Research', 'Data (Amplitude)', 'Hypotheses', 'Wireframes', 'UI', 'User testing'],
+        role: 'Product Designer',
+        scope: ['Concept', 'User flows', 'Wireframes', 'UI', 'User testing', 'Data analysis (Amplitude)'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: "One setup screen and one overview screen. Shipped right after I left Tidio (Nov 2026), so I haven't seen the results. Success was to be measured by the “Aha! moment”: completing onboarding, launching the agent and Lyro resolving its first conversation.",
         processImages: ['onboarding/process-1', 'onboarding/process-2'],
         processCaptions: ['Hypothesis and research map: why the to-do list stopped working', 'States, steps and wireframes for the Setup screen'],
         sections: [
@@ -401,14 +395,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 03',
         title: 'Profil agenta zamiast zakładek ustawień',
         summary: 'Przebudowa modelu mentalnego Lyro i nawigacji: ustawienia ułożone wokół tego, kim jest agent i jak pracuje z zespołem.',
-        role: 'Analiza, model nawigacji, prototypy HTML, UI, testy z użytkownikami',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: 'Ustawienia rozproszone między Configure, Behavior, Handoff i kanały. Użytkownicy gubili się, gdzie co jest.',
-          solution: 'Profil agenta: kim jest, jak mówi i jak pracuje z zespołem, z podglądem rozmowy obok. Iteracje na klikalnych prototypach HTML.',
-          effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
-        },
-        processSteps: ['Analiza nawigacji', 'Model', 'Prototypy HTML', 'UI', 'Testy z użytkownikami'],
+        role: 'Product Designer',
+        scope: ['Analiza', 'Model nawigacji', 'Prototypy HTML', 'UI', 'Testy z użytkownikami'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
         processImages: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
         processCaptions: ['Mapa obecnej nawigacji: gdzie były rozproszone ustawienia agenta', 'Struktura nowego modelu: profil, praca z zespołem, ustawienia domyślne', 'Dokument roboczy: model agenta i nawigacji (wersja 17)'],
         sections: [
@@ -473,14 +463,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 03',
         title: 'An agent profile instead of settings tabs',
         summary: "Rebuilding Lyro's mental model and navigation: settings organised around who the agent is and how it works with the team.",
-        role: 'Analysis, navigation model, HTML prototypes, UI, user testing',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE.',
-        tldr: {
-          problem: 'Settings were scattered across Configure, Behavior, Handoff and channels. Users got lost looking for things.',
-          solution: 'An agent profile: who it is, how it talks and how it works with the team, with a live conversation preview. Iterated on clickable HTML prototypes.',
-          effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: fewer support tickets asking where agent settings live.',
-        },
-        processSteps: ['Navigation audit', 'Model', 'HTML prototypes', 'UI', 'User testing'],
+        role: 'Product Designer',
+        scope: ['Analysis', 'Navigation model', 'HTML prototypes', 'UI', 'User testing'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: fewer support tickets asking where agent settings live.',
         processImages: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
         processCaptions: ['Map of the current navigation: where agent settings were scattered', 'Structure of the new model: profile, working with the team, defaults', 'Working doc: agent and navigation model (version 17)'],
         sections: [
@@ -553,14 +539,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 04',
         title: 'Knowledge: uproszczony model źródeł wiedzy',
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
-        role: 'Inicjatywa własna, analiza modelu danych, UI, testy z użytkownikami',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. Byłem designerem zespołu, przy Knowledge współpracował ze mną drugi designer.',
-        tldr: {
-          problem: 'Manual, Inbox, CSV, Website i PDF wyglądały jak pięć różnych rzeczy, choć wszystkie były zbiorem pytań i odpowiedzi.',
-          solution: 'Każda pozycja w bazie wiedzy to Q&A, a CSV, strona czy PDF to tylko jej źródło. Source zmienione w Type.',
-          effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
-        },
-        processSteps: ['Research', 'Hipotezy', 'Model danych', 'UI', 'Testy z użytkownikami'],
+        role: 'Product Designer, inicjatywa własna',
+        scope: ['Analiza modelu danych', 'UI', 'Testy z użytkownikami'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE', 'Drugi designer, który ze mną współpracował'],
+        effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         processImages: ['knowledge/process'],
         processCaptions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
         sections: [
@@ -637,14 +619,10 @@ export const cases: CaseStudy[] = [
         label: 'Lyro AI Agent · Case study 04',
         title: 'Knowledge: a simpler model of knowledge sources',
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
-        role: 'Own initiative, data model analysis, UI, user testing',
-        team: 'PM, EM, QA, 2-3 BE, 2-4 FE. I was the team’s designer, and a second designer collaborated with me on Knowledge.',
-        tldr: {
-          problem: 'Manual, Inbox, CSV, Website and PDF looked like five different things, although all of them were sets of questions and answers.',
-          solution: 'Every item in the knowledge base is a Q&A; CSV, website or PDF is only its origin. Source became Type.',
-          effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
-        },
-        processSteps: ['Research', 'Hypotheses', 'Data model', 'UI', 'User testing'],
+        role: 'Product Designer, own initiative',
+        scope: ['Data model analysis', 'UI', 'User testing'],
+        team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE', 'A second designer collaborating with me'],
+        effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         processImages: ['knowledge/process'],
         processCaptions: ['Hypothesis and research map: the current and new knowledge source structure'],
         sections: [

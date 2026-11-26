@@ -28,7 +28,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <dl class:list={['meta', { 'no-year': !c.year }]}>
         <div><dt>{t.myRole}</dt><dd>{c.role}</dd></div>
         <div><dt>{t.scope}</dt><dd><ul>{c.scope.map((x) => <li>{x}</li>)}</ul></dd></div>
-        <div><dt>{t.team}</dt><dd><ul>{c.team.map((x) => <li>{x}</li>)}</ul></dd></div>
+        <div><dt>{t.team}</dt><dd>{c.team.map((x, i) => <><span class="nowrap">{x}</span>{i < c.team.length - 1 && ', '}</>)}</dd></div>
         {c.year && <div><dt>{t.year}</dt><dd>{c.year}</dd></div>}
       </dl>
       <div class="cover"><Figure src={item.cover} eager frame={false} /></div>
@@ -38,7 +38,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
       <Fragment>
       {s.title === t.solution && (
         <div class="wrap imgs n2 process">
-          {c.processImages.map((src, n) => <Figure src={src} caption={c.processCaptions[n]} sizes="(max-width: 860px) 50vw, 600px" />)}
+          {c.processImages.map((src, n) => <Figure src={src} caption={c.processCaptions[n]} sizes="(max-width: 860px) 100vw, 600px" />)}
         </div>
       )}
       <section class="wrap block">
@@ -103,7 +103,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
           <a class="essay-link" href={`${href(`portfolio/${essay.slug}`, lang)}#lekcja-${lessonIdx + 1}`}>
             <span class="muted">{t.moreInEssay}</span>
             <span>{essay.content[lang].title}</span>
-            <span class="essay-lesson">{t.lessonN} {lessonIdx + 1}: {relLesson.title} →</span>
+            <span class="essay-lesson">{t.lessonN} {lessonIdx + 1}: {relLesson.title} <span class="arrow">→</span></span>
           </a>
         )}
       </div>
@@ -128,6 +128,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .meta.no-year { grid-template-columns: repeat(3, 1fr); }
   .meta dt { font-size: 15px; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid var(--fg); margin-bottom: 14px; }
   .meta dd { margin: 0; font-size: 15px; }
+  .nowrap { white-space: nowrap; }
   .meta ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
   @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; gap: 28px 20px; } }
 
@@ -138,7 +139,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
 
   .block { padding-top: clamp(40px, 6vw, 72px); }
   .block .row { border-top: 1px solid var(--line); }
-  .block h2.label { font-size: 15px; font-weight: 500; line-height: 1.6; }
+  .block h2.label { font-size: 15px; font-weight: 600; line-height: 1.6; color: var(--fg); }
   .content { max-width: var(--text); }
   .bullets { padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
   .content .bullets { margin-top: 4px; }
@@ -155,7 +156,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .imgs.n3 { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 860px) { .imgs.n2, .imgs.n3 { grid-template-columns: 1fr; } }
   /* Proces: zawsze 2 w rzędzie, mniejsze odstępy */
-  .imgs.n2.process { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .imgs.n2.process { gap: 16px; margin-top: 32px; }
   /* Efekt: szary blok w kolumnie treści, pogrubiony tekst w rozmiarze body */
   .effect-row { display: grid; grid-template-columns: 220px 1fr; column-gap: 48px; margin: 8px 0 0; }
   .effect { grid-column: 2; background: var(--bg-soft); border-radius: var(--radius); padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 40px); }
@@ -173,13 +174,14 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .compare :global(figcaption) { display: none; }
   @media (max-width: 860px) { .compare { grid-template-columns: 1fr; } }
 
-  /* Wniosek: szary blok z dużym nagłówkiem i linkiem do eseju */
-  .lesson { margin-top: clamp(56px, 8vw, 96px); background: var(--bg-soft); border-radius: var(--radius); padding: clamp(24px, 4vw, 44px); }
-  .lesson-label { font-size: 15px; font-weight: 500; margin: 0 0 12px; }
-  .lesson-text { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; max-width: 26em; margin: 0; }
-  .essay-link { display: flex; flex-direction: column; gap: 2px; margin-top: 24px; text-decoration: none; font-size: clamp(16px, 1.6vw, 18px); }
-  .essay-link .muted { font-size: 13px; margin-bottom: 6px; }
-  .essay-link:hover .essay-lesson { text-decoration: underline; }
+  /* Wniosek: bez tła, duży nagłówek, link do eseju w kolorze linku ze strzałką */
+  .lesson { margin-top: clamp(56px, 8vw, 96px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line); }
+  .lesson-label { font-size: 15px; font-weight: 600; margin: 0 0 12px; }
+  .lesson-text { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; max-width: 24em; margin: 0; }
+  .essay-link { display: inline-flex; flex-direction: column; gap: 2px; margin-top: 24px; text-decoration: none; font-size: clamp(16px, 1.6vw, 18px); color: var(--link); font-weight: 500; }
+  .essay-link .muted { font-size: 13px; font-weight: 400; margin-bottom: 6px; }
+  .essay-link .arrow { display: inline-block; transition: transform .25s ease; }
+  .essay-link:hover .arrow { transform: translateX(6px); }
   .next { padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 8px; text-decoration: none; border: 1px solid color-mix(in srgb, var(--fg) 30%, transparent); border-radius: var(--radius); padding: clamp(24px, 3vw, 40px); transition: .2s; }
   .next a:hover { border-color: color-mix(in srgb, var(--fg) 45%, transparent); }
@@ -187,5 +189,5 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .next .muted { font-size: 14px; }
   .next .arrow { display: inline-block; transition: transform .25s ease; }
   .next a:hover .arrow { transform: translateX(6px); }
-  @media (prefers-reduced-motion: reduce) { .next .arrow { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .next .arrow, .essay-link .arrow { transition: none; } }
 </style>

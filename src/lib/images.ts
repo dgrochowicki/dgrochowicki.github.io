@@ -25,3 +25,8 @@ export function folder(dir: string): ImageMetadata[] {
     .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
     .map(([, v]) => v);
 }
+
+/** Czy obraz o danym kluczu istnieje (bez rzucania błędu). */
+export function hasImg(key: string): boolean {
+  return byKey.has(key.replace(/\.[^.]+$/, ''));
+}

@@ -24,7 +24,7 @@ const full = await getImage({ src: meta, width: Math.min(meta.width, 2400), form
   .fig { margin: 0; }
   .fig a { display: block; cursor: zoom-in; }
   .frame a { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--bg-soft); }
-  .fig img { width: 100%; transition: transform .3s; }
+  .fig img { display: block; width: 100%; height: auto; transition: transform .3s; }
   .fig a:hover img { transform: scale(1.01); }
   figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
 </style>

@@ -82,7 +82,7 @@ export const cases: CaseStudy[] = [
     cover: 'audiences/example-modal',
     content: {
       pl: {
-        label: 'Lyro AI Agent · Case study 01',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Audiences: różne odpowiedzi dla różnych klientów',
         summary: 'Jak jeden prosty mechanizm grup odwiedzających zastąpił osobne bazy wiedzy i stał się wspólnym językiem całego agenta.',
         role: 'Product Designer',
@@ -145,7 +145,7 @@ export const cases: CaseStudy[] = [
         lesson: 'Zanim zaprojektujesz funkcję, sprawdź, czy nie potrzebujesz prymitywu.',
       },
       en: {
-        label: 'Lyro AI Agent · Case study 01',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Audiences: different answers for different customers',
         summary: 'How one simple visitor-group mechanism replaced separate knowledge bases and became a shared language across the whole agent.',
         role: 'Product Designer',
@@ -216,7 +216,7 @@ export const cases: CaseStudy[] = [
     cover: 'onboarding/setup',
     content: {
       pl: {
-        label: 'Lyro AI Agent · Case study 02',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Onboarding: agent gotowy w kilka minut',
         summary: 'Zamiast kolejnych punktów na liście „to do”: osobny ekran Setup, na którym agent przedstawia się jak nowy członek zespołu.',
         role: 'Product Designer',
@@ -292,7 +292,7 @@ export const cases: CaseStudy[] = [
         lesson: 'Gdy produkt rośnie, onboarding nie może rosnąć razem z nim. Musi skupiać się na tym, co najważniejsze na starcie.',
       },
       en: {
-        label: 'Lyro AI Agent · Case study 02',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Onboarding: an agent ready in minutes',
         summary: 'Instead of more items on a to-do list: a dedicated Setup screen where the agent introduces itself like a new teammate.',
         role: 'Product Designer',
@@ -376,7 +376,7 @@ export const cases: CaseStudy[] = [
     cover: 'agent-profile/profile',
     content: {
       pl: {
-        label: 'Lyro AI Agent · Case study 03',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Profil agenta zamiast zakładek ustawień',
         summary: 'Przebudowa modelu mentalnego Lyro i nawigacji: ustawienia ułożone wokół tego, kim jest agent i jak pracuje z zespołem.',
         role: 'Product Designer',
@@ -445,7 +445,7 @@ export const cases: CaseStudy[] = [
         lesson: 'Nawigacja to nie lista funkcji, tylko model tego, jak użytkownik rozumie produkt. Warto go projektować od początku, zanim funkcji przybędzie.',
       },
       en: {
-        label: 'Lyro AI Agent · Case study 03',
+        label: 'Tidio · Lyro AI Agent',
         title: 'An agent profile instead of settings tabs',
         summary: "Rebuilding Lyro's mental model and navigation: settings organised around who the agent is and how it works with the team.",
         role: 'Product Designer',
@@ -522,7 +522,7 @@ export const cases: CaseStudy[] = [
     cover: 'knowledge/after',
     content: {
       pl: {
-        label: 'Lyro AI Agent · Case study 04',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Knowledge: uproszczony model źródeł wiedzy',
         summary: 'Pięć „typów źródeł”, które w praktyce były tym samym. Moja inicjatywa: każda pozycja to Q&A, a plik czy strona to tylko miejsce pochodzenia.',
         role: 'Product Designer, inicjatywa własna',
@@ -603,7 +603,7 @@ export const cases: CaseStudy[] = [
         lesson: 'Gdy użytkownik widzi pięć rzeczy tam, gdzie jest jedna, problemem nie jest UI, tylko model. Uproszczenie modelu upraszcza wszystko, co powstaje na nim później.',
       },
       en: {
-        label: 'Lyro AI Agent · Case study 04',
+        label: 'Tidio · Lyro AI Agent',
         title: 'Knowledge: a simpler model of knowledge sources',
         summary: 'Five “source types” that were really the same thing. My own initiative: every item is a Q&A, and a file or page is just where it came from.',
         role: 'Product Designer, own initiative',

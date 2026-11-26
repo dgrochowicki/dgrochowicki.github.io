@@ -31,7 +31,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
         <div><dt>{t.team}</dt><dd><ul>{c.team.map((x) => <li>{x}</li>)}</ul></dd></div>
         {c.year && <div><dt>{t.year}</dt><dd>{c.year}</dd></div>}
       </dl>
-      <Figure src={item.cover} eager />
+      <div class="cover"><Figure src={item.cover} eager frame={false} /></div>
     </div>
 
     {c.sections.map((s) => (
@@ -82,39 +82,37 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
             {s.images.map((src, n) => <Figure src={src} caption={s.captions?.[n]} sizes={imgSizes(s.images!.length)} />)}
           </div>
         )}
-      </section>
-      {s.title === t.solution && (
-        <section class="wrap block">
-          <div class="row">
-            <h2 class="label">{t.effect}</h2>
-            <div class="content"><p class="effect">{c.effect}</p></div>
+
+        {s.title === t.solution && (
+          <div class="effect-row">
+            <div class="effect">
+              <p class="effect-label">{t.effect}</p>
+              <p class="effect-text">{c.effect}</p>
+            </div>
           </div>
-        </section>
-      )}
+        )}
+      </section>
       </Fragment>
     ))}
 
     <section class="wrap">
       <div class="lesson">
-        <p class="eyebrow">{t.lesson}</p>
-        <p>{c.lesson}</p>
+        <p class="lesson-label">{t.lesson}</p>
+        <p class="lesson-text">{c.lesson}</p>
+        {relLesson && (
+          <a class="essay-link" href={`${href(`portfolio/${essay.slug}`, lang)}#lekcja-${lessonIdx + 1}`}>
+            <span class="muted">{t.moreInEssay}</span>
+            <span>{essay.content[lang].title}</span>
+            <span class="essay-lesson">{t.lessonN} {lessonIdx + 1}: {relLesson.title} →</span>
+          </a>
+        )}
       </div>
     </section>
 
-    {relLesson && (
-      <section class="wrap">
-        <a class="essay-link" href={`${href(`portfolio/${essay.slug}`, lang)}#lekcja-${lessonIdx + 1}`}>
-          <span class="eyebrow">{t.inEssay}</span>
-          <strong>{t.lessonN} {lessonIdx + 1}: {relLesson.title} →</strong>
-          <span class="muted">{essay.content[lang].title}</span>
-        </a>
-      </section>
-    )}
-
     <nav class="wrap next">
       <a href={href(`portfolio/${next.slug}`, lang)}>
-        <span class="eyebrow">{t.next} case study</span>
-        <strong>{next.content[lang].title} →</strong>
+        <strong>{t.next} case study →</strong>
+        <span class="muted">{next.content[lang].title}</span>
       </a>
     </nav>
   </article>
@@ -125,13 +123,18 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .back { display: inline-block; margin-bottom: 40px; font-size: 15px; }
   .head h1 { font-size: clamp(32px, 5vw, 56px); max-width: 16em; margin: 14px 0 20px; letter-spacing: -0.025em; }
   .lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 38em; }
-  /* Rząd meta: Rola | Zakres | Zespół | Rok */
-  .meta { display: grid; grid-template-columns: 1fr 1.3fr 1fr .6fr; gap: 24px 32px; border-top: 1px solid var(--line); padding: 24px 0 0; margin: 0 0 40px; }
-  .meta.no-year { grid-template-columns: 1fr 1.3fr 1fr; }
-  .meta dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+  /* Rząd meta: Rola | Zakres | Zespół | Rok. Nagłówek kolumny z linią pod spodem */
+  .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 24px 0 clamp(40px, 6vw, 64px); }
+  .meta.no-year { grid-template-columns: repeat(3, 1fr); }
+  .meta dt { font-size: 15px; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid var(--fg); margin-bottom: 14px; }
   .meta dd { margin: 0; font-size: 15px; }
-  .meta ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
-  @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; } }
+  .meta ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  @media (max-width: 760px) { .meta, .meta.no-year { grid-template-columns: 1fr 1fr; gap: 28px 20px; } }
+
+  /* Cover: zrzut na tle z gradientem, przycięty od dołu */
+  .cover { background: linear-gradient(180deg, #8f9ab4 0%, #e6e8ed 100%); border-radius: var(--radius); padding: clamp(20px, 5vw, 64px) clamp(16px, 5vw, 60px) 0; max-height: 760px; overflow: hidden; }
+  .cover :global(img) { display: block; border-radius: 8px 8px 0 0; box-shadow: 0 8px 32px rgba(20, 30, 60, .18); }
+  @media (prefers-color-scheme: dark) { .cover { background: linear-gradient(180deg, #3a4258 0%, #1c1d1f 100%); } }
 
   .block { padding-top: clamp(40px, 6vw, 72px); }
   .block .row { border-top: 1px solid var(--line); }
@@ -153,8 +156,12 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   @media (max-width: 860px) { .imgs.n2, .imgs.n3 { grid-template-columns: 1fr; } }
   /* Proces: zawsze 2 w rzędzie, mniejsze odstępy */
   .imgs.n2.process { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-  /* Efekt: wyróżniony blok jak dawna karta TL;DR, tekst w rozmiarze body */
-  .effect { background: var(--accent); color: var(--accent-fg); border-radius: var(--radius); padding: 20px 24px; margin: 0; }
+  /* Efekt: szary blok w kolumnie treści, pogrubiony tekst w rozmiarze body */
+  .effect-row { display: grid; grid-template-columns: 220px 1fr; column-gap: 48px; margin: 8px 0 0; }
+  .effect { grid-column: 2; background: var(--bg-soft); border-radius: var(--radius); padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 40px); }
+  .effect-label { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+  .effect-text { font-weight: 600; margin: 0; }
+  @media (max-width: 760px) { .effect-row { grid-template-columns: 1fr; } .effect { grid-column: 1; } }
   .process :global(figcaption) { font-size: 13px; }
 
   .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -166,19 +173,17 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .compare :global(figcaption) { display: none; }
   @media (max-width: 860px) { .compare { grid-template-columns: 1fr; } }
 
-  .lesson { margin-top: clamp(56px, 8vw, 96px); background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
-  .lesson .eyebrow { color: var(--accent); margin-bottom: 12px; }
-  .lesson p:last-child { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.35; max-width: 30em; }
-  /* W ciemnym motywie jasny blok za mocno się wybija: spokojne, ciemne tło */
-  @media (prefers-color-scheme: dark) { .lesson { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--line); } }
-
-  .essay-link { display: flex; flex-direction: column; gap: 6px; margin-top: 24px; padding: 22px 26px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; transition: .2s; }
-  .essay-link:hover { border-color: var(--muted); }
-  .essay-link strong { font-size: 18px; font-weight: 600; }
-  .essay-link .muted { font-size: 14px; }
-  .next { padding-top: 40px; padding-bottom: clamp(56px, 8vw, 96px); }
-  .next a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 32px; transition: .2s; }
-  .next a:hover { border-color: var(--muted); }
-  .next strong { font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; }
+  /* Wniosek: szary blok z dużym nagłówkiem i linkiem do eseju */
+  .lesson { margin-top: clamp(56px, 8vw, 96px); background: var(--bg-soft); border-radius: var(--radius); padding: clamp(24px, 4vw, 44px); }
+  .lesson-label { font-size: 15px; font-weight: 500; margin: 0 0 12px; }
+  .lesson-text { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; max-width: 26em; margin: 0; }
+  .essay-link { display: flex; flex-direction: column; gap: 2px; margin-top: 24px; text-decoration: none; font-size: clamp(16px, 1.6vw, 18px); }
+  .essay-link .muted { font-size: 13px; margin-bottom: 6px; }
+  .essay-link:hover .essay-lesson { text-decoration: underline; }
+  .next { padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(56px, 8vw, 96px); }
+  .next a { display: flex; flex-direction: column; gap: 8px; text-decoration: none; border: 1px solid color-mix(in srgb, var(--fg) 30%, transparent); border-radius: var(--radius); padding: clamp(24px, 3vw, 40px); transition: .2s; }
+  .next a:hover { border-color: var(--fg); }
+  .next strong { font-size: clamp(24px, 3vw, 36px); font-weight: 400; letter-spacing: -0.015em; }
+  .next .muted { font-size: 14px; }
   .next a:hover strong { text-decoration: underline; }
 </style>

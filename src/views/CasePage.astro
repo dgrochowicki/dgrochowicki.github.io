@@ -111,7 +111,7 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
 
     <nav class="wrap next">
       <a href={href(`portfolio/${next.slug}`, lang)}>
-        <strong>{t.next} case study →</strong>
+        <strong>{t.next} case study <span class="arrow">→</span></strong>
         <span class="muted">{next.content[lang].title}</span>
       </a>
     </nav>
@@ -182,8 +182,10 @@ const imgSizes = (n: number) => (n > 1 ? '(max-width: 860px) 100vw, 600px' : '(m
   .essay-link:hover .essay-lesson { text-decoration: underline; }
   .next { padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(56px, 8vw, 96px); }
   .next a { display: flex; flex-direction: column; gap: 8px; text-decoration: none; border: 1px solid color-mix(in srgb, var(--fg) 30%, transparent); border-radius: var(--radius); padding: clamp(24px, 3vw, 40px); transition: .2s; }
-  .next a:hover { border-color: var(--fg); }
+  .next a:hover { border-color: color-mix(in srgb, var(--fg) 45%, transparent); }
   .next strong { font-size: clamp(24px, 3vw, 36px); font-weight: 400; letter-spacing: -0.015em; }
   .next .muted { font-size: 14px; }
-  .next a:hover strong { text-decoration: underline; }
+  .next .arrow { display: inline-block; transition: transform .25s ease; }
+  .next a:hover .arrow { transform: translateX(6px); }
+  @media (prefers-reduced-motion: reduce) { .next .arrow { transition: none; } }
 </style>

@@ -88,6 +88,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Research', 'Model konfiguracji', 'User flows', 'UI', 'Testy z użytkownikami'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2025',
         effect: 'Funkcja dla większych firm. Ten sam mechanizm trafił później do Guidance, Procedures, Actions i wykluczania grup z rozmów z Lyro.',
         processImages: ['audiences/process-1', 'audiences/process-2'],
         processCaptions: ['Mapa hipotez i researchu: od zgłoszeń większych klientów do modelu grup', 'User flows: filtrowanie, akcje zbiorcze i przypisywanie audiences'],
@@ -95,18 +96,12 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'Lyro korzystał z jednej bazy wiedzy dla wszystkich odwiedzających. Więksi klienci zgłaszali potrzebę wydzielenia części wiedzy agenta tak, by nie mówił wszystkiego każdemu, tylko odpowiadał inaczej różnym grupom. Na przykład:',
+              'Lyro korzystał z jednej bazy wiedzy, a każde źródło było dostępne w każdej rozmowie. Więksi klienci potrzebowali, żeby agent odpowiadał inaczej różnym grupom, na przykład:',
             ],
             list: [
               'inne treści dla klientów z innego kraju lub w innym języku',
               'osobne informacje dla klientów VIP',
               'odpowiedzi zależne od strony, na której jest klient',
-            ],
-          },
-          {
-            title: 'Kontekst i ograniczenia',
-            text: [
-              'W Knowledge / Data sources użytkownicy dodawali treści, z których Lyro budował odpowiedzi. Każde źródło było dostępne w każdej rozmowie.',
             ],
           },
           {
@@ -124,10 +119,6 @@ export const cases: CaseStudy[] = [
               {
                 title: 'Prosty, addytywny model',
                 text: 'Klient może należeć do kilku grup naraz, bez priorytetów i konfliktów. Domyślnie wszystko jest dla Everyone, więc wdrożenie niczego nie psuje. Rozmowy można sprawdzić w inboxie, w folderze Lyro.',
-              },
-              {
-                title: 'Jeden mechanizm dla całego agenta',
-                text: 'Audiences to osobny prymityw, a nie „funkcja Knowledge”. Dzięki temu trafiły do Guidance, Procedures, Actions i wykluczania z rozmów z Lyro.',
               },
               {
                 title: 'Istniejący komponent zamiast nowego',
@@ -151,7 +142,7 @@ export const cases: CaseStudy[] = [
             captions: ['Definicja audience', 'Przypisanie audience do pojedynczego Q&A'],
           },
         ],
-        lesson: 'Prosty prymityw zamiast łatki: zaczął od jednego PDF-a, skończył jako wspólny język całego agenta.',
+        lesson: 'Zanim zaprojektujesz funkcję, sprawdź, czy nie potrzebujesz prymitywu.',
       },
       en: {
         label: 'Lyro AI Agent · Case study 01',
@@ -160,6 +151,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Research', 'Configuration model', 'User flows', 'UI', 'User testing'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2025',
         effect: 'A feature for larger companies. The same mechanism later powered Guidance, Procedures, Actions and excluding groups from Lyro conversations.',
         processImages: ['audiences/process-1', 'audiences/process-2'],
         processCaptions: ['Hypothesis and research map: from larger customers’ requests to a group model', 'User flows: filtering, bulk actions and assigning audiences'],
@@ -167,18 +159,12 @@ export const cases: CaseStudy[] = [
           {
             title: 'Problem',
             text: [
-              'Lyro used a single knowledge base for all visitors. Larger customers asked to scope parts of the knowledge so the agent would answer different groups differently. For example:',
+              'Lyro used a single knowledge base, and every source was available in every conversation. Larger customers needed the agent to answer different groups differently, for example:',
             ],
             list: [
               'different content for customers from another country or language',
               'separate information for VIP customers',
               'answers that depend on the page the customer is on',
-            ],
-          },
-          {
-            title: 'Context and constraints',
-            text: [
-              'In Knowledge / Data sources users added the content Lyro built its answers from. Every source was available in every conversation.',
             ],
           },
           {
@@ -196,10 +182,6 @@ export const cases: CaseStudy[] = [
               {
                 title: 'A simple, additive model',
                 text: 'A customer can belong to several groups at once, with no priorities and no conflicts. Everything defaults to Everyone, so rolling it out breaks nothing. Conversations can be reviewed in the inbox, in the Lyro folder.',
-              },
-              {
-                title: 'One mechanism for the whole agent',
-                text: 'Audiences are a standalone primitive, not a “Knowledge feature”. That is why they could be reused in Guidance, Procedures, Actions and conversation exclusions.',
               },
               {
                 title: 'Reuse an existing component',
@@ -223,7 +205,7 @@ export const cases: CaseStudy[] = [
             captions: ['Audience definition', 'Assigning an audience to a single Q&A'],
           },
         ],
-        lesson: 'A simple primitive instead of a patch: it started with a single PDF and ended up as a shared language for the whole agent.',
+        lesson: 'Before you design a feature, check whether what you need is a primitive.',
       },
     },
   },
@@ -240,6 +222,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Koncepcja', 'User flows', 'Wireframes', 'UI', 'Testy z użytkownikami', 'Analiza danych (Amplitude)'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2026',
         effect: 'Jeden ekran setupu i jeden ekran overview. Wdrożone tuż po moim odejściu z Tidio (XI 2026), więc nie znam wyników. Miarą sukcesu miał być „Aha! moment”: przejście onboardingu, uruchomienie agenta i pierwsza rozmowa rozwiązana przez Lyro.',
         processImages: ['onboarding/process-1', 'onboarding/process-2'],
         processCaptions: ['Mapa hipotez i researchu: dlaczego lista „to do” przestała działać', 'Statusy, kroki i wireframes ekranu Setup'],
@@ -315,6 +298,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Concept', 'User flows', 'Wireframes', 'UI', 'User testing', 'Data analysis (Amplitude)'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2026',
         effect: "One setup screen and one overview screen. Shipped right after I left Tidio (Nov 2026), so I haven't seen the results. Success was to be measured by the “Aha! moment”: completing onboarding, launching the agent and Lyro resolving its first conversation.",
         processImages: ['onboarding/process-1', 'onboarding/process-2'],
         processCaptions: ['Hypothesis and research map: why the to-do list stopped working', 'States, steps and wireframes for the Setup screen'],
@@ -398,6 +382,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Analiza', 'Model nawigacji', 'Prototypy HTML', 'UI', 'Testy z użytkownikami'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2026',
         effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: mniej zgłoszeń do supportu o to, gdzie są ustawienia agenta.',
         processImages: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
         processCaptions: ['Mapa obecnej nawigacji: gdzie były rozproszone ustawienia agenta', 'Struktura nowego modelu: profil, praca z zespołem, ustawienia domyślne', 'Dokument roboczy: model agenta i nawigacji (wersja 17)'],
@@ -466,6 +451,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer',
         scope: ['Analysis', 'Navigation model', 'HTML prototypes', 'UI', 'User testing'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE'],
+        year: '2026',
         effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: fewer support tickets asking where agent settings live.',
         processImages: ['agent-profile/process-1', 'agent-profile/process-2', 'agent-profile/process-3'],
         processCaptions: ['Map of the current navigation: where agent settings were scattered', 'Structure of the new model: profile, working with the team, defaults', 'Working doc: agent and navigation model (version 17)'],
@@ -542,6 +528,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer, inicjatywa własna',
         scope: ['Analiza modelu danych', 'UI', 'Testy z użytkownikami'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE', 'Drugi designer, który ze mną współpracował'],
+        year: '2024',
         effect: 'Koncepcja trafiła do dalszych planów, ale zakończyłem pracę w Tidio, zanim przyszła kolej na jej wdrożenie. Cel: prostsza, bardziej zrozumiała lista źródeł, mniej filtrów i łatwiejsze dalsze funkcje na poziomie pojedynczego Q&A.',
         processImages: ['knowledge/process'],
         processCaptions: ['Mapa hipotez i researchu: obecna i nowa struktura źródeł wiedzy'],
@@ -622,6 +609,7 @@ export const cases: CaseStudy[] = [
         role: 'Product Designer, own initiative',
         scope: ['Data model analysis', 'UI', 'User testing'],
         team: ['PM', 'EM', 'QA', '2-3 BE', '2-4 FE', 'A second designer collaborating with me'],
+        year: '2024',
         effect: 'Planned for a later stage, but I left Tidio before it came up for implementation. Goal: a simpler, clearer source list, fewer filters, and easier follow-up features at the single-Q&A level.',
         processImages: ['knowledge/process'],
         processCaptions: ['Hypothesis and research map: the current and new knowledge source structure'],

@@ -10,7 +10,7 @@
   --line: #e6e7ea;
   --accent: #e1ffc1;
   --accent-fg: #161616;
-  --link: #0b57d0;
+  --link: #4f46e5;
   --max: 1200px;
   --text: 680px;
   --pad: clamp(20px, 5vw, 48px);
@@ -25,7 +25,7 @@
     --fg: #ececec;
     --muted: #9aa1ad;
     --line: #2a2c30;
-    --link: #8ab4f8;
+    --link: #a5b4fc;
   }
 }
 

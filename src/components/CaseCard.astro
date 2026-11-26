@@ -15,7 +15,6 @@ const cardKey = [`${folder}/card`, `cards/card-${folder}`].find(hasImg);
 <a class="card" href={href(`portfolio/${item.slug}`, lang)} aria-label={`${ui[lang].readCase}: ${c.title}`}>
   <div class:list={['thumb', { zoom: cardKey }]}>
     <Image src={img(cardKey ?? item.cover)} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 600px" />
-    <span class="arrow" aria-hidden="true">→</span>
   </div>
   <div class="body">
     <span class="eyebrow">Case study {String(index + 1).padStart(2, '0')}</span>
@@ -28,16 +27,12 @@ const cardKey = [`${folder}/card`, `cards/card-${folder}`].find(hasImg);
   .card { display: flex; flex-direction: column; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: border-color .2s; background: var(--bg); }
   .card:hover { border-color: color-mix(in srgb, var(--fg) 30%, transparent); }
   /* Jaśniejsze tło z delikatnym gradientem */
-  .thumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: linear-gradient(180deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 35%, #fff) 100%); padding: 60px 20px 0; }
+  .thumb { aspect-ratio: 16 / 9; overflow: hidden; background: linear-gradient(180deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 35%, #fff) 100%); padding: 36px 20px 0; }
   /* Cały ekran: pełna szerokość, przycinany tylko dół */
   .thumb :global(img) { display: block; width: 100%; height: auto; border-radius: 8px 8px 0 0; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
   /* Zbliżenie: element wyśrodkowany w kafelku */
-  .thumb.zoom { display: grid; place-items: center; padding: 60px 28px 28px; }
+  .thumb.zoom { display: grid; place-items: center; padding: 28px; }
   .thumb.zoom :global(img) { width: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; }
-  /* Strzałka w prawym górnym rogu, przesuwa się na hover */
-  .arrow { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; background: var(--bg); color: var(--fg); display: grid; place-items: center; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,.08); transition: transform .25s ease; }
-  .card:hover .arrow { transform: translateX(4px); }
-  @media (prefers-reduced-motion: reduce) { .arrow { transition: none; } }
   .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .body h3 { font-size: 20px; }
   .body p { font-size: 15px; flex: 1; }
